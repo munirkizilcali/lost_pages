@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  copy_id: 1
+  borrower_id: 1
+  due_date: 2018-05-29 13:42:33
+  lend_date: 2018-05-29 13:42:33
+  returned: false
+  rating: 1
+
+two:
+  copy_id: 1
+  borrower_id: 1
+  due_date: 2018-05-29 13:42:33
+  lend_date: 2018-05-29 13:42:33
+  returned: false
+  rating: 1
