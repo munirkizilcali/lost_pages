@@ -14,10 +14,6 @@ class CopiesController < ApplicationController
 
   private
 
-  def user_check
-    redirect_to login_path unless current_user
-  end
-
   def find_copy
     @copy = Copy.find_by(id: params[:id])
   end

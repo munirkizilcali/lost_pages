@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :friendships
+  resources :friendships, only:[:create, :destroy, :index]
   resources :copies
   resources :lendings
   resources :books
@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   post "/login" => "sessions#create"
   get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
+
+  get '/friends' => 'friendships#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
