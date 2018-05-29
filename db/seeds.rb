@@ -38,6 +38,10 @@ lendings = Lending.create([
   {copy_id: 5, borrower_id: 1}
 ])
 
+friends = Friendship.create([
+  {user_id: 1, friend_id: 2}
+])
+
 
 
 
