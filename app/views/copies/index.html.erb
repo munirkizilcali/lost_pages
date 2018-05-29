@@ -2,6 +2,7 @@
 
 <div>
   <% current_user.copies.each do |copy| %>
-   <p><%=link_to copy.book.name, copy_path(copy) %></p>
+   <p><%=link_to copy.book.name, copy_path(copy) %>
+   </p>
   <% end %>
 </div>

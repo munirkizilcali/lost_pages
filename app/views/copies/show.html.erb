@@ -1,0 +1,7 @@
+<h1><%= @copy.book.name %></h1>
+<p>
+  Condition: <%= @copy.condition %><br>
+  Purchased Date: <%= @copy.purchased_date %><br>
+  Notes: <%= @copy.notes %><br>
+  Status: <%= @copy.available? ? "Available" : "Currently borrowed by #{@copy.current_borrower}. Return date: #{@copy.current_lending.first.formatted_due_date}" %>
+</p>

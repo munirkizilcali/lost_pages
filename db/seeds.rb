@@ -23,9 +23,9 @@ users = User.create([
 ])
 
 copies = Copy.create([
-  {book_id: 1, user_id: 1},
-  {book_id: 1, user_id: 2},
-  {book_id: 1, user_id: 3},
+  {book_id: 1, user_id: 1, condition: 5, purchased_date: "2018-05-05", notes: "The greatest book."},
+  {book_id: 1, user_id: 2, condition: 3, purchased_date: "2018-01-05", notes: "An okay book."},
+  {book_id: 1, user_id: 3, condition: 1, purchased_date: "2000-05-05", notes: "Falling apart."},
   {book_id: 1, user_id: 4},
   {book_id: 1, user_id: 5},
   {book_id: 2, user_id: 1},
@@ -36,11 +36,11 @@ copies = Copy.create([
 ])
 
 lendings = Lending.create([
-  {copy_id: 1, borrower_id: 2},
-  {copy_id: 2, borrower_id: 3},
-  {copy_id: 3, borrower_id: 4},
-  {copy_id: 4, borrower_id: 5},
-  {copy_id: 5, borrower_id: 1}
+  {copy_id: 1, borrower_id: 2, returned: false, due_date: "2018-07-07"},
+  {copy_id: 2, borrower_id: 3, returned: false, due_date: "2018-06-07"},
+  {copy_id: 3, borrower_id: 4, returned: false, due_date: "2018-10-07"},
+  {copy_id: 4, borrower_id: 5, returned: false, due_date: "2018-11-07"},
+  {copy_id: 5, borrower_id: 1, returned: false, due_date: "2018-01-07"}
 ])
 
 friends = Friendship.create([

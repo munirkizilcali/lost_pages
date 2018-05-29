@@ -1,2 +1,4 @@
 class LendingsController < ApplicationController
+
+
 end
