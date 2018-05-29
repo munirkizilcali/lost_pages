@@ -15,19 +15,24 @@ books = Book.create([
 ])
 
 users = User.create([
-  {name:"munir"},
-  {name:"adam"},
-  {name:"lucas"},
-  {name:"brittany"},
-  {name:"richard"}
+  {name:"munir", email: "munir@munir.com", password: "munir", password_confirmation: "munir"},
+  {name:"adam", email: "adam@adam.com", password: "munir", password_confirmation: "munir"},
+  {name:"lucas", email: "lucas@lucas.com", password: "munir", password_confirmation: "munir"},
+  {name:"brittany", email: "brittany@brittany.com", password: "munir", password_confirmation: "munir"},
+  {name:"richard", email: "richard@richard.com", password: "munir", password_confirmation: "munir"}
 ])
 
 copies = Copy.create([
   {book_id: 1, user_id: 1},
   {book_id: 1, user_id: 2},
-  {book_id: 2, user_id: 3},
-  {book_id: 2, user_id: 4},
-  {book_id: 3, user_id: 5}
+  {book_id: 1, user_id: 3},
+  {book_id: 1, user_id: 4},
+  {book_id: 1, user_id: 5},
+  {book_id: 2, user_id: 1},
+  {book_id: 2, user_id: 2},
+  {book_id: 3, user_id: 1},
+  {book_id: 3, user_id: 2},
+  {book_id: 3, user_id: 3}
 ])
 
 lendings = Lending.create([

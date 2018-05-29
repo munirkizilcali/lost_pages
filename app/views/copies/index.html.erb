@@ -1,5 +1,7 @@
-<% if current_user %>
-  <h1>Welcome <%= current_user.name %>!</h1>
-<% else %>
-  <h1>Please sign in</h1>
-<% end %>
+<h1>Welcome to your library <%= current_user.name %>!</h1>
+
+<div>
+  <% current_user.copies.each do |copy| %>
+   <p><%=link_to copy.book.name, copy_path(copy) %></p>
+  <% end %>
+</div>
