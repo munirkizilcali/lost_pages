@@ -1,1 +1,5 @@
-<h1>NICE <%= session["user_id"] %></h1>
+<% if current_user %>
+  <h1>Welcome <%= current_user.name %>!</h1>
+<% else %>
+  <h1>Please sign in</h1>
+<% end %>

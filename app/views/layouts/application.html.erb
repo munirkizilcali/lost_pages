@@ -11,5 +11,17 @@
 
   <body>
     <%= yield %>
+    <br><br>
+    <hr>
+    <% if current_user %>
+      <p>
+        Current User: <%= current_user.email %><br>
+        <%= link_to "Logout", '/logout', method: "DELETE" %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to "Login", new_session_path %>
+      </p>
+    <% end %>
   </body>
 </html>
