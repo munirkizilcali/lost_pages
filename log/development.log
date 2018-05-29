@@ -283,3 +283,2255 @@ Migrating to CreateFriendships (20180529174611)
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:42:35.441812"], ["updated_at", "2018-05-29 18:42:35.441812"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:42:35.514554"], ["updated_at", "2018-05-29 18:42:35.514554"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:42:35.519979"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:42:35.560864"], ["updated_at", "2018-05-29 18:42:35.560864"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:42:35.564890"], ["updated_at", "2018-05-29 18:42:35.564890"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:42:35.568828"], ["updated_at", "2018-05-29 18:42:35.568828"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:42:51.722611"], ["updated_at", "2018-05-29 18:42:51.722611"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:42:51.771896"], ["updated_at", "2018-05-29 18:42:51.771896"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:42:51.777084"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:42:51.837093"], ["updated_at", "2018-05-29 18:42:51.837093"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:42:51.841242"], ["updated_at", "2018-05-29 18:42:51.841242"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:42:51.844690"], ["updated_at", "2018-05-29 18:42:51.844690"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "the girl Who Lived"], ["author", "Christopher Greyson"], ["created_at", "2018-05-29 18:42:51.848799"], ["updated_at", "2018-05-29 18:42:51.848799"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spilled Milk"], ["author", "K.L. Randis"], ["created_at", "2018-05-29 18:42:51.854075"], ["updated_at", "2018-05-29 18:42:51.854075"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "munir"], ["created_at", "2018-05-29 18:42:51.880073"], ["updated_at", "2018-05-29 18:42:51.880073"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "adam"], ["created_at", "2018-05-29 18:42:51.890016"], ["updated_at", "2018-05-29 18:42:51.890016"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lucas"], ["created_at", "2018-05-29 18:42:51.893453"], ["updated_at", "2018-05-29 18:42:51.893453"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "brittany"], ["created_at", "2018-05-29 18:42:51.897255"], ["updated_at", "2018-05-29 18:42:51.897255"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "richard"], ["created_at", "2018-05-29 18:42:51.903128"], ["updated_at", "2018-05-29 18:42:51.903128"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:44:06.543539"], ["updated_at", "2018-05-29 18:44:06.543539"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:44:06.595077"], ["updated_at", "2018-05-29 18:44:06.595077"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:44:06.600401"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:44:06.640093"], ["updated_at", "2018-05-29 18:44:06.640093"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:44:06.644186"], ["updated_at", "2018-05-29 18:44:06.644186"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:44:06.648792"], ["updated_at", "2018-05-29 18:44:06.648792"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "the girl Who Lived"], ["author", "Christopher Greyson"], ["created_at", "2018-05-29 18:44:06.653909"], ["updated_at", "2018-05-29 18:44:06.653909"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spilled Milk"], ["author", "K.L. Randis"], ["created_at", "2018-05-29 18:44:06.657864"], ["updated_at", "2018-05-29 18:44:06.657864"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "munir"], ["created_at", "2018-05-29 18:44:06.676526"], ["updated_at", "2018-05-29 18:44:06.676526"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "adam"], ["created_at", "2018-05-29 18:44:06.680871"], ["updated_at", "2018-05-29 18:44:06.680871"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lucas"], ["created_at", "2018-05-29 18:44:06.683880"], ["updated_at", "2018-05-29 18:44:06.683880"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "brittany"], ["created_at", "2018-05-29 18:44:06.686827"], ["updated_at", "2018-05-29 18:44:06.686827"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "richard"], ["created_at", "2018-05-29 18:44:06.690008"], ["updated_at", "2018-05-29 18:44:06.690008"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:47:12.571137"], ["updated_at", "2018-05-29 18:47:12.571137"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:47:12.630685"], ["updated_at", "2018-05-29 18:47:12.630685"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:47:12.637296"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:47:12.675112"], ["updated_at", "2018-05-29 18:47:12.675112"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:47:12.678793"], ["updated_at", "2018-05-29 18:47:12.678793"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (1.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:47:12.682755"], ["updated_at", "2018-05-29 18:47:12.682755"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "the girl Who Lived"], ["author", "Christopher Greyson"], ["created_at", "2018-05-29 18:47:12.688227"], ["updated_at", "2018-05-29 18:47:12.688227"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (5.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spilled Milk"], ["author", "K.L. Randis"], ["created_at", "2018-05-29 18:47:12.692386"], ["updated_at", "2018-05-29 18:47:12.692386"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "munir"], ["created_at", "2018-05-29 18:47:12.718909"], ["updated_at", "2018-05-29 18:47:12.718909"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "adam"], ["created_at", "2018-05-29 18:47:12.724588"], ["updated_at", "2018-05-29 18:47:12.724588"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lucas"], ["created_at", "2018-05-29 18:47:12.728586"], ["updated_at", "2018-05-29 18:47:12.728586"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "brittany"], ["created_at", "2018-05-29 18:47:12.732974"], ["updated_at", "2018-05-29 18:47:12.732974"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "richard"], ["created_at", "2018-05-29 18:47:12.738721"], ["updated_at", "2018-05-29 18:47:12.738721"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCopy Load (0.5ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" ORDER BY "copies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:50:25.793189"], ["updated_at", "2018-05-29 18:50:25.793189"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:50:25.850905"], ["updated_at", "2018-05-29 18:50:25.850905"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:50:25.857761"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:50:25.896381"], ["updated_at", "2018-05-29 18:50:25.896381"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:50:25.900560"], ["updated_at", "2018-05-29 18:50:25.900560"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:50:25.905114"], ["updated_at", "2018-05-29 18:50:25.905114"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "the girl Who Lived"], ["author", "Christopher Greyson"], ["created_at", "2018-05-29 18:50:25.908983"], ["updated_at", "2018-05-29 18:50:25.908983"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spilled Milk"], ["author", "K.L. Randis"], ["created_at", "2018-05-29 18:50:25.912313"], ["updated_at", "2018-05-29 18:50:25.912313"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "munir"], ["created_at", "2018-05-29 18:50:25.940326"], ["updated_at", "2018-05-29 18:50:25.940326"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "adam"], ["created_at", "2018-05-29 18:50:25.944526"], ["updated_at", "2018-05-29 18:50:25.944526"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lucas"], ["created_at", "2018-05-29 18:50:25.948845"], ["updated_at", "2018-05-29 18:50:25.948845"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "brittany"], ["created_at", "2018-05-29 18:50:25.952676"], ["updated_at", "2018-05-29 18:50:25.952676"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "richard"], ["created_at", "2018-05-29 18:50:25.957885"], ["updated_at", "2018-05-29 18:50:25.957885"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 1], ["created_at", "2018-05-29 18:50:25.998368"], ["updated_at", "2018-05-29 18:50:25.998368"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 2], ["created_at", "2018-05-29 18:50:26.006001"], ["updated_at", "2018-05-29 18:50:26.006001"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 3], ["created_at", "2018-05-29 18:50:26.012280"], ["updated_at", "2018-05-29 18:50:26.012280"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 4], ["created_at", "2018-05-29 18:50:26.027983"], ["updated_at", "2018-05-29 18:50:26.027983"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["user_id", 5], ["created_at", "2018-05-29 18:50:26.033743"], ["updated_at", "2018-05-29 18:50:26.033743"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Load (0.9ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:51:39.357508"], ["updated_at", "2018-05-29 18:51:39.357508"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:51:39.398064"], ["updated_at", "2018-05-29 18:51:39.398064"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:51:39.403265"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:51:39.460282"], ["updated_at", "2018-05-29 18:51:39.460282"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:51:39.465885"], ["updated_at", "2018-05-29 18:51:39.465885"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:51:39.470774"], ["updated_at", "2018-05-29 18:51:39.470774"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "the girl Who Lived"], ["author", "Christopher Greyson"], ["created_at", "2018-05-29 18:51:39.476127"], ["updated_at", "2018-05-29 18:51:39.476127"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spilled Milk"], ["author", "K.L. Randis"], ["created_at", "2018-05-29 18:51:39.480377"], ["updated_at", "2018-05-29 18:51:39.480377"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "munir"], ["created_at", "2018-05-29 18:51:39.500130"], ["updated_at", "2018-05-29 18:51:39.500130"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "adam"], ["created_at", "2018-05-29 18:51:39.504117"], ["updated_at", "2018-05-29 18:51:39.504117"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lucas"], ["created_at", "2018-05-29 18:51:39.507759"], ["updated_at", "2018-05-29 18:51:39.507759"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "brittany"], ["created_at", "2018-05-29 18:51:39.512376"], ["updated_at", "2018-05-29 18:51:39.512376"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "richard"], ["created_at", "2018-05-29 18:51:39.524547"], ["updated_at", "2018-05-29 18:51:39.524547"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 1], ["created_at", "2018-05-29 18:51:39.562904"], ["updated_at", "2018-05-29 18:51:39.562904"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 2], ["created_at", "2018-05-29 18:51:39.570640"], ["updated_at", "2018-05-29 18:51:39.570640"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 3], ["created_at", "2018-05-29 18:51:39.579090"], ["updated_at", "2018-05-29 18:51:39.579090"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 4], ["created_at", "2018-05-29 18:51:39.585416"], ["updated_at", "2018-05-29 18:51:39.585416"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["user_id", 5], ["created_at", "2018-05-29 18:51:39.592070"], ["updated_at", "2018-05-29 18:51:39.592070"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:52:14.628574"], ["updated_at", "2018-05-29 18:52:14.628574"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:52:14.689619"], ["updated_at", "2018-05-29 18:52:14.689619"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:52:14.694738"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:52:14.732744"], ["updated_at", "2018-05-29 18:52:14.732744"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:52:14.736884"], ["updated_at", "2018-05-29 18:52:14.736884"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:52:14.747060"], ["updated_at", "2018-05-29 18:52:14.747060"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "the girl Who Lived"], ["author", "Christopher Greyson"], ["created_at", "2018-05-29 18:52:14.751541"], ["updated_at", "2018-05-29 18:52:14.751541"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spilled Milk"], ["author", "K.L. Randis"], ["created_at", "2018-05-29 18:52:14.755121"], ["updated_at", "2018-05-29 18:52:14.755121"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "munir"], ["created_at", "2018-05-29 18:52:14.774395"], ["updated_at", "2018-05-29 18:52:14.774395"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "adam"], ["created_at", "2018-05-29 18:52:14.778453"], ["updated_at", "2018-05-29 18:52:14.778453"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lucas"], ["created_at", "2018-05-29 18:52:14.782066"], ["updated_at", "2018-05-29 18:52:14.782066"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "brittany"], ["created_at", "2018-05-29 18:52:14.785495"], ["updated_at", "2018-05-29 18:52:14.785495"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "richard"], ["created_at", "2018-05-29 18:52:14.789324"], ["updated_at", "2018-05-29 18:52:14.789324"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 1], ["created_at", "2018-05-29 18:52:14.825415"], ["updated_at", "2018-05-29 18:52:14.825415"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 2], ["created_at", "2018-05-29 18:52:14.831543"], ["updated_at", "2018-05-29 18:52:14.831543"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.9ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 3], ["created_at", "2018-05-29 18:52:14.846989"], ["updated_at", "2018-05-29 18:52:14.846989"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 4], ["created_at", "2018-05-29 18:52:14.855510"], ["updated_at", "2018-05-29 18:52:14.855510"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["user_id", 5], ["created_at", "2018-05-29 18:52:14.862539"], ["updated_at", "2018-05-29 18:52:14.862539"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mLending Create (0.5ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 1], ["borrower_id", 2], ["created_at", "2018-05-29 18:52:14.891145"], ["updated_at", "2018-05-29 18:52:14.891145"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 2], ["borrower_id", 3], ["created_at", "2018-05-29 18:52:14.896475"], ["updated_at", "2018-05-29 18:52:14.896475"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mLending Create (0.3ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 3], ["borrower_id", 4], ["created_at", "2018-05-29 18:52:14.901051"], ["updated_at", "2018-05-29 18:52:14.901051"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mLending Create (0.6ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 4], ["borrower_id", 5], ["created_at", "2018-05-29 18:52:14.907059"], ["updated_at", "2018-05-29 18:52:14.907059"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mLending Create (0.5ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 5], ["borrower_id", 1], ["created_at", "2018-05-29 18:52:14.913875"], ["updated_at", "2018-05-29 18:52:14.913875"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mLending Load (0.9ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:53:14.504230"], ["updated_at", "2018-05-29 18:53:14.504230"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:53:14.551038"], ["updated_at", "2018-05-29 18:53:14.551038"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:53:14.581201"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:53:14.615655"], ["updated_at", "2018-05-29 18:53:14.615655"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:53:14.619282"], ["updated_at", "2018-05-29 18:53:14.619282"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:53:14.622912"], ["updated_at", "2018-05-29 18:53:14.622912"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "the girl Who Lived"], ["author", "Christopher Greyson"], ["created_at", "2018-05-29 18:53:14.628493"], ["updated_at", "2018-05-29 18:53:14.628493"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spilled Milk"], ["author", "K.L. Randis"], ["created_at", "2018-05-29 18:53:14.632470"], ["updated_at", "2018-05-29 18:53:14.632470"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "munir"], ["created_at", "2018-05-29 18:53:14.650596"], ["updated_at", "2018-05-29 18:53:14.650596"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "adam"], ["created_at", "2018-05-29 18:53:14.654453"], ["updated_at", "2018-05-29 18:53:14.654453"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lucas"], ["created_at", "2018-05-29 18:53:14.664394"], ["updated_at", "2018-05-29 18:53:14.664394"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "brittany"], ["created_at", "2018-05-29 18:53:14.669844"], ["updated_at", "2018-05-29 18:53:14.669844"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "richard"], ["created_at", "2018-05-29 18:53:14.673302"], ["updated_at", "2018-05-29 18:53:14.673302"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (1.0ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 1], ["created_at", "2018-05-29 18:53:14.715051"], ["updated_at", "2018-05-29 18:53:14.715051"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 2], ["created_at", "2018-05-29 18:53:14.724258"], ["updated_at", "2018-05-29 18:53:14.724258"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 3], ["created_at", "2018-05-29 18:53:14.731613"], ["updated_at", "2018-05-29 18:53:14.731613"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.6ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 4], ["created_at", "2018-05-29 18:53:14.741120"], ["updated_at", "2018-05-29 18:53:14.741120"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.7ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["user_id", 5], ["created_at", "2018-05-29 18:53:14.751028"], ["updated_at", "2018-05-29 18:53:14.751028"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:54:22.387729"], ["updated_at", "2018-05-29 18:54:22.387729"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:54:22.425028"], ["updated_at", "2018-05-29 18:54:22.425028"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:54:22.429940"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:54:22.485115"], ["updated_at", "2018-05-29 18:54:22.485115"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:54:22.489155"], ["updated_at", "2018-05-29 18:54:22.489155"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:54:22.493038"], ["updated_at", "2018-05-29 18:54:22.493038"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "the girl Who Lived"], ["author", "Christopher Greyson"], ["created_at", "2018-05-29 18:54:22.498775"], ["updated_at", "2018-05-29 18:54:22.498775"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spilled Milk"], ["author", "K.L. Randis"], ["created_at", "2018-05-29 18:54:22.503329"], ["updated_at", "2018-05-29 18:54:22.503329"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "munir"], ["created_at", "2018-05-29 18:54:22.523283"], ["updated_at", "2018-05-29 18:54:22.523283"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "adam"], ["created_at", "2018-05-29 18:54:22.526891"], ["updated_at", "2018-05-29 18:54:22.526891"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lucas"], ["created_at", "2018-05-29 18:54:22.532785"], ["updated_at", "2018-05-29 18:54:22.532785"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "brittany"], ["created_at", "2018-05-29 18:54:22.537063"], ["updated_at", "2018-05-29 18:54:22.537063"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "richard"], ["created_at", "2018-05-29 18:54:22.540262"], ["updated_at", "2018-05-29 18:54:22.540262"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 1], ["created_at", "2018-05-29 18:54:22.583172"], ["updated_at", "2018-05-29 18:54:22.583172"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 2], ["created_at", "2018-05-29 18:54:22.589765"], ["updated_at", "2018-05-29 18:54:22.589765"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.6ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 3], ["created_at", "2018-05-29 18:54:22.596887"], ["updated_at", "2018-05-29 18:54:22.596887"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 4], ["created_at", "2018-05-29 18:54:22.604271"], ["updated_at", "2018-05-29 18:54:22.604271"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["user_id", 5], ["created_at", "2018-05-29 18:54:22.611441"], ["updated_at", "2018-05-29 18:54:22.611441"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:54:36.190011"], ["updated_at", "2018-05-29 18:54:36.190011"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "returned" boolean, "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180529174611)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-29 18:54:36.255000"], ["updated_at", "2018-05-29 18:54:36.255000"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-29 18:54:36.262010"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["created_at", "2018-05-29 18:54:36.292810"], ["updated_at", "2018-05-29 18:54:36.292810"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["author", "J.K. Rowling"], ["created_at", "2018-05-29 18:54:36.302789"], ["updated_at", "2018-05-29 18:54:36.302789"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Silent Wife"], ["author", "Kerry Fisher"], ["created_at", "2018-05-29 18:54:36.308710"], ["updated_at", "2018-05-29 18:54:36.308710"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "the girl Who Lived"], ["author", "Christopher Greyson"], ["created_at", "2018-05-29 18:54:36.312305"], ["updated_at", "2018-05-29 18:54:36.312305"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spilled Milk"], ["author", "K.L. Randis"], ["created_at", "2018-05-29 18:54:36.315795"], ["updated_at", "2018-05-29 18:54:36.315795"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "munir"], ["created_at", "2018-05-29 18:54:36.334665"], ["updated_at", "2018-05-29 18:54:36.334665"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "adam"], ["created_at", "2018-05-29 18:54:36.338706"], ["updated_at", "2018-05-29 18:54:36.338706"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "lucas"], ["created_at", "2018-05-29 18:54:36.341981"], ["updated_at", "2018-05-29 18:54:36.341981"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "brittany"], ["created_at", "2018-05-29 18:54:36.346060"], ["updated_at", "2018-05-29 18:54:36.346060"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "richard"], ["created_at", "2018-05-29 18:54:36.351200"], ["updated_at", "2018-05-29 18:54:36.351200"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 1], ["created_at", "2018-05-29 18:54:36.389478"], ["updated_at", "2018-05-29 18:54:36.389478"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.8ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 2], ["created_at", "2018-05-29 18:54:36.396945"], ["updated_at", "2018-05-29 18:54:36.396945"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.7ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 3], ["created_at", "2018-05-29 18:54:36.419555"], ["updated_at", "2018-05-29 18:54:36.419555"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 4], ["created_at", "2018-05-29 18:54:36.425903"], ["updated_at", "2018-05-29 18:54:36.425903"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 3], ["user_id", 5], ["created_at", "2018-05-29 18:54:36.432162"], ["updated_at", "2018-05-29 18:54:36.432162"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:33

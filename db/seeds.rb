@@ -6,17 +6,40 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-fellowship_of_the_ring = Book.create(name: "Fellowship of the Ring", author: "J.R.R. Tolkien")
-harry_potter = Book.create(name: "Harry Potter", author: "J.K. Rowling")
-silent_wife = Book.create(name: "Silent Wife", author: "Kerry Fisher")
-the_girl_who_lived = Book.create(name: "the girl Who Lived", author: "Christopher Greyson")
-spilled_milk = Book.create(name: "Spilled Milk", author: "K.L. Randis")
+books = Book.create([
+  {name: "Fellowship of the Ring", author: "J.R.R. Tolkien"},
+  {name: "Harry Potter", author: "J.K. Rowling"},
+  {name: "Silent Wife", author: "Kerry Fisher"},
+  {name: "the girl Who Lived", author: "Christopher Greyson"},
+  {name: "Spilled Milk", author: "K.L. Randis"}
+])
 
-munir = User.create(name:"munir")
-josh = User.create(name:"josh")
-adam = User.create(name:"adam")
-lucas = User.create(name:"lucas")
-brittany = User.create(name:"brittany")
-richard = User.create(name:"richard")
+users = User.create([
+  {name:"munir"},
+  {name:"adam"},
+  {name:"lucas"},
+  {name:"brittany"},
+  {name:"richard"}
+])
+
+copies = Copy.create([
+  {book_id: 1, user_id: 1},
+  {book_id: 1, user_id: 2},
+  {book_id: 2, user_id: 3},
+  {book_id: 2, user_id: 4},
+  {book_id: 3, user_id: 5}
+])
+
+lendings = Lending.create([
+  {copy_id: 1, borrower_id: 2},
+  {copy_id: 2, borrower_id: 3},
+  {copy_id: 3, borrower_id: 4},
+  {copy_id: 4, borrower_id: 5},
+  {copy_id: 5, borrower_id: 1}
+])
+
+
+
+
 
 
