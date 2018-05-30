@@ -11,11 +11,12 @@ class LendingsController < ApplicationController
   end
 
   def update
-    @lending = Lending.find_by(params[:id])
+    @lending = Lending.find_by(id: params[:id])
     @lending.lend_date = Time.now
+    @lending.status = "active"
     # if @lending.valid?
-      @lending.save
-      redirect_to copies_path
+    @lending.save
+    redirect_to copies_path
     # end
 
   end
@@ -23,7 +24,7 @@ class LendingsController < ApplicationController
   private
 
   def lending_params
-    params.require(:lending).permit(:copy_id, :borrower_id, :due_date, :lend_date, :returned, :rating)
+    params.require(:lending).permit(:copy_id, :borrower_id, :due_date, :lend_date, :status, :rating)
   end
 
 

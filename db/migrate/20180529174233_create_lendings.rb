@@ -5,7 +5,7 @@ class CreateLendings < ActiveRecord::Migration[5.2]
       t.integer :borrower_id
       t.datetime :due_date
       t.datetime :lend_date
-      t.boolean :returned
+      t.string :status, :default => "requested"
       t.integer :rating
 
       t.timestamps

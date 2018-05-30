@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2018_05_29_174611) do
     t.integer "borrower_id"
     t.datetime "due_date"
     t.datetime "lend_date"
-    t.boolean "returned"
+    t.string "status", default: "requested"
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

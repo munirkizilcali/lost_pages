@@ -4,19 +4,25 @@ class Copy < ApplicationRecord
 	has_many :lendings
 
   def current_lending
-    Lending.where("returned = ? AND copy_id = ?", false, self.id)
+    self.lendings.where("status = ?", "active").first
+  end
+
+  def open_requests
+    self.lendings.where("status = ?", "requested")
+  end
+
+  def past_lendings
+    self.lendings.where("status = ?", "returned")
   end
 
   def current_borrower
-    current_lending.first.borrower.name
+    if current_lending
+      current_lending.borrower
+    end
   end
 
   def available?
-    self.current_lending.empty? ? true : false
-  end
-
-  def requests
-    self.current_lending.select { |lending| !lending.lend_date? }
+    !current_lending
   end
 
 end

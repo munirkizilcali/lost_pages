@@ -36,11 +36,11 @@ copies = Copy.create([
 ])
 
 lendings = Lending.create([
-  {copy_id: 1, borrower_id: 2, returned: false, due_date: "2018-07-07"},
-  {copy_id: 2, borrower_id: 3, returned: false, due_date: "2018-06-07"},
-  {copy_id: 3, borrower_id: 4, returned: false, due_date: "2018-10-07"},
-  {copy_id: 4, borrower_id: 5, returned: false, due_date: "2018-11-07"},
-  {copy_id: 5, borrower_id: 1, returned: false, due_date: "2018-01-07"}
+  {copy_id: 1, borrower_id: 2, status: "requested", due_date: "2018-07-07"},
+  {copy_id: 2, borrower_id: 3, status: "requested", due_date: "2018-06-07"},
+  {copy_id: 3, borrower_id: 4, status: "returned", due_date: "2018-10-07"},
+  {copy_id: 4, borrower_id: 5, status: "active", due_date: "2018-11-07"},
+  {copy_id: 5, borrower_id: 1, status: "requested", due_date: "2018-01-07"}
 ])
 
 friends = Friendship.create([

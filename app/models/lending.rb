@@ -3,7 +3,19 @@ class Lending < ApplicationRecord
   has_one :user, through: :copy
 	belongs_to :borrower, :class_name => "User"
 
+
   def formatted_due_date
     self.due_date.strftime("%B %d, %Y")
   end
+
+  # def status
+  #   if !lend_date
+  #     "requested"
+  #   elsif returned == false
+  #     "ongoing"
+  #   else
+  #     "returned"
+  #   end
+  # end
+
 end
