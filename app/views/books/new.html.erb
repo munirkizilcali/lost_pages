@@ -1,0 +1,28 @@
+<h1>Search for a book</h1>
+<%= form_tag new_book_path, method: "GET" do  %>
+	<%= text_field_tag "search", params[:search] %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<% if @search_list %>
+<ul>
+	<% @search_list.each do |volume| %>
+		<% book_hash = Book.google_book_corrected(volume) %>
+		<li><img src="<%=book_hash[:cover_img]%>">
+			<%= "Title: #{book_hash[:title]} - Author: #{book_hash[:author]}" %> 
+			<%= form_for Book.new do |f| %>
+			<%= f.hidden_field :isbn, value: book_hash[:isbn] %>
+			<%= f.hidden_field :author, value: book_hash[:author] %>
+			<%= f.hidden_field :name, value: book_hash[:title] %>
+			<%= f.hidden_field :short_description, value: book_hash[:short_description] %>
+			<%= f.hidden_field :info_link, value: book_hash[:info_link] %>
+			<%= f.hidden_field :cover_img, value: book_hash[:cover_img] %>
+
+			<%= f.submit "Add book" %>
+
+			<% end %>
+			<br><br>
+		</li>
+	<% end %>
+</ul>
+<% end %>
