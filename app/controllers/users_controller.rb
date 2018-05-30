@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   
   before_action :user_check, only:[:friends]
 
+  def index 
+    @users = User.all
+  end
+
   def new
   	@user = User.new
   end
@@ -17,8 +21,9 @@ class UsersController < ApplicationController
   		end
   end
 
-  def friends
-    
+  def add_friend
+    current_user.add_friend(User.find_by(id: params[:id]))
+    redirect_to "/friends"
   end
 
   private
