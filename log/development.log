@@ -15283,3 +15283,168 @@ Processing by CopiesController#index as HTML
 Completed 200 OK in 111ms (Views: 99.0ms | ActiveRecord: 4.4ms)
 
 
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 15:30:23 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/munirkizilcali/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 488ms (Views: 474.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=asdfasf&commit=Search" for 127.0.0.1 at 2018-05-30 15:31:00 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asdfasf", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 102ms (Views: 94.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=asdfasf&commit=Search" for 127.0.0.1 at 2018-05-30 15:39:54 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asdfasf", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (52.0ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty' for nil:NilClass):
+    4: 	<%= submit_tag "Search" %>
+    5: <% end %>
+    6: 
+    7: <% if !@search_list.empty %>
+    8: 	<% @search_list.each do |volume| %>
+    9: 		<%= "#{volume[:id]} - Title: #{volume['volumeInfo']['title']} - Author: #{volume['volumeInfo']['authors'].join(', ')}" %>
+   10: 	<% end %>
+  
+app/views/books/new.html.erb:7:in `_app_views_books_new_html_erb___1812099077357817029_70119154900400'
+Started GET "/books/new?utf8=%E2%9C%93&search=harry+potter&commit=Search" for 127.0.0.1 at 2018-05-30 15:40:19 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"harry potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty' for nil:NilClass):
+    4: 	<%= submit_tag "Search" %>
+    5: <% end %>
+    6: 
+    7: <% if !@search_list.empty %>
+    8: 	<% @search_list.each do |volume| %>
+    9: 		<%= "#{volume[:id]} - Title: #{volume['volumeInfo']['title']} - Author: #{volume['volumeInfo']['authors'].join(', ')}" %>
+   10: 	<% end %>
+  
+app/views/books/new.html.erb:7:in `_app_views_books_new_html_erb___1812099077357817029_70119165650640'
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 15:40:41 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    4: 	<%= submit_tag "Search" %>
+    5: <% end %>
+    6: 
+    7: <% if !@search_list.empty? %>
+    8: 	<% @search_list.each do |volume| %>
+    9: 		<%= "#{volume[:id]} - Title: #{volume['volumeInfo']['title']} - Author: #{volume['volumeInfo']['authors'].join(', ')}" %>
+   10: 	<% end %>
+  
+app/views/books/new.html.erb:7:in `_app_views_books_new_html_erb___1812099077357817029_70119200935400'
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 15:40:43 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    4: 	<%= submit_tag "Search" %>
+    5: <% end %>
+    6: 
+    7: <% if !@search_list.empty? %>
+    8: 	<% @search_list.each do |volume| %>
+    9: 		<%= "#{volume[:id]} - Title: #{volume['volumeInfo']['title']} - Author: #{volume['volumeInfo']['authors'].join(', ')}" %>
+   10: 	<% end %>
+  
+app/views/books/new.html.erb:7:in `_app_views_books_new_html_erb___1812099077357817029_70119194688180'
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 15:41:19 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=asdf&commit=Search" for 127.0.0.1 at 2018-05-30 15:41:23 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asdf", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 15:41:35 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 54ms (Views: 51.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 15:42:08 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+Completed 500 Internal Server Error in 66109ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `search_google_books' for #<Class:0x007f8bc7cbfd90>
+Did you mean?  searh_google_books):
+  
+app/controllers/books_controller.rb:6:in `new'
+Started GET "/books/new?utf8=%E2%9C%93&search=asdf&commit=Search" for 127.0.0.1 at 2018-05-30 15:43:32 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asdf", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 613ms (Views: 69.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=asdf&commit=Search" for 127.0.0.1 at 2018-05-30 15:44:43 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asdf", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 558ms (Views: 39.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=asdf&commit=Search" for 127.0.0.1 at 2018-05-30 15:46:11 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asdf", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 459ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
