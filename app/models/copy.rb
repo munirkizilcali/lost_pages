@@ -15,4 +15,8 @@ class Copy < ApplicationRecord
     self.current_lending.empty? ? true : false
   end
 
+  def requests
+    self.current_lending.select { |lending| !lending.lend_date? }
+  end
+
 end

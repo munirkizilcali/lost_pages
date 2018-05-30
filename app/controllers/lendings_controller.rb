@@ -10,6 +10,16 @@ class LendingsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def update
+    @lending = Lending.find_by(params[:id])
+    @lending.lend_date = Time.now
+    # if @lending.valid?
+      @lending.save
+      redirect_to copies_path
+    # end
+
+  end
+
   private
 
   def lending_params

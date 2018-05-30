@@ -2,7 +2,19 @@
 
 <div>
   <% current_user.copies.each do |copy| %>
-   <p><%=link_to copy.book.name, copy_path(copy) %>
+   <p><%=link_to copy.book.name, copy_path(copy) %> - 
+   	<% if copy.available? %>
+   		On the shelf
+   	<% else %>
+   		<% if !copy.requests.empty? %>
+   			<% copy.requests.each do |request| %>
+
+   				<%= link_to "Lend Book to #{request.borrower.name}", "/lendings/#{request.id}", method: "PATCH" %>
+   			<% end %>
+   		<% else %>
+   			<%= copy.current_borrower %>
+   		<% end %>
+   	<% end %>
    </p>
   <% end %>
 </div>
