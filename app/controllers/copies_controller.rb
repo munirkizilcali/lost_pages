@@ -8,7 +8,7 @@ class CopiesController < ApplicationController
 	end
 
   def show
-
+    @lending = @copy.lendings.build
   end
 
 

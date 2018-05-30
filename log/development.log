@@ -9528,3 +9528,1397 @@ Processing by FriendshipsController#index as HTML
 Completed 200 OK in 100ms (Views: 94.4ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:14:08 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (90.4ms)
+Completed 200 OK in 169ms (Views: 154.6ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:14:12 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 147ms (Views: 140.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:14:32 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 83ms (Views: 77.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2018-05-30 11:14:37 -0400
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:14:42 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 67ms (Views: 61.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:14:57 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 88ms (Views: 69.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2018-05-30 11:14:59 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+Completed 406 Not Acceptable in 248ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.0) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.0) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.0) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:15:03 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 74ms (Views: 68.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:15:28 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 81ms (Views: 74.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-30 11:15:30 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.7ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  Rendered copies/index.html.erb within layouts/application (70.5ms)
+Completed 200 OK in 155ms (Views: 113.5ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-30 11:16:05 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  Rendered copies/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 102ms (Views: 90.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:16:07 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 71ms (Views: 64.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-30 11:16:09 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  Rendered copies/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 83ms (Views: 73.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:16:10 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 92ms (Views: 87.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:16:16 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 60ms (Views: 55.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:16:17 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 106ms (Views: 97.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:17:41 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 132ms (Views: 113.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-30 11:17:43 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 99ms (Views: 90.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-30 11:18:39 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.6ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (90.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 184ms (Views: 174.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-30 11:18:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 98ms (Views: 89.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:19:17 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 94ms (Views: 85.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-05-30 11:19:18 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 92ms (Views: 82.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-05-30 11:19:21 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 68ms (Views: 61.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-05-30 11:20:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.7ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (64.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 170ms (Views: 135.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-05-30 11:20:48 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.7ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (47.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 128ms (Views: 102.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:20:49 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 68ms (Views: 61.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-05-30 11:20:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 79ms (Views: 73.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2018-05-30 11:20:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 74ms (Views: 67.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2018-05-30 11:20:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 68ms (Views: 62.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-05-30 11:21:02 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 102ms (Views: 92.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-30 11:21:15 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  Rendered copies/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 111ms (Views: 100.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:21:21 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 85ms (Views: 78.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2018-05-30 11:21:23 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 82ms (Views: 70.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/copies/5" for 127.0.0.1 at 2018-05-30 11:22:01 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mLending Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 5) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 5) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 5) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:6
+  Rendered copies/show.html.erb within layouts/application (104.1ms)
+Completed 200 OK in 208ms (Views: 194.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/copies/5" for 127.0.0.1 at 2018-05-30 11:22:12 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 5) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 5) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 5) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:6
+  Rendered copies/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 108ms (Views: 99.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:22:28 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 88ms (Views: 83.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/friendships?friend_id=3&user_id=1" for 127.0.0.1 at 2018-05-30 11:22:30 -0400
+Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"1ZJoFYeTKaNyNfeGxBpf09xgA44rM7BnDXTO2sH5jdw3d3cl1D+rdDPP3qxuw1TZPzVX/u2EjOilRYVO9MYOOA==", "friend_id"=>"3", "user_id"=>"1"}
+Unpermitted parameters: :_method, :authenticity_token
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Create (2.3ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 3], ["created_at", "2018-05-30 15:22:30.439634"], ["updated_at", "2018-05-30 15:22:30.439634"]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 3], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["friend_id", 1], ["created_at", "2018-05-30 15:22:30.448142"], ["updated_at", "2018-05-30 15:22:30.448142"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 27ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:22:30 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 65ms (Views: 60.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-05-30 11:22:33 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 99ms (Views: 91.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/copies/10" for 127.0.0.1 at 2018-05-30 11:22:34 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 10) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  Rendered copies/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 103ms (Views: 95.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/copies/10" for 127.0.0.1 at 2018-05-30 11:24:19 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.5ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  Rendered copies/show.html.erb within layouts/application (49.2ms)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 6.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `owner' for #<Copy:0x007f87fff5c6a0>):
+    1: <h1><%= @copy.book.name %></h1>
+    2: <p>
+    3:   Owner: <%= @copy.owner.name %>
+    4:   Condition: <%= @copy.condition %><br>
+    5:   Purchased Date: <%= @copy.purchased_date %><br>
+    6:   Notes: <%= @copy.notes %><br>
+  
+app/views/copies/show.html.erb:3:in `_app_views_copies_show_html_erb__1471270808727223832_70111045789560'
+Started GET "/copies/10" for 127.0.0.1 at 2018-05-30 11:24:43 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 10) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  Rendered copies/show.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 135ms (Views: 113.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-05-30 11:24:46 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.7ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (13.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 100ms (Views: 91.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/copies/10" for 127.0.0.1 at 2018-05-30 11:24:53 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 10) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  Rendered copies/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 55ms (Views: 48.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-05-30 11:24:56 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (2.4ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (16.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 230ms (Views: 219.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/copies/10" for 127.0.0.1 at 2018-05-30 11:24:57 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 10) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  Rendered copies/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 92ms (Views: 83.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-05-30 11:27:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 119ms (Views: 112.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-30 11:27:35 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  Rendered copies/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 83ms (Views: 73.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-30 11:41:43 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (1.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  Rendered copies/index.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 264ms (Views: 184.0ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/copies/1" for 127.0.0.1 at 2018-05-30 11:41:45 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  [1m[36mLending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 1) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 1) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:7
+  Rendered copies/show.html.erb within layouts/application (86.7ms)
+Completed 200 OK in 189ms (Views: 139.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:41:53 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 82ms (Views: 71.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-05-30 11:41:54 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 130ms (Views: 120.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/copies/3" for 127.0.0.1 at 2018-05-30 11:41:56 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 3) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 3) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:7
+  Rendered copies/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 143ms (Views: 132.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/lendings" for 127.0.0.1 at 2018-05-30 11:42:01 -0400
+Processing by LendingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hAC1cZBylza2n8GEG58ZdTFawPXHh7d2O43bDxInv5c83e9sy6Ut0J09DKOMIIPKFHzLm0MXdQ+UuSncv9kteQ==", "lending"=>{"borrower_id"=>"1"}, "commit"=>"Create Lending"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:9
+No template found for LendingsController#create, rendering head :no_content
+Completed 204 No Content in 146ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/copies/3" for 127.0.0.1 at 2018-05-30 11:43:22 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.6ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 3) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 3) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:7
+  Rendered copies/show.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 183ms (Views: 112.4ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/lendings" for 127.0.0.1 at 2018-05-30 11:43:24 -0400
+Processing by LendingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uXWbxfPk7gOIrSCEEB7/dFNAWPPSpIIQMTk+1RFuvrlbkIT1oEhs1MlXCa66x/R+sBUMgxQTvp+ZCHVBJFE9XQ==", "lending"=>{"borrower_id"=>"1"}, "commit"=>"Create Lending"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:11
+Started GET "/users/3" for 127.0.0.1 at 2018-05-30 11:45:27 -0400
+Started GET "/users/3" for 127.0.0.1 at 2018-05-30 11:45:27 -0400
+No template found for LendingsController#create, rendering head :no_content
+Completed 204 No Content in 123328ms (ActiveRecord: 0.8ms)
+
+
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  ↳ app/controllers/users_controller.rb:25
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.9ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:5
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (16.5ms)
+  Rendered users/show.html.erb within layouts/application (11.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 144ms (Views: 130.0ms | ActiveRecord: 2.5ms)
+
+
+Completed 200 OK in 135ms (Views: 116.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/copies/3" for 127.0.0.1 at 2018-05-30 11:45:30 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  [1m[36mLending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 3) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 3) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:7
+  Rendered copies/show.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 112ms (Views: 98.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/copies/3" for 127.0.0.1 at 2018-05-30 11:46:48 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 3) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE (returned = 0 AND copy_id = 3) ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:7
+  Rendered copies/show.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 205ms (Views: 110.4ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/lendings" for 127.0.0.1 at 2018-05-30 11:46:51 -0400
+Processing by LendingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tp6kgjwVZvrODl1ipjcP5XGhvhfeYjJHCdxMh9Tk8wCse7uyb7nkLY/0dEgM7gTvkvTqZxjVDsih7QcT4dtw5A==", "lending"=>{"copy_id"=>"3", "borrower_id"=>"1"}, "commit"=>"Create Lending"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[36mLending Create (1.3ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 3], ["borrower_id", 1], ["created_at", "2018-05-30 15:46:51.071141"], ["updated_at", "2018-05-30 15:46:51.071141"]]
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 14ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-30 11:46:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (10.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 71ms (Views: 58.0ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? LIMIT ?[0m  [["borrower_id", 1], ["LIMIT", 11]]
+Started GET "/users/1" for 127.0.0.1 at 2018-05-30 11:52:30 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ?[0m  [["borrower_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mCopy Load (0.5ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered users/show.html.erb within layouts/application (132.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 285ms (Views: 221.4ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-30 11:52:56 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ?[0m  [["borrower_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCACHE Book Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered users/show.html.erb within layouts/application (23.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 109ms (Views: 98.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:53:05 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 124ms (Views: 117.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:53:07 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 107ms (Views: 100.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/friendships?friend_id=2&user_id=1" for 127.0.0.1 at 2018-05-30 11:53:10 -0400
+Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"nXE0JJu9rYX7i6XTyUklCFTRRBYpNPsGIeJnCVJX9vV/lCsUyBEvUrpxjPljkC4Ct4QQZu+Dx4mJ0yydZ2h1EQ==", "friend_id"=>"2", "user_id"=>"1"}
+Unpermitted parameters: :_method, :authenticity_token
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Create (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 2], ["created_at", "2018-05-30 15:53:10.383777"], ["updated_at", "2018-05-30 15:53:10.383777"]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 2], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["friend_id", 1], ["created_at", "2018-05-30 15:53:10.389198"], ["updated_at", "2018-05-30 15:53:10.389198"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 21ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:53:10 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 63ms (Views: 58.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-05-30 11:53:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ?[0m  [["borrower_id", 2]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered users/show.html.erb within layouts/application (20.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 140ms (Views: 75.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/copies/9" for 127.0.0.1 at 2018-05-30 11:53:14 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE (returned = 0 AND copy_id = 9) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/copy.rb:15
+  Rendered copies/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 108ms (Views: 95.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/lendings" for 127.0.0.1 at 2018-05-30 11:53:15 -0400
+Processing by LendingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wXejNW2Sce24htbWwZVk19Jo7/uadJ3nxsj9UFb/ikB5qvkoNkXLC5MkG/FWKv5o907klR7kX55p/A+D+wEYrg==", "lending"=>{"copy_id"=>"9", "borrower_id"=>"1"}, "commit"=>"Create Lending"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[36mLending Create (0.7ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 9], ["borrower_id", 1], ["created_at", "2018-05-30 15:53:15.902807"], ["updated_at", "2018-05-30 15:53:15.902807"]]
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 16ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-30 11:53:15 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.5ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ?[0m  [["borrower_id", 1]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered users/show.html.erb within layouts/application (23.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 94ms (Views: 82.8ms | ActiveRecord: 3.1ms)
+
+

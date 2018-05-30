@@ -1,0 +1,19 @@
+<h1><%= @user.name %></h1>
+
+<h2>Library</h2>
+<div>
+  <% @user.copies.each do |copy| %>
+   <p>
+    <%=link_to copy.book.name, copy_path(copy) %>
+   </p>
+  <% end %>
+</div>
+<div>
+  <h2>Borrowed Books</h2>
+  <% @user.borrowings.each do |borrowing| %>
+    <p>
+      Book Title: <%= borrowing.copy.book.name %><br>
+      Book Owner: <%= borrowing.copy.user.name %><br>
+    </p>
+  <% end %>
+</div>

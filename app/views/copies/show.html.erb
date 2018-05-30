@@ -1,7 +1,20 @@
 <h1><%= @copy.book.name %></h1>
-<p>
+<div>
+  Owner: <%= link_to @copy.user.name, user_path(@copy.user) %><br>
   Condition: <%= @copy.condition %><br>
   Purchased Date: <%= @copy.purchased_date %><br>
   Notes: <%= @copy.notes %><br>
   Status: <%= @copy.available? ? "Available" : "Currently borrowed by #{@copy.current_borrower}. Return date: #{@copy.current_lending.first.formatted_due_date}" %>
-</p>
+</div>
+<div>
+
+  <h2>Request to borrow</h2>
+  <%= form_for @lending do |f| %>
+    <%= f.hidden_field :copy_id, value: @copy.id %>
+    <%= f.hidden_field :borrower_id, value: current_user.id %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
+
+
