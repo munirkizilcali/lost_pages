@@ -8,15 +8,14 @@ class FriendshipsController < ApplicationController
 	end
 
 	def create
-		byebug
-		Friendship.create(user_id: current_user.id, friend_id: friendship_params[:friend_id])
+		Friendship.create(friendship_params)
 		redirect_to "/friends"
 	end
 
 	private
 
 	def friendship_params
-		params.permit(:friend_id)
+		params.permit(:friend_id, :user_id)
 	end
 
 end

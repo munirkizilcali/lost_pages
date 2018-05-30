@@ -9327,3 +9327,204 @@ Processing by FriendshipsController#index as HTML
 Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:04:14 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/josh/Code/Module_2/rails/lost_pages/app/views/users/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/users/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:05:16 -0400
+Processing by UsersController#index as HTML
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:05:26 -0400
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 352ms (Views: 334.1ms | ActiveRecord: 2.0ms)
+
+
+Processing by UsersController#index as HTML
+Started GET "/" for 127.0.0.1 at 2018-05-30 11:05:27 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 139ms (Views: 99.8ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mCopy Load (0.6ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  Rendered copies/index.html.erb within layouts/application (63.9ms)
+Completed 200 OK in 214ms (Views: 106.0ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:05:31 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 80ms (Views: 73.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:05:58 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 119ms (Views: 112.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/friendships?friend_id=1&param2=1" for 127.0.0.1 at 2018-05-30 11:06:00 -0400
+Processing by FriendshipsController#index as HTML
+  Parameters: {"friend_id"=>"1", "param2"=>"1"}
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  Rendered friendships/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 111ms (Views: 101.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:08:52 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/josh/Code/Module_2/rails/lost_pages/app/views/users/index.html.erb:3: syntax error, unexpected tLABEL, expecting ')'
+...r_id => current_user.id)Method: "POST" );@output_buffer.safe...
+...                               ^):
+  
+app/views/users/index.html.erb:3: syntax error, unexpected tLABEL, expecting ')'
+Started GET "/" for 127.0.0.1 at 2018-05-30 11:09:39 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.5ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  Rendered copies/index.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 150ms (Views: 112.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:09:44 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 62ms (Views: 53.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/friendships?friend_id=5&user_id=1" for 127.0.0.1 at 2018-05-30 11:09:47 -0400
+Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"PNLoQXJgb4u7ykD0zF0rEkuZeuBWkmIULPr223gSdCHeN/dxIcztXPowad5mhCAYqMwukJAlXpuEy71PTS33xQ==", "friend_id"=>"5", "user_id"=>"1"}
+Completed 500 Internal Server Error in 10232ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/friendships_controller.rb:12:in `create'
+Started GET "/users" for 127.0.0.1 at 2018-05-30 11:10:37 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 497ms (Views: 457.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/friendships?friend_id=5&user_id=1" for 127.0.0.1 at 2018-05-30 11:10:39 -0400
+Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"+ceMUFnDVzdwWA+V/DrW/P4ilbwQ7NccJqUenP9SlLsbIpNgCm/V4DGiJr9W4932HXfBzNZb65OOlFUIym0XXw==", "friend_id"=>"5", "user_id"=>"1"}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/friendships_controller.rb:11:in `create'
+Started POST "/friendships?friend_id=5&user_id=1" for 127.0.0.1 at 2018-05-30 11:11:17 -0400
+Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"+ceMUFnDVzdwWA+V/DrW/P4ilbwQ7NccJqUenP9SlLsbIpNgCm/V4DGiJr9W4932HXfBzNZb65OOlFUIym0XXw==", "friend_id"=>"5", "user_id"=>"1"}
+Unpermitted parameters: :_method, :authenticity_token
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Create (1.6ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 5], ["created_at", "2018-05-30 15:11:28.205923"], ["updated_at", "2018-05-30 15:11:28.205923"]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 5], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["friend_id", 1], ["created_at", "2018-05-30 15:11:28.220613"], ["updated_at", "2018-05-30 15:11:28.220613"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 78ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 11:11:28 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 100ms (Views: 94.4ms | ActiveRecord: 0.7ms)
+
+
