@@ -15448,3 +15448,215 @@ Processing by BooksController#new as HTML
 Completed 200 OK in 459ms (Views: 41.7ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/books/new?utf8=%E2%9C%93&search=asdf&commit=Search" for 127.0.0.1 at 2018-05-30 15:58:28 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/munirkizilcali/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asdf", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (37.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 898ms (Views: 455.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 15:58:30 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 133ms (Views: 126.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=harry+potter&commit=Search" for 127.0.0.1 at 2018-05-30 15:58:41 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"harry potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (10.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 458ms (Views: 54.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=harry+potter&commit=Search" for 127.0.0.1 at 2018-05-30 15:59:25 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"harry potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 436ms (Views: 67.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=kama+sutra&commit=Search" for 127.0.0.1 at 2018-05-30 15:59:43 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"kama sutra", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (45.4ms)
+Completed 500 Internal Server Error in 754ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     7: <% if @search_list %>
+     8: <ul>
+     9: 	<% @search_list.each do |volume| %>
+    10: 		<li><img src="<%=volume['volumeInfo']['imageLinks']['smallThumbnail']%>">
+    11: 			<%= "Title: #{volume['volumeInfo']['title']} - Author: #{volume['volumeInfo']['authors'].join(', ')}" %> 
+    12: 			<%= form_for Book.new do |f| %>
+    13: 			<%= f.hidden_field :isbn, value: volume['id'] %>
+  
+app/views/books/new.html.erb:10:in `block in _app_views_books_new_html_erb___4239961548189640216_70120528088040'
+app/views/books/new.html.erb:9:in `each'
+app/views/books/new.html.erb:9:in `_app_views_books_new_html_erb___4239961548189640216_70120528088040'
+Started GET "/books/new?utf8=%E2%9C%93&search=murakami&commit=Search" for 127.0.0.1 at 2018-05-30 16:00:19 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"murakami", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (8.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 699ms (Views: 47.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=murakami&commit=Search" for 127.0.0.1 at 2018-05-30 16:06:05 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"murakami", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (17.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 900ms (Views: 72.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-05-30 16:06:10 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TA/CSR+FYqWmOxOh5YR4wJknE+YAEFlYW7FivmwLPhO29/T9yE+TmbMSc1d1z7C1AJ6IOiQJdtCjZXoYb3fgfA==", "book"=>{"isbn"=>"BgruFujfHF8C", "author"=>"Haruki Murakami", "name"=>"Hard-Boiled Wonderland and the End of the World", "short_description"=>"Japan's most widely-read and controversial writer, author of A Wild Sheep Chase, hurtles into the consciousness of the West with this narrative about a split-brained data processor, a deranged scientist, his shockingly undemure granddaughter, and various thugs, librarians, and subterranean monsters--not to mention Bob Dylan and Lauren Bacall. From the Trade Paperback edition.", "info_link"=>"http://books.google.com/books?id=BgruFujfHF8C&dq=murakami&hl=&source=gbs_api", "cover_img"=>"http://books.google.com/books/content?id=BgruFujfHF8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}, "commit"=>"Add book"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:12
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hard-Boiled Wonderland and the End of the World"], ["isbn", "BgruFujfHF8C"], ["author", "Haruki Murakami"], ["short_description", "Japan's most widely-read and controversial writer, author of A Wild Sheep Chase, hurtles into the consciousness of the West with this narrative about a split-brained data processor, a deranged scientist, his shockingly undemure granddaughter, and various thugs, librarians, and subterranean monsters--not to mention Bob Dylan and Lauren Bacall. From the Trade Paperback edition."], ["info_link", "http://books.google.com/books?id=BgruFujfHF8C&dq=murakami&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=BgruFujfHF8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-30 20:06:10.604042"], ["updated_at", "2018-05-30 20:06:10.604042"]]
+  ↳ app/controllers/books_controller.rb:12
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:12
+Redirected to http://localhost:3000/books
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-30 16:06:10 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY "books"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 16:10:42 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 66ms (Views: 61.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=brandon+sanderson&commit=Search" for 127.0.0.1 at 2018-05-30 16:10:56 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"brandon sanderson", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (21.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 847ms (Views: 59.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-05-30 16:11:13 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pZyVCIz+V14wm1ju0UTdPViSXvVn/NEk4dvAI+ReX7RfZKO8WzSmYiWyOBhBDxVIwSvFKUPl/qwZD9iF5yKB2w==", "book"=>{"isbn"=>"VsT3DQAAQBAJ", "author"=>"Brandon Sanderson", "name"=>"Oathbringer", "short_description"=>"The #1 New York Times bestselling sequel to Words of Radiance, from epic fantasy author Brandon Sanderson at the top of his game. In Oathbringer, the third volume of the New York Times bestselling Stormlight Archive, humanity faces a new Desolation with the return of the Voidbringers, a foe with numbers as great as their thirst for vengeance. Dalinar Kholin’s Alethi armies won a fleeting victory at a terrible cost: The enemy Parshendi summoned the violent Everstorm, which now sweeps the world with destruction, and in its passing awakens the once peaceful and subservient parshmen to the horror of their millennia-long enslavement by humans. While on a desperate flight to warn his family of the threat, Kaladin Stormblessed must come to grips with the fact that the newly kindled anger of the parshmen may be wholly justified. Nestled in the mountains high above the storms, in the tower city of Urithiru, Shallan Davar investigates the wonders of the ancient stronghold of the Knights Radiant and unearths dark secrets lurking in its depths. And Dalinar realizes that his holy mission to unite his homeland of Alethkar was too narrow in scope. Unless all the nations of Roshar can put aside Dalinar’s blood-soaked past and stand together—and unless Dalinar himself can confront that past—even the restoration of the Knights Radiant will not prevent the end of civilization. Other Tor books by Brandon Sanderson The Cosmere The Stormlight Archive The Way of Kings Words of Radiance Edgedancer (Novella) Oathbringer The Mistborn trilogy Mistborn: The Final Empire The Well of Ascension The Hero of Ages Mistborn: The Wax and Wayne series Alloy of Law Shadows of Self Bands of Mourning Collection Arcanum Unbounded Other Cosmere novels Elantris Warbreaker The Alcatraz vs. the Evil Librarians series Alcatraz vs. the Evil Librarians The Scrivener's Bones The Knights of Crystallia The Shattered Lens The Dark Talent The Rithmatist series The Rithmatist Other books by Brandon Sanderson The Reckoners Steelheart Firefight Calamity At the Publisher's request, this title is being sold without Digital Rights Management Software (DRM) applied.", "info_link"=>"https://play.google.com/store/books/details?id=VsT3DQAAQBAJ&source=gbs_api", "cover_img"=>"http://books.google.com/books/content?id=VsT3DQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}, "commit"=>"Add book"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:12
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Oathbringer"], ["isbn", "VsT3DQAAQBAJ"], ["author", "Brandon Sanderson"], ["short_description", "The #1 New York Times bestselling sequel to Words of Radiance, from epic fantasy author Brandon Sanderson at the top of his game. In Oathbringer, the third volume of the New York Times bestselling Stormlight Archive, humanity faces a new Desolation with the return of the Voidbringers, a foe with numbers as great as their thirst for vengeance. Dalinar Kholin’s Alethi armies won a fleeting victory at a terrible cost: The enemy Parshendi summoned the violent Everstorm, which now sweeps the world with destruction, and in its passing awakens the once peaceful and subservient parshmen to the horror of their millennia-long enslavement by humans. While on a desperate flight to warn his family of the threat, Kaladin Stormblessed must come to grips with the fact that the newly kindled anger of the parshmen may be wholly justified. Nestled in the mountains high above the storms, in the tower city of Urithiru, Shallan Davar investigates the wonders of the ancient stronghold of the Knights Radiant and unearths dark secrets lurking in its depths. And Dalinar realizes that his holy mission to unite his homeland of Alethkar was too narrow in scope. Unless all the nations of Roshar can put aside Dalinar’s blood-soaked past and stand together—and unless Dalinar himself can confront that past—even the restoration of the Knights Radiant will not prevent the end of civilization. Other Tor books by Brandon Sanderson The Cosmere The Stormlight Archive The Way of Kings Words of Radiance Edgedancer (Novella) Oathbringer The Mistborn trilogy Mistborn: The Final Empire The Well of Ascension The Hero of Ages Mistborn: The Wax and Wayne series Alloy of Law Shadows of Self Bands of Mourning Collection Arcanum Unbounded Other Cosmere novels Elantris Warbreaker The Alcatraz vs. the Evil Librarians series Alcatraz vs. the Evil Librarians The Scrivener's Bones The Knights of Crystallia The Shattered Lens The Dark Talent The Rithmatist series The Rithmatist Other books by Brandon Sanderson The Reckoners Steelheart Firefight Calamity At the Publisher's request, this title is being sold without Digital Rights Management Software (DRM) applied."], ["info_link", "https://play.google.com/store/books/details?id=VsT3DQAAQBAJ&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=VsT3DQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-30 20:11:13.665832"], ["updated_at", "2018-05-30 20:11:13.665832"]]
+  ↳ app/controllers/books_controller.rb:12
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 7], ["user_id", 1], ["created_at", "2018-05-30 20:11:13.729541"], ["updated_at", "2018-05-30 20:11:13.729541"]]
+  ↳ app/controllers/books_controller.rb:13
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:13
+Redirected to http://localhost:3000/copies/11
+Completed 302 Found in 71ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/copies/11" for 127.0.0.1 at 2018-05-30 16:11:13 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  Rendered copies/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 77ms (Views: 45.7ms | ActiveRecord: 1.4ms)
+
+
