@@ -1,7 +1,12 @@
 class LendingsController < ApplicationController
 
+  helper_method :current_user
+  helper_method :user_check
+
   def new
-    @lending = Lending.new
+    if params[:search]
+      @search_list = Copy.friend_copies_search(params[:search], current_user)
+    end
   end
 
   def create
@@ -20,6 +25,7 @@ class LendingsController < ApplicationController
     # end
 
   end
+
 
   private
 

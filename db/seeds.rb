@@ -15,11 +15,11 @@ books = Book.create([
 ])
 
 users = User.create([
-  {name:"munir", email: "munir@munir.com", password: "munir", password_confirmation: "munir"},
-  {name:"adam", email: "adam@adam.com", password: "munir", password_confirmation: "munir"},
-  {name:"lucas", email: "lucas@lucas.com", password: "munir", password_confirmation: "munir"},
-  {name:"brittany", email: "brittany@brittany.com", password: "munir", password_confirmation: "munir"},
-  {name:"richard", email: "richard@richard.com", password: "munir", password_confirmation: "munir"}
+  {name:"munir", email: "munir@munir.com", password: "password", password_confirmation: "password"},
+  {name:"adam", email: "adam@adam.com", password: "password", password_confirmation: "password"},
+  {name:"lucas", email: "lucas@lucas.com", password: "password", password_confirmation: "password"},
+  {name:"brittany", email: "brittany@brittany.com", password: "password", password_confirmation: "password"},
+  {name:"richard", email: "richard@richard.com", password: "password", password_confirmation: "password"}
 ])
 
 copies = Copy.create([

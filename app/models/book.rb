@@ -3,16 +3,21 @@ class Book < ApplicationRecord
 	has_many :lendings, through: :copies
 	has_many :users, through: :copies
 
+  def self.friend_book_search(search, current_user)
+    Book.where("name LIKE ? OR author LIKE ? OR short_description LIKE ?", "#{search}", "#{search}", "#{search}").joins(:copies).where(copies: {user_id: current_user.friend_ids})
+  end
+
 	def self.search_google_books(string)
 		if !string.empty?
-			html = open(URI.escape("https://www.googleapis.com/books/v1/volumes?q=#{string}")).read
+			html = open(URI.escape("https://www.googleapis.com/books/v1/volumes?q=#{string}&maxResults=40")).read
 			doc = JSON.parse(html)
 			doc["items"]
 		end
 	end
 
 	 def self.google_book_corrected(volume)
-    default_book_info = {:title => "No book title", :short_description => "No description", :info_link => "No infoLink", :cover_img => "http://via.placeholder.com/128x185", :isbn => "NoISBN", author: "No author info"}
+
+    default_book_info = {:title => "No book title", :short_description => "No description", :info_link => "No infoLink", :cover_img => "http://via.placeholder.com/128x185", :isbn => "NoISBN", :author => "No author info"}
 
     if volume['id'] && volume['id'] != ""
       default_book_info[:isbn] = volume['id']
@@ -31,6 +36,10 @@ class Book < ApplicationRecord
 
       if vol_info['infoLink'] && vol_info['infoLink'] != ""
         default_book_info[:info_link] = vol_info['infoLink']
+      end
+
+      if vol_info['authors'] && vol_info['authors'] != ""
+        default_book_info[:author] = vol_info['authors'].join(', ')
       end
 
       if vol_info['imageLinks']

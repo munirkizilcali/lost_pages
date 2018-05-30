@@ -16020,3 +16020,1653 @@ Processing by BooksController#new as HTML
 Completed 200 OK in 477ms (Views: 60.1ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 17:20:26 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (196.0ms)
+Completed 200 OK in 326ms (Views: 312.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:20:33 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.8ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:5
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:5
+  Rendered lendings/new.html.erb within layouts/application (174.5ms)
+Completed 200 OK in 373ms (Views: 268.8ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:21:16 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:6
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:6
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:6
+  Rendered lendings/new.html.erb within layouts/application (88.4ms)
+Completed 200 OK in 294ms (Views: 255.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:21:20 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:6
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:6
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:6
+  Rendered lendings/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 153ms (Views: 140.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:21:36 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (2.5ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  Rendered lendings/new.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 179ms (Views: 163.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:21:52 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  Rendered lendings/new.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 534ms (Views: 509.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:22:33 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  Rendered lendings/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 75ms (Views: 70.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:30:38 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 246ms (Views: 198.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=hello&commit=Search" for 127.0.0.1 at 2018-05-30 17:30:42 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"hello", "commit"=>"Search"}
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 78ms (Views: 72.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=hello&commit=Search" for 127.0.0.1 at 2018-05-30 17:31:33 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"hello", "commit"=>"Search"}
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (10.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 323ms (Views: 217.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-30 17:31:39 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  Rendered lendings/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 118ms (Views: 113.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:31:45 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 123ms (Views: 115.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=lkjalk&commit=Search" for 127.0.0.1 at 2018-05-30 17:31:48 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"lkjalk", "commit"=>"Search"}
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 63ms (Views: 58.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=lkjalk&commit=Search" for 127.0.0.1 at 2018-05-30 17:32:39 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"lkjalk", "commit"=>"Search"}
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `search_google_books' for #<Class:0x007fcfa3efa018>):
+  
+app/controllers/lendings_controller.rb:5:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=lkjalk&commit=Search" for 127.0.0.1 at 2018-05-30 17:33:36 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"lkjalk", "commit"=>"Search"}
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (38.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 830ms (Views: 141.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=lkjalk&commit=Search" for 127.0.0.1 at 2018-05-30 17:36:04 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"lkjalk", "commit"=>"Search"}
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (117.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1196ms (Views: 238.8ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:37:28 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.5ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:7
+  Rendered lendings/new.html.erb within layouts/application (158.9ms)
+Completed 200 OK in 246ms (Views: 231.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:42:37 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 153ms (Views: 142.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 17:42:43 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (62.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 905ms (Views: 126.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:43:10 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (10.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 203ms (Views: 173.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 17:43:13 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<Class:0x007fcfa1966630>
+Did you mean?  current_scope):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:5:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 17:45:02 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<Class:0x007fcfaa842520>
+Did you mean?  current_scope):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:5:in `new'
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:45:18 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 113ms (Views: 106.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=test&commit=Search" for 127.0.0.1 at 2018-05-30 17:45:21 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"test", "commit"=>"Search"}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<Class:0x007fcfaa842520>
+Did you mean?  current_scope):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:5:in `new'
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:46:04 -0400
+Processing by LendingsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 123ms (Views: 88.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=test&commit=Search" for 127.0.0.1 at 2018-05-30 17:46:06 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"test", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<Class:0x007fcfa7c46750>
+Did you mean?  current_scope):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:7:in `new'
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:47:15 -0400
+Processing by LendingsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 2.2ms)
+
+
+  
+SyntaxError (/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/lendings/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:47:30 -0400
+Processing by LendingsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 88ms (Views: 79.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=&commit=Search" for 127.0.0.1 at 2018-05-30 17:47:31 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.0ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<Class:0x007fcfa9d08a38>
+Did you mean?  current_scope):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:7:in `new'
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:48:27 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 119ms (Views: 110.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=&commit=Search" for 127.0.0.1 at 2018-05-30 17:48:28 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<Class:0x007fcfa6dd3d80>
+Did you mean?  current_scope):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=&commit=Search" for 127.0.0.1 at 2018-05-30 17:49:08 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 2.7ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/models/copy.rb:28:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:51:54 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 120ms (Views: 111.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=&commit=Search" for 127.0.0.1 at 2018-05-30 17:51:55 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.6ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `where' for #<Array:0x007fcfa9b947b0>):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 17:53:19 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (1.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 5.9ms)
+
+
+  
+NoMethodError (undefined method `where' for #<Array:0x007fcfa7e65400>):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 17:54:32 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.6ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (80.5ms)
+Completed 200 OK in 184ms (Views: 171.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-30 17:54:40 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.9ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (0.8ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:20
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (0.6ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:20
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:7
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  Rendered copies/index.html.erb within layouts/application (132.5ms)
+Completed 200 OK in 212ms (Views: 185.8ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-30 17:54:53 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  Rendered lendings/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 72ms (Views: 67.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:54:56 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 62ms (Views: 56.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Hello&commit=Search" for 127.0.0.1 at 2018-05-30 17:54:59 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Hello", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `where' for #<Array:0x007fcfa4fba8f8>):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Hello&commit=Search" for 127.0.0.1 at 2018-05-30 17:55:14 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Hello", "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.9ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+Completed 500 Internal Server Error in 56021ms (ActiveRecord: 5.0ms)
+
+
+  
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:56:11 -0400
+NoMethodError (undefined method `where' for #<Array:0x007fcfa69e6380>):
+Processing by LendingsController#new as HTML
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:56:11 -0400
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:56:11 -0400
+  
+Processing by LendingsController#new as HTML
+Processing by LendingsController#new as HTML
+app/models/copy.rb:30:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+  Rendering lendings/new.html.erb within layouts/application
+  Rendering lendings/new.html.erb within layouts/application
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (1.4ms)
+  Rendered lendings/new.html.erb within layouts/application (0.5ms)
+  Rendered lendings/new.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 166ms (Views: 161.9ms | ActiveRecord: 0.7ms)
+
+
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 205ms (Views: 193.6ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 183ms (Views: 179.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:56:13 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 84ms (Views: 78.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Hello&commit=Search" for 127.0.0.1 at 2018-05-30 17:56:15 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Hello", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.8ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+Completed 500 Internal Server Error in 141903ms (ActiveRecord: 6.9ms)
+
+
+  
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:58:38 -0400
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:58:38 -0400
+NoMethodError (undefined method `where' for #<Array:0x007fcfa7fa8ba0>):
+Processing by LendingsController#new as HTML
+  
+app/models/copy.rb:30:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (18.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 329ms (Views: 307.0ms | ActiveRecord: 0.8ms)
+
+
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 315ms (Views: 304.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 17:58:41 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 80ms (Views: 73.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=&commit=Search" for 127.0.0.1 at 2018-05-30 17:58:49 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `friend_copies' for #<User:0x007fcfa9aa75c8>
+Did you mean?  friend_ids
+               friend_ids=
+               friend_books):
+  
+app/models/copy.rb:30:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=&commit=Search" for 127.0.0.1 at 2018-05-30 17:59:05 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:17
+  [1m[36mCopy Load (0.6ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:18
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 5.8ms)
+
+
+  
+NoMethodError (undefined method `where' for #<Array:0x007fcfa1ecdc40>):
+  
+app/models/copy.rb:30:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 18:18:40 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 172ms (Views: 151.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=&commit=Search" for 127.0.0.1 at 2018-05-30 18:18:42 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `search' for #<Class:0x007fcfa0521328>):
+  
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=&commit=Search" for 127.0.0.1 at 2018-05-30 18:19:02 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 126ms (Views: 71.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 18:20:40 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (20.0ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:12: syntax error, unexpected ']', expecting ')'
+...er.append=(copy.book.cover_img]);@output_buffer.safe_append=...
+...                               ^
+/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:13: syntax error, unexpected ']', expecting tSTRING_DEND
+...end=( "Title: #{copy.book.name]} - Author: #{copy.book.autho...
+...                               ^
+/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:17: unknown regexp option - l
+/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:18: unterminated string meets end of file
+/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:18: syntax error, unexpected end-of-input, expecting tSTRING_DEND):
+  
+app/views/lendings/new.html.erb:12: syntax error, unexpected ']', expecting ')'
+app/views/lendings/new.html.erb:13: syntax error, unexpected ']', expecting tSTRING_DEND
+app/views/lendings/new.html.erb:17: unknown regexp option - l
+app/views/lendings/new.html.erb:18: unterminated string meets end of file
+app/views/lendings/new.html.erb:18: syntax error, unexpected end-of-input, expecting tSTRING_DEND
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 18:21:11 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:13: syntax error, unexpected ']', expecting tSTRING_DEND
+...end=( "Title: #{copy.book.name]} - Author: #{copy.book.autho...
+...                               ^
+/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:17: unknown regexp option - l
+/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:18: unterminated string meets end of file
+/Users/josh/Code/Module_2/rails/lost_pages/app/views/lendings/new.html.erb:18: syntax error, unexpected end-of-input, expecting tSTRING_DEND):
+  
+app/views/lendings/new.html.erb:13: syntax error, unexpected ']', expecting tSTRING_DEND
+app/views/lendings/new.html.erb:17: unknown regexp option - l
+app/views/lendings/new.html.erb:18: unterminated string meets end of file
+app/views/lendings/new.html.erb:18: syntax error, unexpected end-of-input, expecting tSTRING_DEND
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 18:21:26 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mCopy Load (3.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ? AND (name LIKE 'Tolkien')[0m  [["user_id", 2]]
+  ↳ app/views/lendings/new.html.erb:10
+  Rendered lendings/new.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.6ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: name: SELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ? AND (name LIKE 'Tolkien')):
+     7: 
+     8: <ul>
+     9:   <% if params[:search] %>
+    10:     <% @search_list.each do |copy| %>
+    11:     <li>
+    12:       <img src="<%= copy.book.cover_img %>">
+    13:       <%= "Title: #{copy.book.name} - Author: #{copy.book.author}" %>
+  
+app/views/lendings/new.html.erb:10:in `_app_views_lendings_new_html_erb___2033150333845518874_70264925844180'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 18:22:57 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 3.3ms)
+
+
+  
+NameError (undefined local variable or method `copy' for #<Class:0x007fcfa04b42c8>):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 18:23:58 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  [1m[36mCopy Load (1.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:24
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:24
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:24
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:24
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 8.1ms)
+
+
+  
+NoMethodError (undefined method `where' for #<Array:0x007fcfa3fd5618>):
+  
+app/models/copy.rb:29:in `search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 18:59:43 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" INNER JOIN "copies" ON "copies"."book_id" = "books"."id" WHERE (name LIKE 'Tolkien' OR author LIKE 'Tolkien' OR short_description LIKE 'Tolkien') AND "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/copy.rb:8
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ? AND 1=0[0m  [["user_id", 2]]
+  ↳ app/views/lendings/new.html.erb:10
+  Rendered lendings/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 218ms (Views: 107.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Tolkien&commit=Search" for 127.0.0.1 at 2018-05-30 18:59:46 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Tolkien", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" INNER JOIN "copies" ON "copies"."book_id" = "books"."id" WHERE (name LIKE 'Tolkien' OR author LIKE 'Tolkien' OR short_description LIKE 'Tolkien') AND "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/copy.rb:8
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ? AND 1=0[0m  [["user_id", 2]]
+  ↳ app/views/lendings/new.html.erb:10
+  Rendered lendings/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 53ms (Views: 41.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 18:59:52 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" INNER JOIN "copies" ON "copies"."book_id" = "books"."id" WHERE (name LIKE 'Harry Potter' OR author LIKE 'Harry Potter' OR short_description LIKE 'Harry Potter') AND "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/copy.rb:8
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ? AND "copies"."book_id" = ?[0m  [["user_id", 2], ["book_id", 2]]
+  ↳ app/views/lendings/new.html.erb:10
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:12
+  Rendered lendings/new.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 80ms (Views: 57.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:07:24 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" INNER JOIN "copies" ON "copies"."book_id" = "books"."id" WHERE (name LIKE 'Harry Potter' OR author LIKE 'Harry Potter' OR short_description LIKE 'Harry Potter') AND "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/copy.rb:8
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 8.5ms)
+
+
+  
+NameError (undefined local variable or method `book' for #<Class:0x007fcfa7b0f6c0>):
+  
+app/models/copy.rb:15:in `friend_book_copy_hash'
+app/models/copy.rb:10:in `friend_copies_search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:07:43 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" INNER JOIN "copies" ON "copies"."book_id" = "books"."id" WHERE (name LIKE 'Harry Potter' OR author LIKE 'Harry Potter' OR short_description LIKE 'Harry Potter') AND "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/copy.rb:8
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 5.8ms)
+
+
+  
+NameError (undefined local variable or method `book_hash' for #<Class:0x007fcfa7850bf0>):
+  
+app/models/copy.rb:15:in `block in friend_book_copy_hash'
+app/models/copy.rb:15:in `friend_book_copy_hash'
+app/models/copy.rb:10:in `friend_copies_search'
+app/controllers/lendings_controller.rb:8:in `new'
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:08:03 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" INNER JOIN "copies" ON "copies"."book_id" = "books"."id" WHERE (name LIKE 'Harry Potter' OR author LIKE 'Harry Potter' OR short_description LIKE 'Harry Potter') AND "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/copy.rb:8
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ? AND "copies"."book_id" = ?[0m  [["user_id", 2], ["book_id", 2]]
+  ↳ app/models/copy.rb:16
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:16
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:20
+  Rendered lendings/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 164ms (Views: 77.6ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 19:10:21 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (12.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 187ms (Views: 172.5ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:10:26 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (80.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 895ms (Views: 178.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:11:29 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (92.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 983ms (Views: 293.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:11:36 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (51.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 720ms (Views: 96.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:13:13 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (94.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 899ms (Views: 207.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:13:18 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (74.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 564ms (Views: 121.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:14:55 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:16:10 -0400
+  Rendered books/new.html.erb within layouts/application (73577.9ms)
+Completed 500 Internal Server Error in 74329ms (ActiveRecord: 1.8ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `google_book_corrected'
+app/models/book.rb:20:in `google_book_corrected'
+app/views/books/new.html.erb:10:in `block in _app_views_books_new_html_erb__3517627581302844703_70264900550760'
+app/views/books/new.html.erb:9:in `each'
+app/views/books/new.html.erb:9:in `_app_views_books_new_html_erb__3517627581302844703_70264900550760'
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (315.0ms)
+Completed 500 Internal Server Error in 1142ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `join' for nil:NilClass
+Did you mean?  JSON):
+     7: <% if @search_list %>
+     8: <ul>
+     9: 	<% @search_list.each do |volume| %>
+    10: 		<% book_hash = Book.google_book_corrected(volume) %>
+    11: 		<li><img src="<%=book_hash[:cover_img]%>">
+    12: 			<%= "Title: #{book_hash[:title]} - Author: #{book_hash[:author]}" %> 
+    13: 			<%= form_for Book.new do |f| %>
+  
+app/models/book.rb:42:in `google_book_corrected'
+app/views/books/new.html.erb:10:in `block in _app_views_books_new_html_erb__3517627581302844703_70264948510200'
+app/views/books/new.html.erb:9:in `each'
+app/views/books/new.html.erb:9:in `_app_views_books_new_html_erb__3517627581302844703_70264948510200'
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 19:16:24 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (18.4ms)
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 3799ms (Views: 3739.4ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 19:16:28 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (31.7ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1029ms (Views: 984.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:16:34 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (320.9ms)
+Completed 500 Internal Server Error in 835ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `join' for nil:NilClass
+Did you mean?  JSON):
+     7: <% if @search_list %>
+     8: <ul>
+     9: 	<% @search_list.each do |volume| %>
+    10: 		<% book_hash = Book.google_book_corrected(volume) %>
+    11: 		<li><img src="<%=book_hash[:cover_img]%>">
+    12: 			<%= "Title: #{book_hash[:title]} - Author: #{book_hash[:author]}" %> 
+    13: 			<%= form_for Book.new do |f| %>
+  
+app/models/book.rb:42:in `google_book_corrected'
+app/views/books/new.html.erb:10:in `block in _app_views_books_new_html_erb__3517627581302844703_70264900971440'
+app/views/books/new.html.erb:9:in `each'
+app/views/books/new.html.erb:9:in `_app_views_books_new_html_erb__3517627581302844703_70264900971440'
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:17:18 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (2310.4ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 4573ms (Views: 3563.2ms | ActiveRecord: 237.7ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:17:36 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1426.9ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 3528ms (Views: 2780.4ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:18:39 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1272.3ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 3085ms (Views: 2120.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:19:37 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1354.2ms)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 2878ms (Views: 2227.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:20:10 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1332.2ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 2850ms (Views: 2184.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:20:42 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1463.9ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 2961ms (Views: 2303.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:21:09 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1328.9ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 2740ms (Views: 2128.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-05-30 19:21:18 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ucmz+Y4tutVZJi2T9fZQWkWUBOLz/Eh8min0B6gw83OzLKzJ3YE4AhjcBLlfL1tQpsFQkjVLdPMyGL+TnQ9wlw==", "book"=>{"isbn"=>"Sm5AKLXKxHgC", "author"=>"J.K. Rowling", "name"=>"Harry Potter and the Prisoner of Azkaban", "short_description"=>"\"'Welcome to the Knight Bus, emergency transport for the stranded witch or wizard. Just stick out your wand hand, step on board and we can take you anywhere you want to go.'\" When the Knight Bus crashes through the darkness and screeches to a halt in front of him, it's the start of another far from ordinary year at Hogwarts for Harry Potter. Sirius Black, escaped mass-murderer and follower of Lord Voldemort, is on the run - and they say he is coming after Harry. In his first ever Divination class, Professor Trelawney sees an omen of death in Harry's tea leaves... But perhaps most terrifying of all are the Dementors patrolling the school grounds, with their soul-sucking kiss...", "info_link"=>"https://play.google.com/store/books/details?id=Sm5AKLXKxHgC&source=gbs_api", "cover_img"=>"http://books.google.com/books/content?id=Sm5AKLXKxHgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}, "commit"=>"Add book"}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:12
+  [1m[36mBook Create (10.2ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and the Prisoner of Azkaban"], ["isbn", "Sm5AKLXKxHgC"], ["author", "J.K. Rowling"], ["short_description", "\"'Welcome to the Knight Bus, emergency transport for the stranded witch or wizard. Just stick out your wand hand, step on board and we can take you anywhere you want to go.'\" When the Knight Bus crashes through the darkness and screeches to a halt in front of him, it's the start of another far from ordinary year at Hogwarts for Harry Potter. Sirius Black, escaped mass-murderer and follower of Lord Voldemort, is on the run - and they say he is coming after Harry. In his first ever Divination class, Professor Trelawney sees an omen of death in Harry's tea leaves... But perhaps most terrifying of all are the Dementors patrolling the school grounds, with their soul-sucking kiss..."], ["info_link", "https://play.google.com/store/books/details?id=Sm5AKLXKxHgC&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=Sm5AKLXKxHgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-30 23:21:18.429114"], ["updated_at", "2018-05-30 23:21:18.429114"]]
+  ↳ app/controllers/books_controller.rb:12
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:12
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:13
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13
+  [1m[36mBook Load (2.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13
+  [1m[36mCopy Create (2.1ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 8], ["user_id", 1], ["created_at", "2018-05-30 23:21:19.076344"], ["updated_at", "2018-05-30 23:21:19.076344"]]
+  ↳ app/controllers/books_controller.rb:13
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:13
+Redirected to http://localhost:3000/copies/12
+Completed 302 Found in 790ms (ActiveRecord: 32.5ms)
+
+
+Started GET "/copies/12" for 127.0.0.1 at 2018-05-30 19:21:19 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (2.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (2.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mCACHE User Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Load (2.1ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 12], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  Rendered copies/show.html.erb within layouts/application (198.4ms)
+Completed 200 OK in 1476ms (Views: 1081.0ms | ActiveRecord: 33.7ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-05-30 19:22:34 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ucmz+Y4tutVZJi2T9fZQWkWUBOLz/Eh8min0B6gw83OzLKzJ3YE4AhjcBLlfL1tQpsFQkjVLdPMyGL+TnQ9wlw==", "book"=>{"isbn"=>"ilc0DwAAQBAJ", "author"=>"British Library", "name"=>"Harry Potter - A Journey Through A History of Magic", "short_description"=>"The official companion book to the British Library exhibition and the ultimate gift for Harry Potter fans! As the British Library unveils a very special new exhibition in the UK, Harry Potter: A History of Magic, readers everywhere are invited on an enchanting journey through the Hogwarts curriculum, from Care of Magical Creatures and Herbology to Defense Against the Dark Arts, Astronomy, and more in this eBook uncovering thousands of years of magical history. Prepare to be amazed by artifacts released from the archives of the British Library, unseen sketches and manuscript pages from J.K. Rowling, and incredible illustrations from artist Jim Kay. Discover the truth behind the origins of the Philosopher’s Stone, monstrous dragons, and troublesome trolls; examine real-life wands and find out what actually makes a mandrake scream; pore over remarkable pages from da Vinci’s notebook; and discover the oldest atlas of the night sky. Carefully curated by the British Library and full of extraordinary treasures from all over the world, this is an unforgettable journey exploring the history of the magic at the heart of the Harry Potter stories.", "info_link"=>"https://play.google.com/store/books/details?id=ilc0DwAAQBAJ&source=gbs_api", "cover_img"=>"http://books.google.com/books/content?id=ilc0DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"}, "commit"=>"Add book"}
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:12
+  [1m[36mBook Create (3.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter - A Journey Through A History of Magic"], ["isbn", "ilc0DwAAQBAJ"], ["author", "British Library"], ["short_description", "The official companion book to the British Library exhibition and the ultimate gift for Harry Potter fans! As the British Library unveils a very special new exhibition in the UK, Harry Potter: A History of Magic, readers everywhere are invited on an enchanting journey through the Hogwarts curriculum, from Care of Magical Creatures and Herbology to Defense Against the Dark Arts, Astronomy, and more in this eBook uncovering thousands of years of magical history. Prepare to be amazed by artifacts released from the archives of the British Library, unseen sketches and manuscript pages from J.K. Rowling, and incredible illustrations from artist Jim Kay. Discover the truth behind the origins of the Philosopher’s Stone, monstrous dragons, and troublesome trolls; examine real-life wands and find out what actually makes a mandrake scream; pore over remarkable pages from da Vinci’s notebook; and discover the oldest atlas of the night sky. Carefully curated by the British Library and full of extraordinary treasures from all over the world, this is an unforgettable journey exploring the history of the magic at the heart of the Harry Potter stories."], ["info_link", "https://play.google.com/store/books/details?id=ilc0DwAAQBAJ&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=ilc0DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-30 23:22:34.179596"], ["updated_at", "2018-05-30 23:22:34.179596"]]
+  ↳ app/controllers/books_controller.rb:12
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:12
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:13
+  [1m[36mCACHE User Load (16.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13
+  [1m[36mCopy Create (2.1ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["book_id", 9], ["user_id", 1], ["created_at", "2018-05-30 23:22:34.458510"], ["updated_at", "2018-05-30 23:22:34.458510"]]
+  ↳ app/controllers/books_controller.rb:13
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:13
+Redirected to http://localhost:3000/copies/13
+Completed 302 Found in 713ms (ActiveRecord: 35.5ms)
+
+
+Started GET "/copies/13" for 127.0.0.1 at 2018-05-30 19:22:34 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (1.8ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (2.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Load (2.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 13], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  Rendered copies/show.html.erb within layouts/application (142.6ms)
+Completed 200 OK in 1193ms (Views: 1066.5ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-30 19:23:09 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (19.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (2.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (2.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (17.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:34
+  [1m[36mBook Load (3.9ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.1ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:34
+  [1m[36mBook Load (2.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (5.8ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mLending Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (0.6ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  [1m[36mBook Load (5.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mLending Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.8ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 12], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mLending Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 12], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 12], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 12], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.1ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 13], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mLending Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 13], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (1.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 13], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 13], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  Rendered copies/index.html.erb within layouts/application (1599.0ms)
+Completed 200 OK in 2926ms (Views: 2772.8ms | ActiveRecord: 93.6ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-30 19:25:10 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (2.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (1.8ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (21.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.6ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mUser Load (21.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:34
+  [1m[36mBook Load (2.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Load (0.8ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:34
+  [1m[36mBook Load (3.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mLending Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 8], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  [1m[36mBook Load (2.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.9ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mLending Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  [1m[36mBook Load (2.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.6ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 12], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mLending Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 12], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 12], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 12], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  [1m[36mBook Load (21.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:5
+  [1m[36mLending Load (2.1ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 13], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mLending Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 13], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:7
+  [1m[36mCACHE Lending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 13], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:21
+  [1m[36mCACHE Lending Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 13], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:13
+  Rendered copies/index.html.erb within layouts/application (1311.1ms)
+Completed 200 OK in 2454ms (Views: 2258.7ms | ActiveRecord: 111.5ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 19:25:15 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (23.0ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1384ms (Views: 1350.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 19:25:21 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (32.5ms)
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1159ms (Views: 1127.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 19:25:27 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (14.5ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1504ms (Views: 1437.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:25:33 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  [1m[36mUser Load (18.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  [1m[36mBook Load (2.2ms)[0m  [1m[34mSELECT "books".* FROM "books" INNER JOIN "copies" ON "copies"."book_id" = "books"."id" WHERE (name LIKE 'Harry Potter' OR author LIKE 'Harry Potter' OR short_description LIKE 'Harry Potter') AND "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/copy.rb:8
+  [1m[36mCopy Load (2.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ? AND "copies"."book_id" = ?[0m  [["user_id", 2], ["book_id", 2]]
+  ↳ app/models/copy.rb:16
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:16
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:20
+  Rendered lendings/new.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 1496ms (Views: 1127.1ms | ActiveRecord: 34.7ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 19:25:45 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (3.0ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (241.7ms)
+Completed 200 OK in 1465ms (Views: 1433.2ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 19:25:49 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (167.3ms)
+Completed 200 OK in 1360ms (Views: 1319.2ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/friendships?friend_id=3&user_id=1" for 127.0.0.1 at 2018-05-30 19:25:55 -0400
+Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"cRKARBdNNO55Tfgo5tpiu/oTWW7YD8rCjOKLPTrOVSyT9590ROG2OTi30QJMA2mxGUYNHh649k0k08CpD/HWyA==", "friend_id"=>"3", "user_id"=>"1"}
+Unpermitted parameters: :_method, :authenticity_token
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Create (21.6ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 3], ["created_at", "2018-05-30 23:25:55.366201"], ["updated_at", "2018-05-30 23:25:55.366201"]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Load (1.9ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 3], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (4.5ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["friend_id", 1], ["created_at", "2018-05-30 23:25:55.505931"], ["updated_at", "2018-05-30 23:25:55.505931"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (2.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 679ms (ActiveRecord: 40.3ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 19:25:55 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (1.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (176.2ms)
+Completed 200 OK in 1219ms (Views: 1167.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 19:25:59 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (119.4ms)
+Completed 200 OK in 1300ms (Views: 1231.7ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/friendships?friend_id=4&user_id=1" for 127.0.0.1 at 2018-05-30 19:26:02 -0400
+Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"ivYK7EBUVElmmu31UAlym8Tzf4PmKXiY5sVyapUk+9BoExXcE/jWnidgxN/60HmRJ6Yr8yCeRBdO9Dn+oBt4NA==", "friend_id"=>"4", "user_id"=>"1"}
+Unpermitted parameters: :_method, :authenticity_token
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Create (2.2ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 4], ["created_at", "2018-05-30 23:26:02.769095"], ["updated_at", "2018-05-30 23:26:02.769095"]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Load (2.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 4], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (3.0ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["friend_id", 1], ["created_at", "2018-05-30 23:26:03.033676"], ["updated_at", "2018-05-30 23:26:03.033676"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (2.0ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 4], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 546ms (ActiveRecord: 19.5ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 19:26:03 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (10.4ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (204.2ms)
+Completed 200 OK in 1238ms (Views: 1178.6ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 19:26:06 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (89.3ms)
+Completed 200 OK in 1521ms (Views: 1490.8ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/friendships?friend_id=5&user_id=1" for 127.0.0.1 at 2018-05-30 19:26:08 -0400
+Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"3CKzXL/ZT1MSDoRtC2Hlc5GFPnih0InEGwFlMIidO3s+x6xs7HXNhFP0rUehuO55ctBqCGdntUuzMC6kvaK4nw==", "friend_id"=>"5", "user_id"=>"1"}
+Unpermitted parameters: :_method, :authenticity_token
+  [1m[35m (1.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Create (2.1ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 5], ["created_at", "2018-05-30 23:26:08.961625"], ["updated_at", "2018-05-30 23:26:08.961625"]]
+  ↳ app/controllers/friendships_controller.rb:11
+  [1m[36mFriendship Load (3.3ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 5], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (3.0ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["friend_id", 1], ["created_at", "2018-05-30 23:26:09.229547"], ["updated_at", "2018-05-30 23:26:09.229547"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (2.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friendships_controller.rb:11
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 544ms (ActiveRecord: 18.2ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-30 19:26:09 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (2.3ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (20.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (264.8ms)
+Completed 200 OK in 1266ms (Views: 1189.8ms | ActiveRecord: 30.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-30 19:26:13 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 1242ms (Views: 1179.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-30 19:26:20 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (12.7ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1269ms (Views: 1215.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/lendings/new?utf8=%E2%9C%93&search=Harry+Potter&commit=Search" for 127.0.0.1 at 2018-05-30 19:26:25 -0400
+Processing by LendingsController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Harry Potter", "commit"=>"Search"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:16
+  [1m[36mBook Load (3.1ms)[0m  [1m[34mSELECT "books".* FROM "books" INNER JOIN "copies" ON "copies"."book_id" = "books"."id" WHERE (name LIKE 'Harry Potter' OR author LIKE 'Harry Potter' OR short_description LIKE 'Harry Potter') AND "copies"."user_id" IN (?, ?, ?, ?)[0m  [["user_id", 2], ["user_id", 3], ["user_id", 4], ["user_id", 5]]
+  ↳ app/models/copy.rb:8
+  [1m[36mCopy Load (2.9ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" IN (?, ?, ?, ?) AND "copies"."book_id" = ?[0m  [["user_id", 2], ["user_id", 3], ["user_id", 4], ["user_id", 5], ["book_id", 2]]
+  ↳ app/models/copy.rb:16
+  [1m[36mBook Load (2.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:16
+  Rendering lendings/new.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/new.html.erb:20
+  Rendered lendings/new.html.erb within layouts/application (73.3ms)
+Completed 200 OK in 1322ms (Views: 1062.8ms | ActiveRecord: 15.8ms)
+
+

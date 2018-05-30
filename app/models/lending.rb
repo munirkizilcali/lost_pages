@@ -8,14 +8,7 @@ class Lending < ApplicationRecord
     self.due_date.strftime("%B %d, %Y")
   end
 
-  # def status
-  #   if !lend_date
-  #     "requested"
-  #   elsif returned == false
-  #     "ongoing"
-  #   else
-  #     "returned"
-  #   end
-  # end
+
+
 
 end

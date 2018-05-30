@@ -1,0 +1,29 @@
+<h1>Search your friend's books</h1>
+
+<%= form_tag new_lending_path, method: "GET" do  %>
+  <%= text_field_tag "search", params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<ul>
+  <% if params[:search] %>
+    <% @search_list.each do |book, copies| %>
+
+    <li>
+
+      <img src="<%= book.cover_img %>">
+      <%= "Title: #{book.name} - Author: #{book.author}" %>
+
+      <ul>
+        <li>
+      <% copies.each do |copy| %>
+        <%= copy.user.name %> - <%= copy.condition%>
+      <% end %>
+        </li>
+      </ul>
+
+    </li>
+
+    <% end %>
+  <% end %>
+</ul>
