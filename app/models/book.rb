@@ -4,42 +4,44 @@ class Book < ApplicationRecord
 	has_many :users, through: :copies
 
 	def self.search_google_books(string)
-		html = open(URI.escape("https://www.googleapis.com/books/v1/volumes?q=#{string}")).read
-		doc = JSON.parse(html)
-		doc["items"]
+		if !string.empty?
+			html = open(URI.escape("https://www.googleapis.com/books/v1/volumes?q=#{string}")).read
+			doc = JSON.parse(html)
+			doc["items"]
+		end
 	end
 
-	def self.google_book_corrected(volume)
-		corrected_book_info = {}
-		if !volume['volumeInfo']['title'].nil? && volume['volumeInfo']['title'] != "" 
-			corrected_book_info[:title] = volume['volumeInfo']['title']
-		else
-			corrected_book_info[:title] = "No book title"
-		end
+	 def self.google_book_corrected(volume)
+    default_book_info = {:title => "No book title", :short_description => "No description", :info_link => "No infoLink", :cover_img => "http://via.placeholder.com/128x185", :isbn => "NoISBN", author: "No author info"}
 
-		if !volume['volumeInfo']['description'].nil? && volume['volumeInfo']['description'] != ""
-			corrected_book_info[:short_description] = volume['volumeInfo']['description']
-		else
-			corrected_book_info[:short_description] = "No description"
-		end
+    if volume['id'] && volume['id'] != ""
+      default_book_info[:isbn] = volume['id']
+    end
 
-		if !volume['volumeInfo']['infoLink'].nil? && volume['volumeInfo']['infoLink'] != "" 
-			corrected_book_info[:info_link] = volume['volumeInfo']['infoLink']
-		else
-			corrected_book_info[:info_link] = "No infoLink"
-		end
+    if volume['volumeInfo']
+      vol_info = volume['volumeInfo']
 
-		if !volume['volumeInfo']['imageLinks']['smallThumbnail'].nil? && volume['volumeInfo']['imageLinks']['smallThumbnail'] != ""
-			corrected_book_info[:cover_img] = volume['volumeInfo']['imageLinks']['smallThumbnail']
-		else
-			corrected_book_info[:cover_img] = "http://via.placeholder.com/128x185"
-		end
+      if vol_info['title'] && vol_info['title'] != ""
+        default_book_info[:title] = vol_info['title']
+      end
 
-		if !volume['id'].nil? && volume['id'] != ""
-			corrected_book_info[:isbn] = volume['id']
-		else
-			corrected_book_info[:isbn] = "NoISBN"
-		end
-		corrected_book_info
-	end
+      if vol_info['description'] && vol_info['description'] != ""
+        default_book_info[:short_description] = vol_info['description']
+      end
+
+      if vol_info['infoLink'] && vol_info['infoLink'] != ""
+        default_book_info[:info_link] = vol_info['infoLink']
+      end
+
+      if vol_info['imageLinks']
+      	if vol_info['imageLinks']['smallThumbnail'] && vol_info['imageLinks']['smallThumbnail'] != ""
+        	default_book_info[:cover_img] = vol_info['imageLinks']['smallThumbnail']
+      	end
+      end
+
+    end
+
+    default_book_info
+  end
+
 end
