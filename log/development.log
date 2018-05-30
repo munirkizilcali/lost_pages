@@ -15660,3 +15660,78 @@ Processing by CopiesController#show as HTML
 Completed 200 OK in 77ms (Views: 45.7ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/books/new" for 127.0.0.1 at 2018-05-30 16:31:02 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 62ms (Views: 58.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/books/new?utf8=%E2%9C%93&search=kama+sutra&commit=Search" for 127.0.0.1 at 2018-05-30 16:31:16 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"kama sutra", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (27.0ms)
+Completed 500 Internal Server Error in 618ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     7: <% if @search_list %>
+     8: <ul>
+     9: 	<% @search_list.each do |volume| %>
+    10: 		<% book_hash = Book.google_book_corrected(volume) %>
+    11: 		<li><img src="<%=book_hash[:cover_img]%>">
+    12: 			<%= "Title: #{book_hash[:title]} - Author: #{book_hash[:author]}" %> 
+    13: 			<%= form_for Book.new do |f| %>
+  
+app/models/book.rb:32:in `google_book_corrected'
+app/views/books/new.html.erb:10:in `block in _app_views_books_new_html_erb___4239961548189640216_70120590003940'
+app/views/books/new.html.erb:9:in `each'
+app/views/books/new.html.erb:9:in `_app_views_books_new_html_erb___4239961548189640216_70120590003940'
+Started GET "/books/new?utf8=%E2%9C%93&search=kama+sutra&commit=Search" for 127.0.0.1 at 2018-05-30 16:33:38 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"kama sutra", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (22.1ms)
+Completed 500 Internal Server Error in 540ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     7: <% if @search_list %>
+     8: <ul>
+     9: 	<% @search_list.each do |volume| %>
+    10: 		<% book_hash = Book.google_book_corrected(volume) %>
+    11: 		<li><img src="<%=book_hash[:cover_img]%>">
+    12: 			<%= "Title: #{book_hash[:title]} - Author: #{book_hash[:author]}" %> 
+    13: 			<%= form_for Book.new do |f| %>
+  
+app/models/book.rb:32:in `google_book_corrected'
+app/views/books/new.html.erb:10:in `block in _app_views_books_new_html_erb___4239961548189640216_70120586606940'
+app/views/books/new.html.erb:9:in `each'
+app/views/books/new.html.erb:9:in `_app_views_books_new_html_erb___4239961548189640216_70120586606940'
+Started GET "/books/new?utf8=%E2%9C%93&search=kama+sutra&commit=Search" for 127.0.0.1 at 2018-05-30 16:36:04 -0400
+Processing by BooksController#new as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"kama sutra", "commit"=>"Search"}
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (18.5ms)
+Completed 500 Internal Server Error in 828ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     7: <% if @search_list %>
+     8: <ul>
+     9: 	<% @search_list.each do |volume| %>
+    10: 		<% book_hash = Book.google_book_corrected(volume) %>
+    11: 		<li><img src="<%=book_hash[:cover_img]%>">
+    12: 			<%= "Title: #{book_hash[:title]} - Author: #{book_hash[:author]}" %> 
+    13: 			<%= form_for Book.new do |f| %>
+  
+app/models/book.rb:32:in `google_book_corrected'
+app/views/books/new.html.erb:10:in `block in _app_views_books_new_html_erb___4239961548189640216_70120519083780'
+app/views/books/new.html.erb:9:in `each'
+app/views/books/new.html.erb:9:in `_app_views_books_new_html_erb___4239961548189640216_70120519083780'
