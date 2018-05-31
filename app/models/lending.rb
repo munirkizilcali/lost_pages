@@ -5,7 +5,9 @@ class Lending < ApplicationRecord
 
 
   def formatted_due_date
-    self.due_date.strftime("%B %d, %Y")
+    if self.due_date
+      self.due_date.strftime("%B %d, %Y")
+    end
   end
 
 

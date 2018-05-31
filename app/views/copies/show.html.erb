@@ -8,7 +8,7 @@
   Condition: <%= @copy.condition %><br>
   Purchased Date: <%= @copy.purchased_date %><br>
   Notes: <%= @copy.notes %><br>
-  Status: <%= @copy.available? ? "Available" : "Currently borrowed by #{@copy.current_borrower}. Return date: #{@copy.current_lending.first.formatted_due_date}" %>
+  Status: <%= @copy.available? ? "Available" : "Currently borrowed by #{@copy.current_borrower.name}. Return date: #{@copy.current_lending.formatted_due_date}" %>
 </div>
 <div>
 

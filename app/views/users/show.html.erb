@@ -18,6 +18,7 @@
     <% @user.active_borrowings.each do |lending| %>
       <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
       <%= render partial: "lendings/return_form", locals: {copy: lending.copy, lending: lending} %>
+      <br>
     <% end %>
   <% end %>
 

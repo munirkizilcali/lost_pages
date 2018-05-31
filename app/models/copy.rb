@@ -15,6 +15,10 @@ class Copy < ApplicationRecord
     self.lendings.where("status = ?", "requested")
   end
 
+  def open_requests_names
+    open_requests.map {|request| request.borrower.name}.join(", ")
+  end
+
   def past_lendings
     self.lendings.where("status = ?", "returned")
   end

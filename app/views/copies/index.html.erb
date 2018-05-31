@@ -8,9 +8,9 @@
    <p><%=link_to copy.book.name, copy_path(copy) %><br>
 
    	<% if copy.available? && !copy.open_requests.empty? %>
-
+      <br>Requested by <%=copy.open_requests_names%>
    		<% copy.open_requests.each do |request| %>
-   			<br>Requested by <%=request.borrower.name%>
+
         <%= render partial: "lendings/lend_form", locals: {lending: request} %>
    		<% end %>
 
