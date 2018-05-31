@@ -12,14 +12,20 @@
   <% end %>
 </div>
 <div>
+
+  <% if !@user.active_borrowings.empty? %>
   <h2>Borrowed Books</h2>
-  <% @user.borrowings.each do |borrowing| %>
-    <div>
-      <img src="<%=borrowing.copy.book.cover_img%>">
-    </div>
-    <p>
-      Book Title: <%= borrowing.copy.book.name %><br>
-      Book Owner: <%= borrowing.copy.user.name %><br>
-    </p>
+    <% @user.active_borrowings.each do |lending| %>
+      <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
+      <%= render partial: "lendings/return_form", locals: {copy: lending.copy, lending: lending} %>
+    <% end %>
   <% end %>
+
+  <% if !@user.requested_borrowings.empty? %>
+  <h2>Requested Books</h2>
+    <% @user.requested_borrowings.each do |lending| %>
+      <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
+    <% end %>
+  <% end %>
+
 </div>

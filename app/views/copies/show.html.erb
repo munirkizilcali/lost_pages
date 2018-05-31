@@ -1,6 +1,10 @@
 <h1><%= @copy.book.name %></h1>
+<h2>Author: <%= @copy.book.author %></h2>
+<h2>Owner: <%= link_to @copy.user.name, user_path(@copy.user) %></h2>
 <div>
-  Owner: <%= link_to @copy.user.name, user_path(@copy.user) %><br>
+  <img src="<%=@copy.book.cover_img%>">
+</div>
+<div>
   Condition: <%= @copy.condition %><br>
   Purchased Date: <%= @copy.purchased_date %><br>
   Notes: <%= @copy.notes %><br>
@@ -8,12 +12,7 @@
 </div>
 <div>
 
-  <h2>Request to borrow</h2>
-  <%= form_for @lending do |f| %>
-    <%= f.hidden_field :copy_id, value: @copy.id %>
-    <%= f.hidden_field :borrower_id, value: current_user.id %>
-    <%= f.submit %>
-  <% end %>
+  <%= render partial: "lendings/borrow_form", locals: {copy: @copy, lending: @lending} %>
 
 </div>
 

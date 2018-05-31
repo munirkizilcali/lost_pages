@@ -17,8 +17,7 @@ class LendingsController < ApplicationController
 
   def update
     @lending = Lending.find_by(id: params[:id])
-    @lending.lend_date = Time.now
-    @lending.status = "active"
+    @lending.update(lending_params)
     # if @lending.valid?
     @lending.save
     redirect_to copies_path

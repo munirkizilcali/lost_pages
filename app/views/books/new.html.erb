@@ -14,13 +14,13 @@
 				<img src="<%=book_hash[:cover_img]%>">
 			</div>
 			<div>
-				<%= "Title: #{book_hash[:title]}"%><br>
+				<%= "Title: #{book_hash[:name]}"%><br>
 				<%= "Author: #{book_hash[:author]}" %>
 			</div>
 			<%= form_for Book.new do |f| %>
 			<%= f.hidden_field :isbn, value: book_hash[:isbn] %>
 			<%= f.hidden_field :author, value: book_hash[:author] %>
-			<%= f.hidden_field :name, value: book_hash[:title] %>
+			<%= f.hidden_field :name, value: book_hash[:name] %>
 			<%= f.hidden_field :short_description, value: book_hash[:short_description] %>
 			<%= f.hidden_field :info_link, value: book_hash[:info_link] %>
 			<%= f.hidden_field :cover_img, value: book_hash[:cover_img] %>

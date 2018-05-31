@@ -17,6 +17,7 @@
       <p>
         Current User: <%= current_user.email %><br>
         <%= link_to "Logout", '/logout', method: "DELETE" %>
+        <%= link_to "Home", user_path(current_user) %><br>
       </p>
     <% else %>
       <p>
