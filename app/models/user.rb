@@ -36,4 +36,8 @@ class User < ApplicationRecord
       self.borrowings.where(status: "requested")
     end
 
+    def active_lendings
+      self.lendings.where(status: "active")
+    end
+
 end

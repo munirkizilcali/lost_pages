@@ -12,21 +12,21 @@
   <% end %>
 </div>
 <div>
+  <% if @user == current_user %>
+    <% if !@user.active_borrowings.empty? %>
+    <h2>Borrowed Books</h2>
+      <% @user.active_borrowings.each do |lending| %>
+        <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
+        <%= render partial: "lendings/return_form", locals: {copy: lending.copy, lending: lending} %>
+        <br>
+      <% end %>
+    <% end %>
 
-  <% if !@user.active_borrowings.empty? %>
-  <h2>Borrowed Books</h2>
-    <% @user.active_borrowings.each do |lending| %>
-      <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
-      <%= render partial: "lendings/return_form", locals: {copy: lending.copy, lending: lending} %>
-      <br>
+    <% if !@user.requested_borrowings.empty? %>
+    <h2>Requested Books</h2>
+      <% @user.requested_borrowings.each do |lending| %>
+        <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
+      <% end %>
     <% end %>
   <% end %>
-
-  <% if !@user.requested_borrowings.empty? %>
-  <h2>Requested Books</h2>
-    <% @user.requested_borrowings.each do |lending| %>
-      <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
-    <% end %>
-  <% end %>
-
 </div>
