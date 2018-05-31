@@ -40,4 +40,8 @@ class User < ApplicationRecord
       self.lendings.where(status: "active")
     end
 
+    def past_unrated_lendings
+      self.lendings.where("status IS ? AND rating IS ?", "returned", nil )
+    end
+
 end

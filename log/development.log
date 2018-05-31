@@ -27450,3 +27450,1821 @@ Processing by LendingsController#index as HTML
 Completed 200 OK in 64ms (Views: 58.7ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 14:47:33 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:29
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:30
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (27.6ms)
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (5.1ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.5ms)
+  Rendered lendings/index.html.erb within layouts/application (99.4ms)
+Completed 200 OK in 134ms (Views: 125.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 14:48:01 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 1]]
+  ↳ app/views/copies/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:4
+  Rendered lendings/_lend_form.html.erb (4.1ms)
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  Rendered copies/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 77ms (Views: 65.6ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/lendings/1" for 127.0.0.1 at 2018-05-31 14:48:02 -0400
+Processing by LendingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xp8WMx6wH8rqmFLw36IEpUvBh7hywSE5OP7D2Hr3kEbFcYJzkrk036Zd2gLgVisZWoXEzBHuz2uEgE3SfOZZfQ==", "lending"=>{"lend_date"=>"2018-05-31 14:48:01 -0400", "status"=>"active"}, "commit"=>"Lend to adam", "id"=>"1"}
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mLending Update (0.5ms)[0m  [1m[33mUPDATE "lendings" SET "lend_date" = ?, "status" = ?, "updated_at" = ? WHERE "lendings"."id" = ?[0m  [["lend_date", "2018-05-31 18:48:01"], ["status", "active"], ["updated_at", "2018-05-31 18:48:02.806390"], ["id", 1]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:22
+Redirected to http://localhost:3000/copies
+Completed 302 Found in 16ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 14:48:02 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  Rendered copies/index.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 65ms (Views: 57.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 14:48:07 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.9ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:29
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:30
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.5ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (7.3ms)
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.6ms)
+  Rendered lendings/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 79ms (Views: 72.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 14:48:57 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.5ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:29
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:30
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.6ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.2ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (2.9ms)
+  Rendered lendings/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 66ms (Views: 61.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 14:49:09 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:29
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:30
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.9ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.3ms)
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.5ms)
+  Rendered lendings/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 70ms (Views: 65.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 14:49:18 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  Rendered copies/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 76ms (Views: 62.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 14:51:11 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  Rendered copies/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 63ms (Views: 51.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-31 14:51:25 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Redirected to http://localhost:3000/login
+Filter chain halted as :user_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-05-31 14:51:25 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-05-31 14:51:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ar06hYLsJ2Mez860ZjmvH6G9xslpVm9E+UxkqeflTzUUzqFIoiTGKx1DRYeYCzlx/dNXc8W/V/wBbDGwACuWPw==", "email"=>"adam@adam.com", "password"=>"[FILTERED]", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adam@adam.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/
+Completed 302 Found in 74ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-31 14:51:32 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 3], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 3]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 3]]
+  ↳ app/views/copies/index.html.erb:12
+  Rendered lendings/_lend_form.html.erb (5.5ms)
+  Rendered copies/index.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `from' for 2629746:Fixnum):
+    1: <%= form_for lending do |f| %>
+    2:   <%= f.hidden_field :lend_date, value: Time.now %>
+    3:   <%= f.hidden_field :due_date, value: 1.month.from.Time.now %>
+    4:   <%= f.hidden_field :status, value: "active" %>
+    5:   <%= f.submit "Lend to #{lending.borrower.name}" %>
+    6: <% end %>
+  
+app/views/lendings/_lend_form.html.erb:3:in `block in _app_views_lendings__lend_form_html_erb___1359435166409074118_70353391037480'
+app/views/lendings/_lend_form.html.erb:1:in `_app_views_lendings__lend_form_html_erb___1359435166409074118_70353391037480'
+app/views/copies/index.html.erb:14:in `block (2 levels) in _app_views_copies_index_html_erb___435054802254170557_70353382876220'
+app/views/copies/index.html.erb:12:in `block in _app_views_copies_index_html_erb___435054802254170557_70353382876220'
+app/views/copies/index.html.erb:4:in `_app_views_copies_index_html_erb___435054802254170557_70353382876220'
+Started GET "/" for 127.0.0.1 at 2018-05-31 14:52:34 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 3], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 3]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 3]]
+  ↳ app/views/copies/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (4.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (1.5ms)
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 4], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 4]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 4]]
+  ↳ app/views/copies/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (2.5ms)
+  Rendered copies/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 72ms (Views: 63.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2018-05-31 14:52:40 -0400
+Processing by FriendshipsController#index as HTML
+  Rendering friendships/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/friendships/index.html.erb:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/friendships/index.html.erb:4
+  Rendered friendships/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 57ms (Views: 51.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-31 14:52:42 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 67ms (Views: 58.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/copies/1" for 127.0.0.1 at 2018-05-31 14:52:44 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_borrow_form.html.erb:1
+  Rendered lendings/_borrow_form.html.erb (5.1ms)
+  Rendered copies/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 70ms (Views: 60.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/lendings" for 127.0.0.1 at 2018-05-31 14:52:45 -0400
+Processing by LendingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KyG8zoMmV8M/ue7pFBmgETkADlks58P5G0Pl+i0JaMxZhqQt5LSCRIb2oUTJuysq6RkWw6iAXf6zVaRUGNi6Q==", "lending"=>{"copy_id"=>"1", "borrower_id"=>"2", "status"=>"requested"}, "commit"=>"Borrow this book from munir"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[36mLending Create (0.7ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 1], ["borrower_id", 2], ["created_at", "2018-05-31 18:52:45.509038"], ["updated_at", "2018-05-31 18:52:45.509038"]]
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 13ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-05-31 14:52:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 2], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 2], ["status", "active"]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.1ms)
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  Rendered lendings/_return_form.html.erb (6.3ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 2], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 2], ["status", "requested"]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.1ms)
+  Rendered users/show.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 86ms (Views: 76.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/copies/4" for 127.0.0.1 at 2018-05-31 14:52:48 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_borrow_form.html.erb:1
+  Rendered lendings/_borrow_form.html.erb (3.7ms)
+  Rendered copies/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 57ms (Views: 46.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 14:52:56 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 3], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 3]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 3]]
+  ↳ app/views/copies/index.html.erb:12
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (4.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (1.8ms)
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 4], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 4]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 4]]
+  ↳ app/views/copies/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (1.7ms)
+  Rendered copies/index.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 73ms (Views: 63.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 14:53:03 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 3], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 3], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 3]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 3]]
+  ↳ app/views/copies/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (3.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (2.4ms)
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 4], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 4], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 4]]
+  ↳ app/models/copy.rb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 4]]
+  ↳ app/views/copies/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (2.3ms)
+  Rendered copies/index.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 78ms (Views: 65.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-05-31 14:53:09 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 43ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-31 14:53:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered users/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 51ms (Views: 43.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/copies/2" for 127.0.0.1 at 2018-05-31 14:53:13 -0400
+Processing by CopiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/show.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/show.html.erb:3
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_borrow_form.html.erb:1
+  Rendered lendings/_borrow_form.html.erb (2.8ms)
+  Rendered copies/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 54ms (Views: 44.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/lendings" for 127.0.0.1 at 2018-05-31 14:53:14 -0400
+Processing by LendingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xLg2cFYas5HKzC3KumWAqgFeLbbcUQzNDUXay6BOnHMlcqoT24T4x9QpEPQNEwqG7h5J1LZAkrUT5YPNGJnbOQ==", "lending"=>{"copy_id"=>"2", "borrower_id"=>"2", "status"=>"requested"}, "commit"=>"Borrow this book from munir"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[36mLending Create (1.5ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 2], ["borrower_id", 2], ["created_at", "2018-05-31 18:53:14.828942"], ["updated_at", "2018-05-31 18:53:14.828942"]]
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 17ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-05-31 14:53:14 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 2], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 2], ["status", "active"]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.8ms)
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  Rendered lendings/_return_form.html.erb (6.1ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 2], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 2], ["status", "requested"]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.4ms)
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.0ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  Rendered users/show.html.erb within layouts/application (45.7ms)
+Completed 200 OK in 86ms (Views: 78.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 14:53:29 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 2]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:19
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested')[0m  [["copy_id", 2]]
+  ↳ app/views/copies/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_lend_form.html.erb:5
+  Rendered lendings/_lend_form.html.erb (2.9ms)
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.1ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  Rendered copies/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 79ms (Views: 71.4ms | ActiveRecord: 3.3ms)
+
+
+Started PATCH "/lendings/17" for 127.0.0.1 at 2018-05-31 14:53:35 -0400
+Processing by LendingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4HmTyJ/ENmppZqFoHNHCm1glWSqh6xXv/CEFQp+GSgoagaV8SA7HVnxPwZ6MmgruwZzC9oXyOmcE9R3knPqUZQ==", "lending"=>{"lend_date"=>"2018-05-31 14:53:29 -0400", "due_date"=>"2018-06-30 18:53:29 UTC", "status"=>"active"}, "commit"=>"Lend to adam", "id"=>"17"}
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mLending Update (0.4ms)[0m  [1m[33mUPDATE "lendings" SET "due_date" = ?, "lend_date" = ?, "status" = ?, "updated_at" = ? WHERE "lendings"."id" = ?[0m  [["due_date", "2018-06-30 18:53:29"], ["lend_date", "2018-05-31 18:53:29"], ["status", "active"], ["updated_at", "2018-05-31 18:53:35.128708"], ["id", 17]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:22
+Redirected to http://localhost:3000/copies
+Completed 302 Found in 15ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 14:53:35 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.5ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  Rendered copies/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 71ms (Views: 63.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 14:53:44 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.4ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.5ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:29
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:30
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.0ms)
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.9ms)
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.7ms)
+  Rendered lendings/index.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 93ms (Views: 85.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 14:57:36 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (26.9ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (2.8ms)
+  Rendered lendings/index.html.erb within layouts/application (88.8ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `past_lendings' for #<User:0x007ff8d66c9248>
+Did you mean?  past_unrated_lendings):
+    23: 
+    24: 
+    25: past lendings
+    26: 	<% current_user.past_lendings.each do |lending| %>
+    27: 		<%= render partial: "list_lendings", locals:{lending: lending} %>
+    28: 		Borrower: <%= lending.borrower.name %><br>
+    29: 		
+  
+app/views/lendings/index.html.erb:26:in `_app_views_lendings_index_html_erb___3148674462288866105_70353379957660'
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 14:58:03 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.8ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND (status IS 'returned' AND rating IS NULL)[0m  [["user_id", 1]]
+  ↳ app/views/lendings/index.html.erb:26
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (5.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:34
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:35
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.5ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.9ms)
+  Rendered lendings/index.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 110ms (Views: 103.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 15:02:23 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.8ms)
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.2ms)
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND (status IS 'returned' AND rating IS NULL)[0m  [["user_id", 1]]
+  ↳ app/views/lendings/index.html.erb:26
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (122.6ms)
+  Rendered lendings/index.html.erb within layouts/application (150.1ms)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `select_field' for #<ActionView::Helpers::FormBuilder:0x007ff8d440a928>
+Did you mean?  select
+               search_field):
+    1: <%= form_for lending do |f| %>
+    2:   <%= f.select_field :rating, value: (1..5) %>
+    3:   <%= f.submit "Rate this borrower: #{lending.borrower.name}" %>
+    4: <% end %>
+  
+app/views/lendings/_rate_lending_form.html.erb:2:in `block in _app_views_lendings__rate_lending_form_html_erb__542799297871831492_70353345077660'
+app/views/lendings/_rate_lending_form.html.erb:1:in `_app_views_lendings__rate_lending_form_html_erb__542799297871831492_70353345077660'
+app/views/lendings/index.html.erb:29:in `block in _app_views_lendings_index_html_erb___3148674462288866105_70353345665720'
+app/views/lendings/index.html.erb:26:in `_app_views_lendings_index_html_erb___3148674462288866105_70353345665720'
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 15:02:40 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.9ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.8ms)
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND (status IS 'returned' AND rating IS NULL)[0m  [["user_id", 1]]
+  ↳ app/views/lendings/index.html.erb:26
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (25.7ms)
+  [1m[36mCACHE Copy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (0.8ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:34
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:35
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (5.0ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  Rendered lendings/index.html.erb within layouts/application (91.6ms)
+Completed 200 OK in 144ms (Views: 135.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-05-31 15:03:37 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 2], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 2], ["status", "active"]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (5.5ms)
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  Rendered lendings/_return_form.html.erb (6.2ms)
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.4ms)
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  Rendered lendings/_return_form.html.erb (4.9ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 2], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 2], ["status", "requested"]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (5.0ms)
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.4ms)
+  Rendered users/show.html.erb within layouts/application (59.6ms)
+Completed 200 OK in 102ms (Views: 94.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 15:03:45 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.0ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.6ms)
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND (status IS 'returned' AND rating IS NULL)[0m  [["user_id", 1]]
+  ↳ app/views/lendings/index.html.erb:26
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (1.4ms)
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.4ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (1.3ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:34
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:35
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.8ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.6ms)
+  Rendered lendings/index.html.erb within layouts/application (66.1ms)
+Completed 200 OK in 111ms (Views: 104.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 15:03:59 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (5.1ms)
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.5ms)
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND (status IS 'returned' AND rating IS NULL)[0m  [["user_id", 1]]
+  ↳ app/views/lendings/index.html.erb:26
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (7.0ms)
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (0.9ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:34
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:35
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.7ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.5ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.4ms)
+  Rendered lendings/index.html.erb within layouts/application (72.7ms)
+Completed 200 OK in 116ms (Views: 109.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 15:04:23 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.3ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.2ms)
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND (status IS 'returned' AND rating IS NULL)[0m  [["user_id", 1]]
+  ↳ app/views/lendings/index.html.erb:26
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (1.6ms)
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (5.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (1.4ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:35
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:36
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.7ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.4ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.3ms)
+  Rendered lendings/index.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 112ms (Views: 105.3ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/lendings/2" for 127.0.0.1 at 2018-05-31 15:04:32 -0400
+Processing by LendingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmQJ3XgttoBXQ52sEwbrvVRMmeGOsRnu7JmFqxx3s+x0nD9pr+dHvEJq/VqDTSPIzfUCPaqoNmYUTZ0NHwttgw==", "lending"=>{"rating"=>"3"}, "commit"=>"Rate this borrower: lucas", "id"=>"2"}
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mLending Update (1.7ms)[0m  [1m[33mUPDATE "lendings" SET "rating" = ?, "updated_at" = ? WHERE "lendings"."id" = ?[0m  [["rating", 3], ["updated_at", "2018-05-31 19:04:32.166276"], ["id", 2]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:22
+Redirected to http://localhost:3000/copies
+Completed 302 Found in 22ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 15:04:32 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/copies/index.html.erb:4
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.1ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:6
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:10
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'requested') LIMIT ?[0m  [["copy_id", 11], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:17
+  Rendered copies/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 66ms (Views: 58.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-05-31 15:04:38 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:25
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/users/show.html.erb:27
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.2ms)
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.1ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.1ms)
+  Rendered users/show.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 76ms (Views: 64.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 15:04:52 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:5
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 1], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:18
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.8ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.2ms)
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND (status IS 'returned' AND rating IS NULL)[0m  [["user_id", 1]]
+  ↳ app/views/lendings/index.html.erb:26
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:28
+  Rendered lendings/_rate_lending_form.html.erb (2.0ms)
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/lendings/index.html.erb:35
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "requested"]]
+  ↳ app/views/lendings/index.html.erb:36
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.6ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.2ms)
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.3ms)
+  Rendered lendings/index.html.erb within layouts/application (55.4ms)
+Completed 200 OK in 91ms (Views: 84.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/lendings/2" for 127.0.0.1 at 2018-05-31 15:05:52 -0400
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for LendingsController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.0) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'

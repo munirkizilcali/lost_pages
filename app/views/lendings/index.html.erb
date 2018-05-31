@@ -13,13 +13,22 @@
 	<% end %>
 
 
-lendings
+<h3>The books that you lent</h3>
 
-	<% current_user.active_lendings %>
+	<% current_user.active_lendings.each do |lending| %>
+		<%= render partial: "list_lendings", locals:{lending: lending} %>
+		Due Date: <%= lending.formatted_due_date %><br>
+	<% end %>
 
 
 
-past lendings
+<h3>Rate these returned books</h3>
+	<% current_user.past_unrated_lendings.each do |lending| %>
+		<%= render partial: "list_lendings", locals:{lending: lending} %>
+		Borrower: <%= lending.borrower.name %><br>
+		<%= render partial: "rate_lending_form", locals: {lending: lending} %>
+		<br>
+	<% end %>
 
 
 <h3>Requested Books</h3>
