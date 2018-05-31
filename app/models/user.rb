@@ -52,4 +52,12 @@ class User < ApplicationRecord
       self.returned_borrowings.average(:rating).to_f
     end
 
+    def self_copies
+      self.copies.select { |copy| copy.available?  }
+    end
+
+    def lended_copies
+      self.copies.select { |copy| !copy.available?  }
+    end
+
 end

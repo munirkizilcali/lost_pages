@@ -22,6 +22,9 @@ class LendingsController < ApplicationController
     @lending.save
     redirect_to copies_path
     # end
+  end
+
+  def borrowed_books
 
   end
 

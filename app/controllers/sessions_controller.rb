@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 		if @user
 			return head(:forbidden) unless @user.authenticate(params[:password])
 			session["user_id"] = @user.id
-			redirect_to root_path
+			redirect_to library_path
 		else
 			flash[:message] = "Username or password did not match"
 			render :new
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session.delete :user_id
-		redirect_to root_path
+		redirect_to home_path
 	end
 
 end

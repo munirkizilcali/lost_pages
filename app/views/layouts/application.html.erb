@@ -17,7 +17,6 @@
       <p>
         Current User: <%= current_user.email %><br>
         <%= link_to "Logout", '/logout', method: "DELETE" %>
-        <%= link_to "Home", user_path(current_user) %><br>
       </p>
     <% else %>
       <p>
@@ -25,9 +24,12 @@
       </p>
     <% end %>
     <br><br>
-    <%= link_to "All Users", users_path %><br>
-    <%= link_to "My Library", copies_path %><br>
-    <%= link_to "My Friends", friends_path %><br>
+    <%= link_to "Home", home_path %><br>
+    <%= link_to "Library", library_path %><br>
+    <%= link_to "Friends", friends_path %><br>
+    <%= link_to "Lent Books", lendings_path %><br>
+    <%= link_to "Borrowed Books", borrowings_path %><br>
+    <%= link_to "Users", users_path %><br>
     <%= link_to "Borrow a book", new_lending_path %><br>
     <%= link_to "Add a book to your library", new_book_path %><br>
   </body>

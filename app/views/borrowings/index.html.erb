@@ -1,0 +1,18 @@
+<h3>The books that you borrowed</h3>
+
+    <% if !current_user.active_borrowings.empty? %>
+    <% current_user.active_borrowings.each do |lending| %>
+      <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
+      <%= render partial: "lendings/return_form", locals: {copy: lending.copy, lending: lending} %>
+      <br>
+    <% end %>
+  <% else %>
+    <P>You have borrowed no book recently.</P>
+  <% end %>
+
+  <h3>Books you have requested</h3>
+<% if !current_user.requested_borrowings.empty? %>
+  <% current_user.requested_borrowings.each do |lending| %>
+    <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
+  <% end %>
+<% end %>

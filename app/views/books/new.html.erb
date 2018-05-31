@@ -1,8 +1,6 @@
-<h1>Add a book to your library</h1>
-<%= form_tag new_book_path, method: "GET" do  %>
-	<%= text_field_tag "search", params[:search] %>
-	<%= submit_tag "Search" %>
-<% end %>
+<h1>Book Search Results</h1>
+
+<%= render partial: "google_book_search", locals: {search: params[:search]} %>
 
 <% if @search_list %>
 <div>

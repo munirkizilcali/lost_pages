@@ -11,7 +11,7 @@ class BooksController < ApplicationController
 		if @book.valid?
 			@book.save
 			@copy = Copy.create(book_id: @book.id, user_id:current_user.id)
-			redirect_to copy_path(@copy)
+			redirect_to library_path
 		else
 			render :new
 		end

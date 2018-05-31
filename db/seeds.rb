@@ -27,11 +27,11 @@ search_google_books("Harry Potter")
 # ])
 
 users = User.create([
-  {name:"munir", email: "munir@munir.com", password: "password", password_confirmation: "password"},
-  {name:"adam", email: "adam@adam.com", password: "password", password_confirmation: "password"},
-  {name:"lucas", email: "lucas@lucas.com", password: "password", password_confirmation: "password"},
-  {name:"brittany", email: "brittany@brittany.com", password: "password", password_confirmation: "password"},
-  {name:"richard", email: "richard@richard.com", password: "password", password_confirmation: "password"}
+  {name:"Fionna Apple", email: "fionna@fionna.com", password: "password", password_confirmation: "password"},
+  {name:"Carson Wentz", email: "carson@carson.com", password: "password", password_confirmation: "password"},
+  {name:"Bryce Harper", email: "bryce@bryce.com", password: "password", password_confirmation: "password"},
+  {name:"Kelly Smith", email: "kelly@kelly.com", password: "password", password_confirmation: "password"},
+  {name:"John Jacobs", email: "john@john.com", password: "password", password_confirmation: "password"}
 ])
 
 copies = Copy.create([

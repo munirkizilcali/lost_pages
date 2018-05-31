@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   resources :lendings
   resources :books
   resources :users
+  resources :borrowings
 
   resources :sessions, only:[:create, :destroy, :new]
 
-  root "copies#index"
+  root "static#home", :as => 'home'
+
+  get 'library', to: 'copies#index', :as => 'library'
+
   post "/login" => "sessions#create"
   get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
@@ -16,6 +20,6 @@ Rails.application.routes.draw do
 
   get '/friends' => 'friendships#index'
 
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
