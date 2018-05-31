@@ -28,7 +28,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'json', '~> 2.1'
 
-
+gem 'omniauth', '~> 1.8', '>= 1.8.1'
+gem 'omniauth-facebook', '~> 5.0'
+gem 'dotenv-rails', '~> 2.4'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
