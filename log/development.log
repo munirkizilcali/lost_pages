@@ -33002,3 +33002,1497 @@ Completed 200 OK in 54ms (Views: 41.6ms | ActiveRecord: 1.0ms)
 
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
 >>>>>>> master
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:26:07 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.0) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.0) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to AddOmniauthToUsers (20180531194902)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  ↳ db/migrate/20180531194902_add_omniauth_to_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "image" varchar[0m
+  ↳ db/migrate/20180531194902_add_omniauth_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180531194902"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter - A Journey Through A History of Magic"], ["isbn", "ilc0DwAAQBAJ"], ["author", "British Library"], ["short_description", "The official companion book to the British Library exhibition and the ultimate gift for Harry Potter fans! As the British Library unveils a very special new exhibition in the UK, Harry Potter: A History of Magic, readers everywhere are invited on an enchanting journey through the Hogwarts curriculum, from Care of Magical Creatures and Herbology to Defense Against the Dark Arts, Astronomy, and more in this eBook uncovering thousands of years of magical history. Prepare to be amazed by artifacts released from the archives of the British Library, unseen sketches and manuscript pages from J.K. Rowling, and incredible illustrations from artist Jim Kay. Discover the truth behind the origins of the Philosopher’s Stone, monstrous dragons, and troublesome trolls; examine real-life wands and find out what actually makes a mandrake scream; pore over remarkable pages from da Vinci’s notebook; and discover the oldest atlas of the night sky. Carefully curated by the British Library and full of extraordinary treasures from all over the world, this is an unforgettable journey exploring the history of the magic at the heart of the Harry Potter stories."], ["info_link", "https://play.google.com/store/books/details?id=ilc0DwAAQBAJ&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=ilc0DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.158021"], ["updated_at", "2018-05-31 20:26:26.158021"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and the Prisoner of Azkaban"], ["isbn", "Sm5AKLXKxHgC"], ["author", "J.K. Rowling"], ["short_description", "\"'Welcome to the Knight Bus, emergency transport for the stranded witch or wizard. Just stick out your wand hand, step on board and we can take you anywhere you want to go.'\" When the Knight Bus crashes through the darkness and screeches to a halt in front of him, it's the start of another far from ordinary year at Hogwarts for Harry Potter. Sirius Black, escaped mass-murderer and follower of Lord Voldemort, is on the run - and they say he is coming after Harry. In his first ever Divination class, Professor Trelawney sees an omen of death in Harry's tea leaves... But perhaps most terrifying of all are the Dementors patrolling the school grounds, with their soul-sucking kiss..."], ["info_link", "https://play.google.com/store/books/details?id=Sm5AKLXKxHgC&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=Sm5AKLXKxHgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.163051"], ["updated_at", "2018-05-31 20:26:26.163051"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (1.7ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and International Relations"], ["isbn", "DKcWE3WXoj8C"], ["author", "Daniel H. Nexon, Iver B. Neumann"], ["short_description", "Drawing on a range of historical and sociological sources, this work shows how aspects of Harry's world contain aspects of our own. It also includes chapters on the political economy of the franchise, and on the problems of studying popular culture."], ["info_link", "http://books.google.com/books?id=DKcWE3WXoj8C&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=DKcWE3WXoj8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.168567"], ["updated_at", "2018-05-31 20:26:26.168567"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["isbn", "0rOWtgEACAAJ"], ["author", "British Library"], ["short_description", "The official companion book to the special exhibition Harry Potter: A History of Magic, featuring an extraordinary treasure trove of magical artifacts, original drafts and drawings by J.K. Rowling, and additional material exclusive to the US run of this unforgettable exhibition! As we celebrate the 20th anniversary of Harry Potter and the Sorcerer's Stone in the US, readers everywhere are invited to explore the extraordinary subjects of the Hogwarts curriculum - Potions & Alchemy, Divination, Care of Magical Creatures, and more - and examine incredible historical artifacts, items from J.K. Rowling's personal archive, and stunning original artwork from Harry Potter series artists Mary GrandPré, Jim Kay, and Brian Selznick. Published in conjunction with the special exhibition Harry Potter: A History of Magic (coming to the New-York Historical Society after a record-breaking sold-out run at the British Library), this complete catalogue of the over 150 artifacts on display gives readers an up-close look at magical treasures from all over the world. Exclusive to the New York run are amazing artifacts from American institutions -- including an original Audubon illustration, a narwhal's tusk (or is it a unicorn's horn?), an ancient Iranian astrolabe, and more -- as well as never-before-seen original artwork by Mary GrandPré and early correspondence between J.K. Rowling and her American editor, Arthur Levine. This special publication is an essential volume for Harry Potter fans, history buffs, and bibliophiles, and a fascinating exploration of the history of the magic at the heart of the Harry Potter stories."], ["info_link", "http://books.google.com/books?id=0rOWtgEACAAJ&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=0rOWtgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.173903"], ["updated_at", "2018-05-31 20:26:26.173903"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Ivory Tower and Harry Potter"], ["isbn", "iO5pApw2JycC"], ["author", "Lana A. Whited"], ["short_description", "Now available in paper, The Ivory Tower and Harry Potter is the first book-length analysis of J. K. Rowling's work from a broad range of perspectives within literature, folklore, psychology, sociology, and popular culture. A significant portion of the book explores the Harry Potter series' literary ancestors, including magic and fantasy works by Ursula K. LeGuin, Monica Furlong, Jill Murphy, and others, as well as previous works about the British boarding school experience. Other chapters explore the moral and ethical dimensions of Harry's world, including objections to the series raised within some religious circles. In her new epilogue, Lana A. Whited brings this volume up to date by covering Rowling's latest book, Harry Potter and the Order of the Phoenix."], ["info_link", "http://books.google.com/books?id=iO5pApw2JycC&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=iO5pApw2JycC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.178407"], ["updated_at", "2018-05-31 20:26:26.178407"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Irresistible Rise of Harry Potter"], ["isbn", "Aaug_RnI-xQC"], ["author", "Andrew Blake"], ["short_description", "As the British state begins to unravel, and as journalists compete to pronounce on the death of Britain, a schoolboy from suburban Surrey who lives for most of the year in a semi-parallel universe becomes the most popular figure in contemporary world literature. Now read on – everyone else does... Harry Potter is English, a home-counties suburban child. An orphan, oppressed and abused by the adults around him, he retreats into a fantasy world where his problems are more elemental; everyday rituals, magic spells and supercharged broomsticks with only the occasional homicidal wizard to worry about. Ironically, as Andrew Blake makes clear, J. K. Rowling rescues her character through the reinvention of that apex of class privilege, the English public school, a literary conceit that problematises Harry Potter's status as a role model and raises important social questions about the state of education in Tony Blair's Britain. Andrew Blake's examination of the Harry Potter phenomenon also raises serious questions about the condition of the publishing industry, the state of bookselling and filmmaking, and the ways in which the Potter consumer campaign has changed our ideas about literature and reading. Blake reflects on how these connections, while drawn up in Britain, act as a template for Harry Potter's international success."], ["info_link", "http://books.google.com/books?id=Aaug_RnI-xQC&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=Aaug_RnI-xQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.182000"], ["updated_at", "2018-05-31 20:26:26.182000"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and the Classical World"], ["isbn", "7HgwCgAAQBAJ"], ["author", " Richard A. Spencer"], ["short_description", "J.K. Rowling has drawn deeply from classical sources to inform and color her Harry Potter novels, with allusions ranging from the obvious to the obscure. \"Fluffy,\" the vicious three-headed dog in Harry Potter and the Sorcerer's Stone, is clearly a repackaging of Cerberus, the hellhound of Greek and Roman mythology. But the significance of Rowling's quotation from Aeschylus at the front of Harry Potter and the Deathly Hallows is a matter of speculation. Her use of classical material is often presented with irony and humor. This extensive analysis of the Harry Potter series examines Rowling's wide range of allusion to classical characters and themes and her varied use of classical languages. Chapters discuss Harry and Narcissus, Dumbledore's many classical predecessors, Lord Voldemort's likeness to mythical figures, and magic in Harry Potter and classical antiquity--among many topics."], ["info_link", "https://play.google.com/store/books/details?id=7HgwCgAAQBAJ&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=7HgwCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.186153"], ["updated_at", "2018-05-31 20:26:26.186153"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Females and Harry Potter"], ["isbn", "LiWrXUHgnL8C"], ["author", "Ruthann Mayes-Elma"], ["short_description", "Uses critical discourse analysis, feminist theory, and critical theory to examine the female characters in J.K. Rowling's Harry Potter series, focusing on such themes as validating/enabling, intelligence, and mothering."], ["info_link", "http://books.google.com/books?id=LiWrXUHgnL8C&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=LiWrXUHgnL8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.189901"], ["updated_at", "2018-05-31 20:26:26.189901"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and the Philosopher's Stone"], ["isbn", "39iYWTb6n6cC"], ["author", "J.K. Rowling"], ["short_description", "\"Turning the envelope over, his hand trembling, Harry saw a purple wax seal bearing a coat of arms; a lion, an eagle, a badger and a snake surrounding a large letter 'H'.\" Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!"], ["info_link", "http://books.google.com/books?id=39iYWTb6n6cC&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=39iYWTb6n6cC&printsec=frontcover&img=1&zoom=5&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.193301"], ["updated_at", "2018-05-31 20:26:26.193301"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Reading Harry Potter"], ["isbn", "-__ICQemqaEC"], ["author", "Giselle Liza Anatol"], ["short_description", "The tropes and themes of J. K. Rowling's massively popular series are interpreted within the context of its audience."], ["info_link", "https://play.google.com/store/books/details?id=-__ICQemqaEC&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=-__ICQemqaEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:26:26.196607"], ["updated_at", "2018-05-31 20:26:26.196607"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Fionna Apple"], ["email", "fionna@fionna.com"], ["password_digest", "$2a$10$OgWBPW3JDXTkPAZc3DNrE.B3ybbUcM0rafP4w/SbRTksNHlPjLfvW"], ["created_at", "2018-05-31 20:26:26.311854"], ["updated_at", "2018-05-31 20:26:26.311854"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Carson Wentz"], ["email", "carson@carson.com"], ["password_digest", "$2a$10$WkBXEjKN1dgRIukihndBjuIGnJ12hol65ttxd8WlXr0gQvkwQoD1u"], ["created_at", "2018-05-31 20:26:26.403890"], ["updated_at", "2018-05-31 20:26:26.403890"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bryce Harper"], ["email", "bryce@bryce.com"], ["password_digest", "$2a$10$Y.W0.2D2HjLUnpnius.3eeaC3BdFmWjgT.sw74j0m5z3lWiK4e1Da"], ["created_at", "2018-05-31 20:26:26.497168"], ["updated_at", "2018-05-31 20:26:26.497168"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kelly Smith"], ["email", "kelly@kelly.com"], ["password_digest", "$2a$10$2Q6V27UHkhY0ZZeQVjn0meBnG/5RHJ/HJMgz/0DDJxFDEhcY8EwCe"], ["created_at", "2018-05-31 20:26:26.587058"], ["updated_at", "2018-05-31 20:26:26.587058"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "John Jacobs"], ["email", "john@john.com"], ["password_digest", "$2a$10$eXu9i3R2.hXAdC/FmZN/ZuxCjTwuk3oPghofwlWVgBmW..R7RuULW"], ["created_at", "2018-05-31 20:26:26.678325"], ["updated_at", "2018-05-31 20:26:26.678325"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.6ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 1], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:26:26.726700"], ["updated_at", "2018-05-31 20:26:26.726700"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 1], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:26:26.736203"], ["updated_at", "2018-05-31 20:26:26.736203"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 3], ["user_id", 2], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:26:26.750160"], ["updated_at", "2018-05-31 20:26:26.750160"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 4], ["user_id", 2], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:26:26.756213"], ["updated_at", "2018-05-31 20:26:26.756213"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 5], ["user_id", 3], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:26:26.762108"], ["updated_at", "2018-05-31 20:26:26.762108"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 6], ["user_id", 3], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:26:26.767922"], ["updated_at", "2018-05-31 20:26:26.767922"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 7], ["user_id", 4], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:26:26.773528"], ["updated_at", "2018-05-31 20:26:26.773528"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 8], ["user_id", 4], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:26:26.792543"], ["updated_at", "2018-05-31 20:26:26.792543"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.7ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 9], ["user_id", 5], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:26:26.797475"], ["updated_at", "2018-05-31 20:26:26.797475"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 10], ["user_id", 5], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:26:26.803342"], ["updated_at", "2018-05-31 20:26:26.803342"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 1], ["borrower_id", 2], ["created_at", "2018-05-31 20:26:26.825904"], ["updated_at", "2018-05-31 20:26:26.825904"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "due_date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 2], ["borrower_id", 3], ["due_date", "2018-07-07 00:00:00"], ["status", "active"], ["created_at", "2018-05-31 20:26:26.831631"], ["updated_at", "2018-05-31 20:26:26.831631"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.3ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 3], ["borrower_id", 4], ["status", "returned"], ["rating", 5], ["created_at", "2018-05-31 20:26:26.836535"], ["updated_at", "2018-05-31 20:26:26.836535"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 4], ["borrower_id", 5], ["status", "returned"], ["rating", 4], ["created_at", "2018-05-31 20:26:26.841391"], ["updated_at", "2018-05-31 20:26:26.841391"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.5ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 5], ["borrower_id", 1], ["status", "returned"], ["rating", 3], ["created_at", "2018-05-31 20:26:26.852880"], ["updated_at", "2018-05-31 20:26:26.852880"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 6], ["borrower_id", 1], ["status", "returned"], ["rating", 1], ["created_at", "2018-05-31 20:26:26.859750"], ["updated_at", "2018-05-31 20:26:26.859750"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 4], ["borrower_id", 1], ["status", "returned"], ["rating", 4], ["created_at", "2018-05-31 20:26:26.864742"], ["updated_at", "2018-05-31 20:26:26.864742"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 6], ["borrower_id", 1], ["status", "returned"], ["rating", 1], ["created_at", "2018-05-31 20:26:26.869808"], ["updated_at", "2018-05-31 20:26:26.869808"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.6ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 6], ["borrower_id", 2], ["status", "returned"], ["rating", 2], ["created_at", "2018-05-31 20:26:26.874276"], ["updated_at", "2018-05-31 20:26:26.874276"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.5ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "due_date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 7], ["borrower_id", 1], ["due_date", "2018-07-07 00:00:00"], ["status", "active"], ["created_at", "2018-05-31 20:26:26.882395"], ["updated_at", "2018-05-31 20:26:26.882395"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 8], ["borrower_id", 2], ["created_at", "2018-05-31 20:26:26.888774"], ["updated_at", "2018-05-31 20:26:26.888774"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 9], ["borrower_id", 3], ["created_at", "2018-05-31 20:26:26.893947"], ["updated_at", "2018-05-31 20:26:26.893947"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.7ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 10], ["borrower_id", 4], ["created_at", "2018-05-31 20:26:26.902764"], ["updated_at", "2018-05-31 20:26:26.902764"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.7ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 2], ["created_at", "2018-05-31 20:26:26.924162"], ["updated_at", "2018-05-31 20:26:26.924162"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 2], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 3], ["created_at", "2018-05-31 20:26:26.936123"], ["updated_at", "2018-05-31 20:26:26.936123"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.0ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 3], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 4], ["created_at", "2018-05-31 20:26:26.941372"], ["updated_at", "2018-05-31 20:26:26.941372"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 4], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 5], ["created_at", "2018-05-31 20:26:26.952124"], ["updated_at", "2018-05-31 20:26:26.952124"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 5], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["friend_id", 3], ["created_at", "2018-05-31 20:26:26.958191"], ["updated_at", "2018-05-31 20:26:26.958191"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 3], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["friend_id", 4], ["created_at", "2018-05-31 20:26:26.964219"], ["updated_at", "2018-05-31 20:26:26.964219"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 4], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["friend_id", 5], ["created_at", "2018-05-31 20:26:26.969697"], ["updated_at", "2018-05-31 20:26:26.969697"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.0ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 5], ["friend_id", 4], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:26:31 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 450ms (Views: 432.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:26:34 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 73ms (Views: 68.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/library" for 127.0.0.1 at 2018-05-31 16:26:36 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.4ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:56
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 5], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 17], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 18], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 5], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 17], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 18], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  Rendered books/_google_book_search.html.erb (0.8ms)
+  Rendered copies/index.html.erb within layouts/application (100.3ms)
+Completed 200 OK in 188ms (Views: 168.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/lendings" for 127.0.0.1 at 2018-05-31 16:26:40 -0400
+Processing by LendingsController#index as HTML
+  Rendering lendings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Load (0.5ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND "lendings"."status" = ?[0m  [["user_id", 3], ["status", "active"]]
+  ↳ app/views/lendings/index.html.erb:3
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" INNER JOIN "copies" ON "lendings"."copy_id" = "copies"."id" WHERE "copies"."user_id" = ? AND (status IS 'returned' AND rating IS NULL)[0m  [["user_id", 3]]
+  ↳ app/views/lendings/index.html.erb:11
+  Rendered lendings/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 66ms (Views: 60.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/borrowings" for 127.0.0.1 at 2018-05-31 16:26:47 -0400
+Processing by BorrowingsController#index as HTML
+  Rendering borrowings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 3], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/borrowings/index.html.erb:3
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 3], ["status", "active"]]
+  ↳ app/views/borrowings/index.html.erb:4
+  [1m[36mCopy Load (0.7ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (13.1ms)
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_return_form.html.erb:7
+  Rendered lendings/_return_form.html.erb (22.5ms)
+  [1m[36mCACHE Copy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.5ms)
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_return_form.html.erb:7
+  Rendered lendings/_return_form.html.erb (9.4ms)
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 3], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/borrowings/index.html.erb:14
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 3], ["status", "requested"]]
+  ↳ app/views/borrowings/index.html.erb:15
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (5.0ms)
+  [1m[36mCACHE Copy Load (0.0ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (3.6ms)
+  Rendered borrowings/index.html.erb within layouts/application (117.4ms)
+Completed 200 OK in 186ms (Views: 177.7ms | ActiveRecord: 3.4ms)
+
+
+Started PATCH "/lendings/15" for 127.0.0.1 at 2018-05-31 16:30:53 -0400
+Processing by LendingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7qKt2h2ugAwb4r/xxn4JpE2mdZCOgE4fKjSRDGelQvFIFAkYZP/qv1yvVQwvtwS7JM0Ee1hwJg4awG/SWWPMVA==", "lending"=>{"copy_id"=>"2", "borrower_id"=>"3", "status"=>"returned"}, "commit"=>"Return book to Fionna Apple", "id"=>"15"}
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[36mLending Update (1.7ms)[0m  [1m[33mUPDATE "lendings" SET "status" = ?, "updated_at" = ? WHERE "lendings"."id" = ?[0m  [["status", "returned"], ["updated_at", "2018-05-31 20:30:53.798536"], ["id", 15]]
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/lendings_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/lendings_controller.rb:22
+Redirected to http://localhost:3000/copies
+Completed 302 Found in 20ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 16:30:53 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:56
+  [1m[36mLending Load (0.6ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 5], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 17], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 18], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mCACHE Book Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 5], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 17], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 18], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  Rendered books/_google_book_search.html.erb (0.7ms)
+  Rendered copies/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 127ms (Views: 115.5ms | ActiveRecord: 3.3ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "status" varchar DEFAULT 'requested', "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "uid" varchar, "image" varchar)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180531194902)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174611),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-31 20:31:16.578597"], ["updated_at", "2018-05-31 20:31:16.578597"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "books"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "isbn" varchar, "author" varchar, "short_description" varchar, "info_link" varchar, "cover_img" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "copies"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "copies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "condition" integer, "purchased_date" datetime, "notes" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "friendships"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "friend_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lendings"[0m
+  ↳ db/schema.rb:43
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "lendings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "copy_id" integer, "borrower_id" integer, "due_date" datetime, "lend_date" datetime, "status" varchar DEFAULT 'requested', "rating" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "uid" varchar, "image" varchar)[0m
+  ↳ db/schema.rb:54
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180531194902)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180529174453),
+(20180529173609),
+(20180529174611),
+(20180529174026),
+(20180529174233);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-31 20:31:16.618810"], ["updated_at", "2018-05-31 20:31:16.618810"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-31 20:31:16.623161"], ["key", "environment"]]
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter - A Journey Through A History of Magic"], ["isbn", "ilc0DwAAQBAJ"], ["author", "British Library"], ["short_description", "The official companion book to the British Library exhibition and the ultimate gift for Harry Potter fans! As the British Library unveils a very special new exhibition in the UK, Harry Potter: A History of Magic, readers everywhere are invited on an enchanting journey through the Hogwarts curriculum, from Care of Magical Creatures and Herbology to Defense Against the Dark Arts, Astronomy, and more in this eBook uncovering thousands of years of magical history. Prepare to be amazed by artifacts released from the archives of the British Library, unseen sketches and manuscript pages from J.K. Rowling, and incredible illustrations from artist Jim Kay. Discover the truth behind the origins of the Philosopher’s Stone, monstrous dragons, and troublesome trolls; examine real-life wands and find out what actually makes a mandrake scream; pore over remarkable pages from da Vinci’s notebook; and discover the oldest atlas of the night sky. Carefully curated by the British Library and full of extraordinary treasures from all over the world, this is an unforgettable journey exploring the history of the magic at the heart of the Harry Potter stories."], ["info_link", "https://play.google.com/store/books/details?id=ilc0DwAAQBAJ&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=ilc0DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.298180"], ["updated_at", "2018-05-31 20:31:17.298180"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and the Prisoner of Azkaban"], ["isbn", "Sm5AKLXKxHgC"], ["author", "J.K. Rowling"], ["short_description", "\"'Welcome to the Knight Bus, emergency transport for the stranded witch or wizard. Just stick out your wand hand, step on board and we can take you anywhere you want to go.'\" When the Knight Bus crashes through the darkness and screeches to a halt in front of him, it's the start of another far from ordinary year at Hogwarts for Harry Potter. Sirius Black, escaped mass-murderer and follower of Lord Voldemort, is on the run - and they say he is coming after Harry. In his first ever Divination class, Professor Trelawney sees an omen of death in Harry's tea leaves... But perhaps most terrifying of all are the Dementors patrolling the school grounds, with their soul-sucking kiss..."], ["info_link", "https://play.google.com/store/books/details?id=Sm5AKLXKxHgC&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=Sm5AKLXKxHgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.304812"], ["updated_at", "2018-05-31 20:31:17.304812"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and International Relations"], ["isbn", "DKcWE3WXoj8C"], ["author", "Daniel H. Nexon, Iver B. Neumann"], ["short_description", "Drawing on a range of historical and sociological sources, this work shows how aspects of Harry's world contain aspects of our own. It also includes chapters on the political economy of the franchise, and on the problems of studying popular culture."], ["info_link", "http://books.google.com/books?id=DKcWE3WXoj8C&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=DKcWE3WXoj8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.309650"], ["updated_at", "2018-05-31 20:31:17.309650"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter"], ["isbn", "0rOWtgEACAAJ"], ["author", "British Library"], ["short_description", "The official companion book to the special exhibition Harry Potter: A History of Magic, featuring an extraordinary treasure trove of magical artifacts, original drafts and drawings by J.K. Rowling, and additional material exclusive to the US run of this unforgettable exhibition! As we celebrate the 20th anniversary of Harry Potter and the Sorcerer's Stone in the US, readers everywhere are invited to explore the extraordinary subjects of the Hogwarts curriculum - Potions & Alchemy, Divination, Care of Magical Creatures, and more - and examine incredible historical artifacts, items from J.K. Rowling's personal archive, and stunning original artwork from Harry Potter series artists Mary GrandPré, Jim Kay, and Brian Selznick. Published in conjunction with the special exhibition Harry Potter: A History of Magic (coming to the New-York Historical Society after a record-breaking sold-out run at the British Library), this complete catalogue of the over 150 artifacts on display gives readers an up-close look at magical treasures from all over the world. Exclusive to the New York run are amazing artifacts from American institutions -- including an original Audubon illustration, a narwhal's tusk (or is it a unicorn's horn?), an ancient Iranian astrolabe, and more -- as well as never-before-seen original artwork by Mary GrandPré and early correspondence between J.K. Rowling and her American editor, Arthur Levine. This special publication is an essential volume for Harry Potter fans, history buffs, and bibliophiles, and a fascinating exploration of the history of the magic at the heart of the Harry Potter stories."], ["info_link", "http://books.google.com/books?id=0rOWtgEACAAJ&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=0rOWtgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.314166"], ["updated_at", "2018-05-31 20:31:17.314166"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Ivory Tower and Harry Potter"], ["isbn", "iO5pApw2JycC"], ["author", "Lana A. Whited"], ["short_description", "Now available in paper, The Ivory Tower and Harry Potter is the first book-length analysis of J. K. Rowling's work from a broad range of perspectives within literature, folklore, psychology, sociology, and popular culture. A significant portion of the book explores the Harry Potter series' literary ancestors, including magic and fantasy works by Ursula K. LeGuin, Monica Furlong, Jill Murphy, and others, as well as previous works about the British boarding school experience. Other chapters explore the moral and ethical dimensions of Harry's world, including objections to the series raised within some religious circles. In her new epilogue, Lana A. Whited brings this volume up to date by covering Rowling's latest book, Harry Potter and the Order of the Phoenix."], ["info_link", "http://books.google.com/books?id=iO5pApw2JycC&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=iO5pApw2JycC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.319312"], ["updated_at", "2018-05-31 20:31:17.319312"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Irresistible Rise of Harry Potter"], ["isbn", "Aaug_RnI-xQC"], ["author", "Andrew Blake"], ["short_description", "As the British state begins to unravel, and as journalists compete to pronounce on the death of Britain, a schoolboy from suburban Surrey who lives for most of the year in a semi-parallel universe becomes the most popular figure in contemporary world literature. Now read on – everyone else does... Harry Potter is English, a home-counties suburban child. An orphan, oppressed and abused by the adults around him, he retreats into a fantasy world where his problems are more elemental; everyday rituals, magic spells and supercharged broomsticks with only the occasional homicidal wizard to worry about. Ironically, as Andrew Blake makes clear, J. K. Rowling rescues her character through the reinvention of that apex of class privilege, the English public school, a literary conceit that problematises Harry Potter's status as a role model and raises important social questions about the state of education in Tony Blair's Britain. Andrew Blake's examination of the Harry Potter phenomenon also raises serious questions about the condition of the publishing industry, the state of bookselling and filmmaking, and the ways in which the Potter consumer campaign has changed our ideas about literature and reading. Blake reflects on how these connections, while drawn up in Britain, act as a template for Harry Potter's international success."], ["info_link", "http://books.google.com/books?id=Aaug_RnI-xQC&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=Aaug_RnI-xQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.324696"], ["updated_at", "2018-05-31 20:31:17.324696"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and the Classical World"], ["isbn", "7HgwCgAAQBAJ"], ["author", " Richard A. Spencer"], ["short_description", "J.K. Rowling has drawn deeply from classical sources to inform and color her Harry Potter novels, with allusions ranging from the obvious to the obscure. \"Fluffy,\" the vicious three-headed dog in Harry Potter and the Sorcerer's Stone, is clearly a repackaging of Cerberus, the hellhound of Greek and Roman mythology. But the significance of Rowling's quotation from Aeschylus at the front of Harry Potter and the Deathly Hallows is a matter of speculation. Her use of classical material is often presented with irony and humor. This extensive analysis of the Harry Potter series examines Rowling's wide range of allusion to classical characters and themes and her varied use of classical languages. Chapters discuss Harry and Narcissus, Dumbledore's many classical predecessors, Lord Voldemort's likeness to mythical figures, and magic in Harry Potter and classical antiquity--among many topics."], ["info_link", "https://play.google.com/store/books/details?id=7HgwCgAAQBAJ&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=7HgwCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.329075"], ["updated_at", "2018-05-31 20:31:17.329075"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Females and Harry Potter"], ["isbn", "LiWrXUHgnL8C"], ["author", "Ruthann Mayes-Elma"], ["short_description", "Uses critical discourse analysis, feminist theory, and critical theory to examine the female characters in J.K. Rowling's Harry Potter series, focusing on such themes as validating/enabling, intelligence, and mothering."], ["info_link", "http://books.google.com/books?id=LiWrXUHgnL8C&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=LiWrXUHgnL8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.333210"], ["updated_at", "2018-05-31 20:31:17.333210"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and the Philosopher's Stone"], ["isbn", "39iYWTb6n6cC"], ["author", "J.K. Rowling"], ["short_description", "\"Turning the envelope over, his hand trembling, Harry saw a purple wax seal bearing a coat of arms; a lion, an eagle, a badger and a snake surrounding a large letter 'H'.\" Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!"], ["info_link", "http://books.google.com/books?id=39iYWTb6n6cC&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=39iYWTb6n6cC&printsec=frontcover&img=1&zoom=5&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.337873"], ["updated_at", "2018-05-31 20:31:17.337873"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("name", "isbn", "author", "short_description", "info_link", "cover_img", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Harry Potter and the Half-blood Prince"], ["isbn", "uQZ5rgEACAAJ"], ["author", "J. K. Rowling"], ["short_description", "The war against Voldemort is not going well; even Muggle governments are noticing. Ron scans the obituary pages of the Daily Prophet, looking for familiar names. Dumbledore is absent from Hogwarts for long stretches of time, and the Order of the Phoenix has already suffered losses. And yet... As in all wars, life goes on. Sixth-year students learn to Apparate - and lose a few eyebrows in the process. The Weasley twins expand their business. Teenagers flirt and fight and fall in love. Classes are never straightforward, though Harry receives some extraordinary help from the mysterious Half-Blood Prince. So it's the home front that takes center stage in the multilayered sixth installment of the story of Harry Potter. Here at Hogwarts, Harry will search for the full complex storty of the boy who became Lord Voldemort - and thereby find what may be his only vulnerability."], ["info_link", "http://books.google.com/books?id=uQZ5rgEACAAJ&dq=Harry+Potter&hl=&source=gbs_api"], ["cover_img", "http://books.google.com/books/content?id=uQZ5rgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"], ["created_at", "2018-05-31 20:31:17.341754"], ["updated_at", "2018-05-31 20:31:17.341754"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Fionna Apple"], ["email", "fionna@fionna.com"], ["password_digest", "$2a$10$1h2BA7KblkwyTCVCS3oDmOQk7Qr8qV3yat21xgLAZNNOVaky.lYUm"], ["created_at", "2018-05-31 20:31:17.459172"], ["updated_at", "2018-05-31 20:31:17.459172"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Carson Wentz"], ["email", "carson@carson.com"], ["password_digest", "$2a$10$G868oYVlR.6L11PpxmOwmO2PuqBXTm0/h0Cz5NdaptXWQy6KJLpE6"], ["created_at", "2018-05-31 20:31:17.560456"], ["updated_at", "2018-05-31 20:31:17.560456"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bryce Harper"], ["email", "bryce@bryce.com"], ["password_digest", "$2a$10$6ZtZ0EvejyE9ImVo6G3BnuM4jZ9Fp9NukkECI2NUClY622P945kPy"], ["created_at", "2018-05-31 20:31:17.656601"], ["updated_at", "2018-05-31 20:31:17.656601"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Kelly Smith"], ["email", "kelly@kelly.com"], ["password_digest", "$2a$10$95l8cwAjtOLlqtubiSlJceANzqEv8ScS3A/ixkT0gFF8iIaTrq1dq"], ["created_at", "2018-05-31 20:31:17.749485"], ["updated_at", "2018-05-31 20:31:17.749485"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "John Jacobs"], ["email", "john@john.com"], ["password_digest", "$2a$10$Usn41nxeS8VQ.a7TWcILquwE2bZYZ6GbCfeajy4F5lpYpDvbUCDP2"], ["created_at", "2018-05-31 20:31:17.857565"], ["updated_at", "2018-05-31 20:31:17.857565"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 1], ["user_id", 1], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:31:17.896467"], ["updated_at", "2018-05-31 20:31:17.896467"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 2], ["user_id", 1], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:31:17.903442"], ["updated_at", "2018-05-31 20:31:17.903442"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.4ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 3], ["user_id", 2], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:31:17.908604"], ["updated_at", "2018-05-31 20:31:17.908604"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 4], ["user_id", 2], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:31:17.913638"], ["updated_at", "2018-05-31 20:31:17.913638"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 5], ["user_id", 3], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:31:17.918349"], ["updated_at", "2018-05-31 20:31:17.918349"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 6], ["user_id", 3], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:31:17.923445"], ["updated_at", "2018-05-31 20:31:17.923445"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 7], ["user_id", 4], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:31:17.928384"], ["updated_at", "2018-05-31 20:31:17.928384"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.5ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 8], ["user_id", 4], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:31:17.934371"], ["updated_at", "2018-05-31 20:31:17.934371"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 9], ["user_id", 5], ["condition", 5], ["purchased_date", "2018-05-05 00:00:00"], ["notes", "The greatest book."], ["created_at", "2018-05-31 20:31:17.940042"], ["updated_at", "2018-05-31 20:31:17.940042"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mCopy Create (0.3ms)[0m  [1m[32mINSERT INTO "copies" ("book_id", "user_id", "condition", "purchased_date", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["book_id", 10], ["user_id", 5], ["condition", 4], ["purchased_date", "2018-01-05 00:00:00"], ["notes", "An okay book."], ["created_at", "2018-05-31 20:31:17.946110"], ["updated_at", "2018-05-31 20:31:17.946110"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 1], ["borrower_id", 2], ["created_at", "2018-05-31 20:31:17.974410"], ["updated_at", "2018-05-31 20:31:17.974410"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "due_date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 2], ["borrower_id", 3], ["due_date", "2018-07-07 00:00:00"], ["status", "active"], ["created_at", "2018-05-31 20:31:17.980291"], ["updated_at", "2018-05-31 20:31:17.980291"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 3], ["borrower_id", 4], ["status", "returned"], ["rating", 5], ["created_at", "2018-05-31 20:31:17.990097"], ["updated_at", "2018-05-31 20:31:17.990097"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.3ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 4], ["borrower_id", 5], ["status", "returned"], ["rating", 4], ["created_at", "2018-05-31 20:31:17.995993"], ["updated_at", "2018-05-31 20:31:17.995993"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 5], ["borrower_id", 1], ["status", "returned"], ["rating", 3], ["created_at", "2018-05-31 20:31:18.001077"], ["updated_at", "2018-05-31 20:31:18.001077"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.5ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 6], ["borrower_id", 1], ["status", "returned"], ["rating", 1], ["created_at", "2018-05-31 20:31:18.008615"], ["updated_at", "2018-05-31 20:31:18.008615"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 4], ["borrower_id", 1], ["status", "returned"], ["rating", 4], ["created_at", "2018-05-31 20:31:18.013803"], ["updated_at", "2018-05-31 20:31:18.013803"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.3ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 6], ["borrower_id", 1], ["status", "returned"], ["rating", 1], ["created_at", "2018-05-31 20:31:18.019246"], ["updated_at", "2018-05-31 20:31:18.019246"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.5ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "status", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 6], ["borrower_id", 2], ["status", "returned"], ["rating", 2], ["created_at", "2018-05-31 20:31:18.024993"], ["updated_at", "2018-05-31 20:31:18.024993"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "due_date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["copy_id", 7], ["borrower_id", 1], ["due_date", "2018-07-07 00:00:00"], ["status", "active"], ["created_at", "2018-05-31 20:31:18.030209"], ["updated_at", "2018-05-31 20:31:18.030209"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 8], ["borrower_id", 2], ["created_at", "2018-05-31 20:31:18.036514"], ["updated_at", "2018-05-31 20:31:18.036514"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.1ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.3ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 9], ["borrower_id", 3], ["created_at", "2018-05-31 20:31:18.041898"], ["updated_at", "2018-05-31 20:31:18.041898"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mLending Create (0.4ms)[0m  [1m[32mINSERT INTO "lendings" ("copy_id", "borrower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["copy_id", 10], ["borrower_id", 4], ["created_at", "2018-05-31 20:31:18.048776"], ["updated_at", "2018-05-31 20:31:18.048776"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 2], ["created_at", "2018-05-31 20:31:18.066126"], ["updated_at", "2018-05-31 20:31:18.066126"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 2], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["friend_id", 1], ["created_at", "2018-05-31 20:31:18.078615"], ["updated_at", "2018-05-31 20:31:18.078615"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 3], ["created_at", "2018-05-31 20:31:18.096146"], ["updated_at", "2018-05-31 20:31:18.096146"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 3], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["friend_id", 1], ["created_at", "2018-05-31 20:31:18.099381"], ["updated_at", "2018-05-31 20:31:18.099381"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.0ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 4], ["created_at", "2018-05-31 20:31:18.105771"], ["updated_at", "2018-05-31 20:31:18.105771"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 4], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["friend_id", 1], ["created_at", "2018-05-31 20:31:18.117832"], ["updated_at", "2018-05-31 20:31:18.117832"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 4], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.7ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["friend_id", 5], ["created_at", "2018-05-31 20:31:18.125007"], ["updated_at", "2018-05-31 20:31:18.125007"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 5], ["friend_id", 1], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["friend_id", 1], ["created_at", "2018-05-31 20:31:18.128964"], ["updated_at", "2018-05-31 20:31:18.128964"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 1], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.5ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["friend_id", 3], ["created_at", "2018-05-31 20:31:18.136058"], ["updated_at", "2018-05-31 20:31:18.136058"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 3], ["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["friend_id", 2], ["created_at", "2018-05-31 20:31:18.139387"], ["updated_at", "2018-05-31 20:31:18.139387"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 2], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["friend_id", 4], ["created_at", "2018-05-31 20:31:18.146515"], ["updated_at", "2018-05-31 20:31:18.146515"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.0ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 4], ["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["friend_id", 3], ["created_at", "2018-05-31 20:31:18.149043"], ["updated_at", "2018-05-31 20:31:18.149043"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 3], ["friend_id", 4], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Create (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["friend_id", 5], ["created_at", "2018-05-31 20:31:18.155021"], ["updated_at", "2018-05-31 20:31:18.155021"]]
+  ↳ db/seeds.rb:66
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 5], ["friend_id", 4], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[36mFriendship Create (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("user_id", "friend_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["friend_id", 4], ["created_at", "2018-05-31 20:31:18.157705"], ["updated_at", "2018-05-31 20:31:18.157705"]]
+  ↳ app/models/friendship.rb:10
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = ? LIMIT ?[0m  [["user_id", 4], ["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/models/friendship.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+Started GET "/copies" for 127.0.0.1 at 2018-05-31 16:31:24 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/copies_controller.rb:18
+  Rendering copies/index.html.erb within layouts/application
+  [1m[36mCopy Load (0.3ms)[0m  [1m[34mSELECT "copies".* FROM "copies" WHERE "copies"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:56
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 5], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/copies/index.html.erb:8
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 5], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 6], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  Rendered books/_google_book_search.html.erb (1.4ms)
+  Rendered copies/index.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 534ms (Views: 468.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/borrowings" for 127.0.0.1 at 2018-05-31 16:31:31 -0400
+Processing by BorrowingsController#index as HTML
+  Rendering borrowings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 3], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/borrowings/index.html.erb:3
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 3], ["status", "active"]]
+  ↳ app/views/borrowings/index.html.erb:4
+  [1m[36mCopy Load (0.7ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (16.7ms)
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE Lending Load (0.0ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 2], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_return_form.html.erb:7
+  Rendered lendings/_return_form.html.erb (22.0ms)
+  [1m[36mLending Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 3], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/borrowings/index.html.erb:14
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 3], ["status", "requested"]]
+  ↳ app/views/borrowings/index.html.erb:15
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (4.7ms)
+  Rendered borrowings/index.html.erb within layouts/application (98.4ms)
+Completed 200 OK in 150ms (Views: 140.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/lendings/new" for 127.0.0.1 at 2018-05-31 16:31:37 -0400
+Processing by LendingsController#new as HTML
+  Rendering lendings/new.html.erb within layouts/application
+  Rendered lendings/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 105ms (Views: 100.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:31:40 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 77ms (Views: 73.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-05-31 16:31:45 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rx1cxqf6PWDeEmX+NpYq4QfqCmDyU6ka1zr1T8d6USNN+EP29Fa/t5/oTNScTyHr5L9eEDTklZV/C77b8kXSxw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:31:45 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-05-31 16:31:47 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered sessions/new.html.erb within layouts/application (5.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 75ms (Views: 68.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-31 16:31:50 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-31 16:31:50 -0400
+Started GET "/sessions/new" for 127.0.0.1 at 2018-05-31 16:32:07 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 72ms (Views: 66.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-05-31 16:32:08 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 69ms (Views: 63.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-31 16:32:10 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-31 16:32:10 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-31 16:33:38 -0400
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-31 16:33:38 -0400
+Started GET "/borrowings" for 127.0.0.1 at 2018-05-31 16:37:14 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BorrowingsController#index as HTML
+  Rendering borrowings/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mLending Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "active"], ["LIMIT", 1]]
+  ↳ app/views/borrowings/index.html.erb:3
+  [1m[36mLending Load (0.2ms)[0m  [1m[34mSELECT "lendings".* FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ?[0m  [["borrower_id", 1], ["status", "active"]]
+  ↳ app/views/borrowings/index.html.erb:4
+  [1m[36mCopy Load (0.2ms)[0m  [1m[34mSELECT  "copies".* FROM "copies" WHERE "copies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/lendings/_list_lendings.html.erb:6
+  Rendered lendings/_list_lendings.html.erb (47.9ms)
+  [1m[36mLending Load (0.4ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 7], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mLending Load (0.3ms)[0m  [1m[34mSELECT  "lendings".* FROM "lendings" WHERE "lendings"."copy_id" = ? AND (status = 'active') ORDER BY "lendings"."id" ASC LIMIT ?[0m  [["copy_id", 7], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/copy.rb:28
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/lendings/_return_form.html.erb:7
+  Rendered lendings/_return_form.html.erb (22.5ms)
+  [1m[36mLending Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lendings" WHERE "lendings"."borrower_id" = ? AND "lendings"."status" = ? LIMIT ?[0m  [["borrower_id", 1], ["status", "requested"], ["LIMIT", 1]]
+  ↳ app/views/borrowings/index.html.erb:14
+  Rendered borrowings/index.html.erb within layouts/application (175.7ms)
+Completed 200 OK in 3515ms (Views: 3494.4ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:37:20 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 69ms (Views: 63.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:37:26 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 82ms (Views: 77.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:37:26 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 66ms (Views: 61.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/library" for 127.0.0.1 at 2018-05-31 16:37:28 -0400
+Processing by CopiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Redirected to http://localhost:3000/login
+Filter chain halted as :user_check rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-05-31 16:37:28 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 60ms (Views: 55.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-05-31 16:37:54 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 63ms (Views: 58.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-05-31 16:38:27 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 295ms (Views: 289.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:39:16 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/josh/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 288ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after " @import ": expected file to import (string or url()), was "‘bootstrap’;"):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:18
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__414578534233442831_70252710848260'
+Started GET "/" for 127.0.0.1 at 2018-05-31 16:40:56 -0400
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1269ms (Views: 1262.6ms | ActiveRecord: 1.0ms)
+
+
