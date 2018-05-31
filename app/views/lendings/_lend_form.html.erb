@@ -1,0 +1,6 @@
+<%= form_for lending do |f| %>
+  <%= f.hidden_field :lend_date, value: Time.now %>
+  <%= f.hidden_field :status, value: "active" %>
+  <%= f.submit "Lend to #{lending.borrower.name}" %>
+<% end %>
+

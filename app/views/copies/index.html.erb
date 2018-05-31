@@ -10,7 +10,8 @@
    	<% if copy.available? && !copy.open_requests.empty? %>
 
    		<% copy.open_requests.each do |request| %>
-   			Requested by <%=request.borrower.name%>. <%= link_to "Lend?", "/lendings/#{request.id}", method: "PATCH" %>
+   			<br>Requested by <%=request.borrower.name%>
+        <%= render partial: "lendings/lend_form", locals: {lending: request} %>
    		<% end %>
 
     <% elsif copy.available? && copy.open_requests.empty? %>
