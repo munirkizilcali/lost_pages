@@ -36,12 +36,20 @@ class User < ApplicationRecord
       self.borrowings.where(status: "requested")
     end
 
+    def returned_borrowings
+      self.borrowings.where("status IS ? AND rating IS NOT ?", "returned", nil )
+    end
+
     def active_lendings
       self.lendings.where(status: "active")
     end
 
     def past_unrated_lendings
       self.lendings.where("status IS ? AND rating IS ?", "returned", nil )
+    end
+
+    def average_rating
+      self.returned_borrowings.average(:rating).to_f
     end
 
 end
