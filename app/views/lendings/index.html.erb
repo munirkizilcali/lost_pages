@@ -1,17 +1,43 @@
-<h3>Books that are currently lent to your friends</h3>
-
-	<% current_user.active_lendings.each do |lending| %>
-		<%= render partial: "list_lendings", locals:{lending: lending} %>
-		Due Date: <%= lending.formatted_due_date %><br>
-	<% end %>
-
-
-
-<h3>Rate your friends that have returned borrowed books</h3>
+<div>
+<h2>Friends that need ratings</h2>
+<div class="row">
+<% if !current_user.past_unrated_lendings.empty? %>
 	<% current_user.past_unrated_lendings.each do |lending| %>
-		<%= render partial: "list_lendings", locals:{lending: lending} %>
-		Borrower: <%= lending.borrower.name %><br>
-		<%= render partial: "rate_lending_form", locals: {lending: lending} %>
-		<br>
+	  <div class="col-md-2 shadow p-3 mb-5 bg-white" >
+	    <a href="<%=copy_path(lending.copy)%>"><img src="<%=lending.copy.book.cover_img%>"" class="rounded mx-auto d-block img-thumbnail mr-md-6"></a>
+	    <br>
+	    <strong><%=lending.copy.book.name %></strong><br>
+	    Author: <%=lending.copy.book.author%><br>
+	    Borrower: <%= lending.borrower.name %><br>
+			<%= render partial: "rate_lending_form", locals: {lending: lending} %>
+	  </div>
 	<% end %>
+<% else %>
+	<div class="col-md-6">
+		There are no outstanding ratings.
+	</div>
+	<br><br>
+<% end %>
+</div>
+</div>
+
+
+<div>
+<h2>Books currently lended to friends</h2>
+<div class="row">
+<% current_user.active_lendings.each do |lending| %>
+  <div class="col-md-2 shadow p-3 mb-5 bg-white" >
+    <a href="<%=copy_path(lending.copy)%>"><img src="<%=lending.copy.book.cover_img%>"" class="rounded mx-auto d-block img-thumbnail mr-md-6"></a>
+    <br>
+    <strong><%=lending.copy.book.name %></strong><br>
+    Author: <%=lending.copy.book.author%><br>
+    Due Date: <%= lending.formatted_due_date %>
+  </div>
+<% end %>
+</div>
+</div>
+
+
+
+
 

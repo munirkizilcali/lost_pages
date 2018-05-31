@@ -3,31 +3,27 @@
 <%= render partial: "google_book_search", locals: {search: params[:search]} %>
 
 <% if @search_list %>
-<div>
-	<br><br>
-	<% @search_list.each do |volume| %>
-		<% book_hash = Book.google_book_corrected(volume) %>
-		<div>
-			<div>
-				<img src="<%=book_hash[:cover_img]%>">
-			</div>
-			<div>
-				<%= "Title: #{book_hash[:name]}"%><br>
+	<div class="row">
+	  <% @search_list.each do |volume| %>
+			<% book_hash = Book.google_book_corrected(volume) %>
+	    <div class="col-md-2 shadow p-3 mb-5 bg-white" >
+	      <img src="<%=book_hash[:cover_img]%>" class="rounded mx-auto d-block img-thumbnail mr-md-6">
+	      <br>
+	      <strong><%= "Title: #{book_hash[:name]}"%></strong><br>
 				<%= "Author: #{book_hash[:author]}" %>
-			</div>
-			<%= form_for Book.new do |f| %>
-			<%= f.hidden_field :isbn, value: book_hash[:isbn] %>
-			<%= f.hidden_field :author, value: book_hash[:author] %>
-			<%= f.hidden_field :name, value: book_hash[:name] %>
-			<%= f.hidden_field :short_description, value: book_hash[:short_description] %>
-			<%= f.hidden_field :info_link, value: book_hash[:info_link] %>
-			<%= f.hidden_field :cover_img, value: book_hash[:cover_img] %>
-
-			<%= f.submit "Add book" %>
-
-			<% end %>
-			<br><br>
-		</div>
-	<% end %>
-</div>
+				<%= form_for Book.new do |f| %>
+				<%= f.hidden_field :isbn, value: book_hash[:isbn] %>
+				<%= f.hidden_field :author, value: book_hash[:author] %>
+				<%= f.hidden_field :name, value: book_hash[:name] %>
+				<%= f.hidden_field :short_description, value: book_hash[:short_description] %>
+				<%= f.hidden_field :info_link, value: book_hash[:info_link] %>
+				<%= f.hidden_field :cover_img, value: book_hash[:cover_img] %>
+				<%= f.submit "Add to Library", class: "btn btn-info" %>
+				<% end %>
+	    </div>
+	  <% end %>
+	</div>
 <% end %>
+
+
+

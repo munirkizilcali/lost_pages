@@ -20,7 +20,7 @@ class LendingsController < ApplicationController
     @lending.update(lending_params)
     # if @lending.valid?
     @lending.save
-    redirect_to copies_path
+    redirect_to library_path
     # end
   end
 

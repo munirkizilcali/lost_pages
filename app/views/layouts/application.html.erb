@@ -18,17 +18,17 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="<%=library_path%>">Library <span class="sr-only">(current)</span></a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="<%=friends_path%>">Friends</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<%=library_path%>">Personal Library</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="<%= borrowings_path %>">Borrowed Books</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="<%= lendings_path  %>">Lent Books</a>
+            <a class="nav-link disabled" href="<%= lendings_path  %>">Manage Lendings</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -37,8 +37,7 @@
         </form>
       </div>
     </nav>
-    Copy
-    <div class="container">
+    <div class="container-fluid ">
       <%= yield %>
     </div>
     <hr>

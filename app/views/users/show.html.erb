@@ -1,32 +1,13 @@
 <h1><%= @user.name %></h1>
-
 <h2>Library</h2>
-<div>
+<div class="row">
   <% @user.copies.each do |copy| %>
-  <div>
-    <img src="<%=copy.book.cover_img%>">
-  </div>
-   <p>
-    <%=link_to copy.book.name, copy_path(copy) %>
-   </p>
+    <div class="col-md-2 shadow p-3 mb-5 bg-white" >
+      <a href="<%=copy_path(copy)%>"><img src="<%=copy.book.cover_img%>"" class="rounded mx-auto d-block img-thumbnail mr-md-6"></a>
+      <br>
+      <strong><%=copy.book.name %></strong><br>
+      Author: <%=copy.book.author%>
+    </div>
   <% end %>
 </div>
-<div>
-  <% if @user == current_user %>
-    <% if !@user.active_borrowings.empty? %>
-    <h2>Borrowed Books</h2>
-      <% @user.active_borrowings.each do |lending| %>
-        <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
-        <%= render partial: "lendings/return_form", locals: {copy: lending.copy, lending: lending} %>
-        <br>
-      <% end %>
-    <% end %>
 
-    <% if !@user.requested_borrowings.empty? %>
-    <h2>Requested Books</h2>
-      <% @user.requested_borrowings.each do |lending| %>
-        <%= render partial: "lendings/list_lendings", locals: {lending: lending} %>
-      <% end %>
-    <% end %>
-  <% end %>
-</div>
