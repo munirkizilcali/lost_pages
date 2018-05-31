@@ -3,8 +3,16 @@ class Book < ApplicationRecord
 	has_many :lendings, through: :copies
 	has_many :users, through: :copies
 
+  def self.book_search(search)
+    where("name LIKE ? OR author LIKE ? ", "%#{search}%", "%#{search}%")
+  end
+
   def self.friend_book_search(search, current_user)
-    Book.where("name LIKE ? OR author LIKE ? OR short_description LIKE ?", "#{search}", "#{search}", "#{search}").joins(:copies).where(copies: {user_id: current_user.friend_ids})
+    book_search(search).joins(:copies).where(copies: {user_id: current_user.friend_ids})
+  end
+
+  def friend_copies(current_user)
+    self.copies.where(user_id: current_user.friend_ids)
   end
 
 	def self.search_google_books(string)
@@ -17,7 +25,7 @@ class Book < ApplicationRecord
 
 	 def self.google_book_corrected(volume)
 
-    default_book_info = {:title => "No book title", :short_description => "No description", :info_link => "No infoLink", :cover_img => "http://via.placeholder.com/128x185", :isbn => "NoISBN", :author => "No author info"}
+    default_book_info = {:name => "No book title", :short_description => "No description", :info_link => "No infoLink", :cover_img => "http://via.placeholder.com/128x185", :isbn => "NoISBN", :author => "No author info"}
 
     if volume['id'] && volume['id'] != ""
       default_book_info[:isbn] = volume['id']
@@ -27,7 +35,7 @@ class Book < ApplicationRecord
       vol_info = volume['volumeInfo']
 
       if vol_info['title'] && vol_info['title'] != ""
-        default_book_info[:title] = vol_info['title']
+        default_book_info[:name] = vol_info['title']
       end
 
       if vol_info['description'] && vol_info['description'] != ""

@@ -2,12 +2,15 @@
 
 <div>
   <% current_user.copies.each do |copy| %>
-   <p><%=link_to copy.book.name, copy_path(copy) %> -
+  <div>
+    <img src="<%=copy.book.cover_img%>">
+  </div>
+   <p><%=link_to copy.book.name, copy_path(copy) %><br>
 
    	<% if copy.available? && !copy.open_requests.empty? %>
 
    		<% copy.open_requests.each do |request| %>
-   			<%= link_to "Lend Book to #{request.borrower.name}", "/lendings/#{request.id}", method: "PATCH" %>
+   			Requested by <%=request.borrower.name%>. <%= link_to "Lend?", "/lendings/#{request.id}", method: "PATCH" %>
    		<% end %>
 
     <% elsif copy.available? && copy.open_requests.empty? %>

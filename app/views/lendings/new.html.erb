@@ -4,26 +4,29 @@
   <%= text_field_tag "search", params[:search] %>
   <%= submit_tag "Search" %>
 <% end %>
+<br><br>
 
-<ul>
+<div>
   <% if params[:search] %>
-    <% @search_list.each do |book, copies| %>
+    <% @book_list.each do |book| %>
 
-    <li>
+    <div>
 
-      <img src="<%= book.cover_img %>">
-      <%= "Title: #{book.name} - Author: #{book.author}" %>
-
+      <img src="<%= book.cover_img %>"><br>
+      <strong><%= "#{book.name}"%></strong><br>
+      <%= "Author: #{book.author}" %>
+      <br>
+      <strong>Friend Copies</strong>
       <ul>
         <li>
-      <% copies.each do |copy| %>
-        <%= copy.user.name %> - <%= copy.condition%>
+      <% book.friend_copies(current_user).each do |copy| %>
+       <%= link_to "#{copy.user.name} - Condition: #{copy.condition}", copy_path(copy) %>
       <% end %>
         </li>
       </ul>
 
-    </li>
+    </div>
 
     <% end %>
   <% end %>
-</ul>
+</div>

@@ -5,7 +5,7 @@ class LendingsController < ApplicationController
 
   def new
     if params[:search]
-      @search_list = Copy.friend_copies_search(params[:search], current_user)
+      @book_list = Copy.friend_copies_search(params[:search], current_user)
     end
   end
 
