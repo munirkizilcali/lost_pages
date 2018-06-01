@@ -8,8 +8,13 @@ class LendingsController < ApplicationController
 
   def create
     @lending = Lending.new(lending_params)
-    @lending.save
-    redirect_to user_path(current_user)
+    if @lending.valid?
+      @lending.save
+      redirect_to user_path(current_user)
+    else
+      flash[:error] = @lending.errors.full_messages
+      redirect_to copy_path(@lending.copy)
+    end
   end
 
   def update

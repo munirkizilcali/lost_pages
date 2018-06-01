@@ -1,12 +1,20 @@
+<% if flash[:error] %>
+	<div><br> <ul>
+		<% flash[:error].each do |error| %>
+			<li><%= error %></li>
+		<% end %>
+	</ul></div>
+<% end %>
 <div class="row">
   <div class="col-md-6" >
   <h2><%= @copy.user.name %>'s copy of <%= @copy.book.name %></h2>
    <%= render partial: "book_view", locals: {copy: @copy} %>
-    Condition: <%= @copy.condition %><br>
-    Purchased Date: <%= @copy.purchased_date %><br>
+    <br>Condition: <%= @copy.condition %><br>
     Notes: <%= @copy.notes %><br>
     Status: <%= @copy.available_message%>
     <%= render partial: "lendings/create_form", locals: {copy: @copy, lending: @lending} %>
+    <% if @copy.user == current_user %>
     <%= button_to "Delete this book", "/copies/#{@copy.id}", method: :delete, class: "btn btn-danger" %>
+    <% end %>
   </div>
 </div>
