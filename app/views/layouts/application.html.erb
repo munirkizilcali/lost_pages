@@ -28,10 +28,10 @@
             <a class="nav-link disabled" href="<%= lendings_path  %>">Manage Lendings</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search Friends Books">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <%= form_tag new_lending_path, method: "GET", class: "form-inline my-2 my-lg-0" do  %>
+          <%= text_field_tag "search", params[:search], class: "form-control mr-sm-2" %>
+          <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+        <% end %>
       </div>
     </nav>
     <div class="container-fluid ">

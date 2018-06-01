@@ -1,5 +1,5 @@
 <div>
-<h2>Rate your friends as book borrowers</h2>
+<h2>Rate your friends as borrowers</h2>
   <div class="row">
   <% if !current_user.past_unrated_borrowers.empty? %>
     <% current_user.past_unrated_borrowers.each do |lending| %>
@@ -21,7 +21,7 @@
 
 
 <div>
-<h2>Rate your friends as book lenders</h2>
+<h2>Rate your friends as lenders</h2>
   <div class="row">
   <% if !current_user.past_unrated_owners.empty? %>
     <% current_user.past_unrated_owners.each do |lending| %>

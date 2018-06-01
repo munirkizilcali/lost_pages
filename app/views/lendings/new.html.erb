@@ -6,27 +6,22 @@
 <% end %>
 <br><br>
 
-<div>
+<div class="row">
   <% if params[:search] %>
     <% @book_list.each do |book| %>
-
-    <div>
-
-      <img src="<%= book.cover_img %>"><br>
-      <strong><%= "#{book.name}"%></strong><br>
-      <%= "Author: #{book.author}" %>
+    <div class="col-md-3 shadow p-3 mb-5 bg-white" >
+      <img src="<%=book.cover_img%>"" class="rounded d-block img-thumbnail mr-md-6">
       <br>
-      <strong>Friend Copies</strong>
+      <strong><%=book.name %></strong><br>
+      Author: <%=book.author%>
+      <br>
+      <strong>Friend's With Copies</strong>
       <ul>
-        <li>
       <% book.friend_copies(current_user).each do |copy| %>
-       <%= link_to "#{copy.user.name} - Condition: #{copy.condition}", copy_path(copy) %>
+       <li><%=copy.user.name%> - <%=copy.available_message%> - <%=link_to "Request", copy_path(copy)%></li>
       <% end %>
-        </li>
       </ul>
-
     </div>
-
     <% end %>
   <% end %>
 </div>
