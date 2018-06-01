@@ -2,6 +2,6 @@
   <%= f.hidden_field :lend_date, value: Time.now %>
   <%= f.hidden_field :due_date, value: 1.month.from_now %>
   <%= f.hidden_field :status, value: "active" %>
-  <%= f.submit "Lend to #{lending.borrower.name}", class: "btn btn-info"%>
+  <%= f.submit "Lend", class: "btn btn-info"%>
 <% end %>
 

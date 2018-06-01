@@ -1,6 +1,7 @@
 <h1>Friends</h1>
 <ul>
 <% current_user.friendships.each do |friendship| %>
-	<li><%= link_to friendship.friend.name, user_path(friendship.friend) %> - <%= link_to "Unfriend", "/friendships/#{friendship.id}", method: "DELETE" %></li>
+	<li><%= link_to friendship.friend.name, user_path(friendship.friend) %> -  Rating: <%=friendship.friend.average_rating%> - <%= link_to "Unfriend", "/friendships/#{friendship.id}", method: "DELETE" %></li>
 <% end %>
 </ul>
+<%= link_to "Find a friend!", users_path %>

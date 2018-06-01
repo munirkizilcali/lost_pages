@@ -19,9 +19,14 @@ class LendingsController < ApplicationController
 
   def update
     @lending = Lending.find_by(id: params[:id])
-    @lending.update(lending_params)
-    @lending.save
-    redirect_to library_path
+    @lending.attributes = lending_params
+    if @lending.valid?
+      @lending.save
+      redirect_to library_path
+    else
+      flash[:error] = @lending.errors.full_messages
+      redirect_to copy_path(@lending.copy)
+    end
   end
 
   def borrowed_books

@@ -20,7 +20,7 @@ class Lending < ApplicationRecord
   def no_double_requests
     result = true
     self.borrower.requested_borrowings.each do |borrowing|
-      if borrowing.copy == self.copy && borrowing.status == "requested"
+      if borrowing.copy == self.copy && borrowing.status == "requested" && self.id =! borrowing.id
         result = false
         errors.add(:borrower_id, "You already requested that book.")
       end

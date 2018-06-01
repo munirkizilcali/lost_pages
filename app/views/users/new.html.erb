@@ -1,16 +1,22 @@
-<%= form_for @user do |f|%>
+<%= form_for @user, class: "form-group" do |f|%>
   <% if @user.errors.any? %>
     <ul>
     <% @user.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
-  <% end %> 
-  <p><%= f.label :name %><%= f.text_field :name %></p>
-  <p><%= f.label :email %><%= f.text_field :email %></p>
-  <p><%= f.label :password %><%= f.password_field :password %></p>
-  <p><%= f.label :password_confirmation %><%= f.password_field :password_confirmation %></p>
-  <p><%= f.submit %></p>
+  <% end %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br>
+  <%= f.label :password_confirmation %><br>
+  <%= f.password_field :password_confirmation %><br><br>
+  <%= f.submit "Create User", class: "btn btn-secondary" %>
 <% end %>
-
-<%= link_to('Log in with Facebook!', '/auth/facebook') %>
+<br>
+<p>or create a user with facebook:</p>
+<%= link_to 'Create with Facebook', '/auth/facebook', class: "btn btn-primary" %>
+<br><br>
