@@ -1,3 +1,47 @@
+<div>
+<h2>Rate your friends as book borrowers</h2>
+  <div class="row">
+  <% if !current_user.past_unrated_borrowers.empty? %>
+    <% current_user.past_unrated_borrowers.each do |lending| %>
+      <div class="col-md-2 shadow p-3 mb-5 bg-white" >
+        <%= render partial: "lendings/book_view", locals: {lending: lending} %>
+        Borrower: <%= link_to lending.borrower.name, user_path(lending.borrower) %><br>
+        Lend Date: <%= lending.formatted_lend_date %><br>
+        <%= render partial: "lendings/rate_borrower_form", locals: {lending: lending} %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="col-md-6">
+      There are no outstanding ratings.
+    </div>
+    <br><br>
+  <% end %>
+  </div>
+</div>
+
+
+<div>
+<h2>Rate your friends as book lenders</h2>
+  <div class="row">
+  <% if !current_user.past_unrated_owners.empty? %>
+    <% current_user.past_unrated_owners.each do |lending| %>
+      <div class="col-md-2 shadow p-3 mb-5 bg-white" >
+        <%= render partial: "lendings/book_view", locals: {lending: lending} %>
+        Owner: <%= link_to lending.user.name, user_path(lending.user) %><br>
+        Lend Date: <%= lending.formatted_lend_date %><br>
+        <%= render partial: "lendings/rate_lender_form", locals: {lending: lending} %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="col-md-6">
+      There are no outstanding ratings.
+    </div>
+    <br><br>
+  <% end %>
+  </div>
+</div>
+
+
 <h1>Friends</h1>
 <ul>
 <% current_user.friendships.each do |friendship| %>

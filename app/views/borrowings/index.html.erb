@@ -5,10 +5,8 @@
     <% if !current_user.active_borrowings.empty? %>
       <% current_user.active_borrowings.each do |lending| %>
       <div class="col-md-2 shadow p-3 mb-5 bg-white" >
-        <a href="<%=copy_path(lending.copy)%>"><img src="<%=lending.copy.book.cover_img%>"" class="rounded mx-auto d-block img-thumbnail mr-md-6"></a>
-          <%= link_to lending.copy.book.name, copy_path(lending.copy) %><br>
-          Friend: <%= link_to lending.user.name, user_path(lending.user)%>
-          <%= render partial: "lendings/return_form", locals: {copy: lending.copy, lending: lending} %>
+          <%= render partial: "book_view", locals: {lending: lending} %>
+          <%= render partial: "return_form", locals: {copy: lending.copy, lending: lending} %>
         </div>
       <% end %>
     <% else %>
@@ -25,9 +23,7 @@
     <% if !current_user.requested_borrowings.empty? %>
       <% current_user.requested_borrowings.each do |lending| %>
       <div class="col-md-2 shadow p-3 mb-5 bg-white" >
-        <a href="<%=copy_path(lending.copy)%>"><img src="<%=lending.copy.book.cover_img%>"" class="rounded mx-auto d-block img-thumbnail mr-md-6"></a>
-        <%= lending.copy.book.name %><br>
-        Friend: <%= link_to lending.user.name, user_path(lending.user)%>
+        <%= render partial: "book_view", locals: {lending: lending} %>
         </div>
       <% end %>
     <% else %>

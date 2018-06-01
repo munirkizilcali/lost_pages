@@ -1,0 +1,10 @@
+<% if current_user == copy.current_borrower %>
+
+  <%= form_for lending do |f| %>
+    <%= f.hidden_field :copy_id, value: copy.id %>
+    <%= f.hidden_field :borrower_id, value: current_user.id %>
+    <%= f.hidden_field :status, value: "returned" %>
+    <%= f.submit "Return", class: "btn btn-info" %>
+  <% end %>
+
+<% end %>

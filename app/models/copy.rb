@@ -33,5 +33,8 @@ class Copy < ApplicationRecord
     !current_lending
   end
 
+  def available_message
+    self.available? ? "Available" : "Currently borrowed by #{self.current_borrower.name}. Return date: #{self.current_lending.formatted_due_date}"
+  end
 
 end

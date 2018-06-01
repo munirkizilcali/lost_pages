@@ -1,14 +1,14 @@
 class CopiesController < ApplicationController
 
   before_action :user_check
-  before_action :find_copy
+  before_action :find_copy, only: [:show]
 
 	def index
 
 	end
 
   def show
-    @lending = @copy.lendings.build
+    @lending = Lending.new
   end
 
 

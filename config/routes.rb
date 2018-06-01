@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only:[:create, :destroy, :new]
 
-  root "static#home", :as => 'home'
+  root "copies#index", :as => 'home'
 
   get 'library', to: 'copies#index', :as => 'library'
 

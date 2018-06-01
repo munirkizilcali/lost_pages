@@ -10,6 +10,12 @@ class Lending < ApplicationRecord
     end
   end
 
+  def formatted_lend_date
+    if self.lend_date
+      self.lend_date.strftime("%B %d, %Y")
+    end
+  end
+
 
 
 

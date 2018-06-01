@@ -1,12 +1,9 @@
-<h1><%= @user.name %></h1>
-<h2>Library</h2>
+<h1><%= @user.name %>'s Library</h1>
 <div class="row">
+  <br>
   <% @user.copies.each do |copy| %>
     <div class="col-md-2 shadow p-3 mb-5 bg-white" >
-      <a href="<%=copy_path(copy)%>"><img src="<%=copy.book.cover_img%>"" class="rounded mx-auto d-block img-thumbnail mr-md-6"></a>
-      <br>
-      <strong><%=copy.book.name %></strong><br>
-      Author: <%=copy.book.author%>
+      <%= render partial: "copies/book_view", locals: {copy: copy} %>
     </div>
   <% end %>
 </div>

@@ -1,36 +1,30 @@
-<h1>Personal Library</h1>
 
 <div>
-    <h3>Add a book to your library</h3>
-  <%= render partial: "books/google_book_search", locals: {search: params[:search]} %>
   <br>
-</div>
-
-<div>
   <h2>Books on your shelf</h2>
   <div class="row">
   <% current_user.self_copies.each do |copy| %>
     <div class="col-md-2 shadow p-3 mb-5 bg-white" >
-      <a href="<%=copy_path(copy)%>"><img src="<%=copy.book.cover_img%>"" class="rounded mx-auto d-block img-thumbnail mr-md-6"></a>
-      <br>
-      <strong><%=copy.book.name %></strong><br>
-      Author: <%=copy.book.author%>
+      <%= render partial: "book_view", locals: {copy: copy} %>
     </div>
   <% end %>
   </div>
 </div>
 <div>
+  <br>
   <h2>Books you have lended</h2>
   <div class="row">
   <% current_user.lended_copies.each do |copy| %>
     <div class="col-md-2 shadow p-3 mb-5 bg-white" >
-      <a href="<%=copy_path(copy)%>"><img src="<%=copy.book.cover_img%>"" class="rounded mx-auto d-block img-thumbnail mr-md-6"></a>
-      <br>
-      <%=link_to copy.book.name, copy_path(copy) %><br>
-      <%= copy.book.author %><br>
+      <%= render partial: "book_view", locals: {copy: copy} %>
       Borrowed by <%= link_to copy.current_borrower.name, user_path(copy.current_borrower) %><br>
       Lend Date: <%= copy.current_lending.lend_date %>
     </div>
   <% end %>
   </div>
+</div>
+<div>
+    <h3>Add a book to your library</h3>
+  <%= render partial: "books/google_book_search", locals: {search: params[:search]} %>
+  <br>
 </div>
