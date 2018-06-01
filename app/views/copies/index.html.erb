@@ -27,7 +27,8 @@
     <div class="col-md-2 shadow p-3 mb-5 bg-white" >
       <%= render partial: "book_view", locals: {copy: copy} %>
       Borrowed by <%= link_to copy.current_borrower.name, user_path(copy.current_borrower) %><br>
-      Lend Date: <%= copy.current_lending.lend_date %>
+      Lend Date: <%= copy.current_lending.formatted_lend_date %>
+      Due Date: <%= copy.current_lending.formatted_due_date %>
     </div>
   <% end %>
   </div>

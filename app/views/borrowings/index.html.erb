@@ -4,7 +4,9 @@
     <% if !current_user.active_borrowings.empty? %>
       <% current_user.active_borrowings.each do |lending| %>
       <div class="col-md-2 shadow p-3 mb-5 bg-white" >
-          <%= render partial: "book_view", locals: {lending: lending} %>
+          <%= render partial: "book_view", locals: {lending: lending} %><br>
+            Lend Date: <%= lending.formatted_lend_date %><br>
+            Due Date: <%= lending.formatted_due_date %>
           <%= render partial: "return_form", locals: {copy: lending.copy, lending: lending} %>
         </div>
       <% end %>

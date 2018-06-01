@@ -1,8 +1,11 @@
-<h1>Lost Pages Users</h1>
+<h1>Find Friends</h1>
 
 <ul>
 <% @users.each do |user| %>
-	<li> <%= link_to "#{user.name} - Rating: #{user.average_rating}", user_path(user) %> - <%=link_to "Add Friend", friendships_path(:friend_id => user.id, :user_id => current_user.id), method: "POST" %>
+  <% if !current_user.friends.include?(user) %>
+	<li>
+    <%= link_to "#{user.name} - Rating: #{user.average_rating}", user_path(user) %> - <%=link_to "Add Friend", friendships_path(:friend_id => user.id, :user_id => current_user.id), method: "POST" %>
 	 </li>
+  <% end %>
 <% end %>
 </ul>

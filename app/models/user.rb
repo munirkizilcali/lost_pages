@@ -49,7 +49,7 @@ class User < ApplicationRecord
     end
 
     def average_rating
-      self.returned_borrowings.average(:rating).to_f
+      self.returned_borrowings.average(:rating).to_f.round(1)
     end
 
     def self_copies

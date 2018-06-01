@@ -9,18 +9,29 @@
 <div class="row">
   <% if params[:search] %>
     <% @book_list.each do |book| %>
-    <div class="col-md-3 shadow p-3 mb-5 bg-white" >
-      <img src="<%=book.cover_img%>"" class="rounded d-block img-thumbnail mr-md-6">
-      <br>
-      <strong><%=book.name %></strong><br>
-      Author: <%=book.author%>
-      <br>
-      <strong>Friend's With Copies</strong>
-      <ul>
-      <% book.friend_copies(current_user).each do |copy| %>
-       <li><%=copy.user.name%> - <%=copy.available_message%> - <%=link_to "Request", copy_path(copy)%></li>
-      <% end %>
-      </ul>
+    <div class="col-md-2 shadow p-3 mb-5 bg-white" >
+        <img src="<%=book.cover_img%>"" class="rounded d-block img-thumbnail mr-md-6">
+        <br>
+        <strong><%=book.name %></strong>
+        <br>
+        Author: <%=book.author%>
+        <br><br>
+        <strong>Friend's With Copies</strong>
+        <div>
+        <% book.friend_copies(current_user).each do |copy| %>
+          <br>
+           <div>
+              <%=copy.user.name%><br>
+              <% if copy.available? %>
+              Available<br>
+              <%=link_to "Request", copy_path(copy)%>
+              <% else %>
+              Borrowed until <%=copy.current_lending.formatted_due_date%><br>
+              <%=link_to "Request", copy_path(copy)%>
+              <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
     <% end %>
   <% end %>

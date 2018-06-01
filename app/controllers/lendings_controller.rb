@@ -21,7 +21,7 @@ class LendingsController < ApplicationController
     @lending = Lending.find_by(id: params[:id])
     @lending.attributes = lending_params
     if @lending.valid?
-      @lending.save
+      @lending.update(lending_params)
       redirect_to library_path
     else
       flash[:error] = @lending.errors.full_messages
