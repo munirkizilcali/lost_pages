@@ -1,4 +1,5 @@
 <h1><%= @user.name %>'s Library</h1>
+<h3>Rating: <%= @user.average_rating %></h3>
 <div class="row">
   <br>
   <% @user.copies.each do |copy| %>

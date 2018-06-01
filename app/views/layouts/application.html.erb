@@ -40,7 +40,7 @@
     <hr>
     <% if current_user %>
       <p>
-        Current User: <%= current_user.email %><br>
+        Current User: <%= link_to current_user.email, user_path(current_user) %><br>
         <%= link_to "Logout", '/logout', method: "DELETE" %>
       </p>
     <% end %>
