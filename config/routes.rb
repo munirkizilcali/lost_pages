@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin/index'
   resources :friendships, only:[:create, :destroy, :index]
   resources :copies
   resources :lendings
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   resources :borrowings
 
   resources :sessions, only:[:create, :destroy, :new]
-
+  resources :admin, only:[:index]
   root "copies#index", :as => 'home'
 
   get 'library', to: 'copies#index', :as => 'library'

@@ -5,13 +5,13 @@ one:
   borrower_id: 1
   due_date: 2018-05-29 13:42:33
   lend_date: 2018-05-29 13:42:33
-  returned: false
+  status: "requested"
   rating: 1
 
 two:
-  copy_id: 1
+  copy_id: 2
   borrower_id: 1
   due_date: 2018-05-29 13:42:33
   lend_date: 2018-05-29 13:42:33
-  returned: false
+  status: "requested"
   rating: 1
