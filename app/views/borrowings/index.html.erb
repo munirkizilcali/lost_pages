@@ -1,6 +1,5 @@
-<h1>Borrowed Books</h1>
 <div>
-  <h2>Checked Out</h2>
+  <h2>Books you are currently borrowing</h2>
   <div class="row">
     <% if !current_user.active_borrowings.empty? %>
       <% current_user.active_borrowings.each do |lending| %>
@@ -18,7 +17,7 @@
 </div>
 <br>
 <div>
-  <h2>Requested</h2>
+  <h2>Books you have requested to borrow</h2>
   <div class="row">
     <% if !current_user.requested_borrowings.empty? %>
       <% current_user.requested_borrowings.each do |lending| %>

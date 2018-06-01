@@ -46,8 +46,7 @@ ActiveRecord::Schema.define(version: 2018_05_31_194902) do
     t.datetime "due_date"
     t.datetime "lend_date"
     t.string "status", default: "requested"
-    t.integer "owner_rating"
-    t.integer "borrower_rating"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

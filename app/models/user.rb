@@ -44,12 +44,8 @@ class User < ApplicationRecord
       self.lendings.where(status: "active")
     end
 
-    def past_unrated_borrowers
-      self.lendings.where("status IS ? AND borrower_rating IS ?", "returned", nil )
-    end
-
-    def past_unrated_owners
-      self.borrowings.where("status IS ? AND owner_rating IS ?", "returned", nil )
+    def past_unrated_lendings
+      self.lendings.where("status IS ? AND rating IS ?", "returned", nil )
     end
 
     def average_rating
