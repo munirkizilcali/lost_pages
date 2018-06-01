@@ -5,7 +5,7 @@
     <%= f.hidden_field :borrower_id, value: current_user.id %>
     <%= f.hidden_field :status, value: "requested" %>
     <br>
-    <%= f.submit "Borrow this book from #{copy.user.name}" %>
+    <%= f.submit "Borrow this book from #{copy.user.name}", class: "btn btn-info"%>
   <% end %>
 
 <% end %>

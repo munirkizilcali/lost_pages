@@ -4,6 +4,7 @@
     <% current_user.requested_lendings.each do |lending| %>
       <div class="col-md-2 shadow p-3 mb-5 bg-white" >
       <%= render partial: "book_view", locals: {lending: lending} %>
+      <%= render partial: "lend_form", locals: {lending: lending} %>
     ` </div>
     <% end %>
   </div>

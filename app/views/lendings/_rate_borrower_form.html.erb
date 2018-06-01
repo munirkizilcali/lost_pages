@@ -1,4 +1,4 @@
 <%= form_for lending do |f| %>
   <%= f.select :borrower_rating, (1..5), prompt: true %><br>
-  <%= f.submit "Submit Rating" %>
+  <%= f.submit "Submit Rating", class: "btn btn-info" %>
 <% end %>
