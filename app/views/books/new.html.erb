@@ -2,6 +2,14 @@
 
 <%= render partial: "google_book_search", locals: {search: params[:search]} %>
 
+<% if flash[:error] %>
+	<ul>
+		<% flash[:error].each do |error| %>
+		<li><%= error %></li>
+		<% end %>
+	</ul>
+<% end %>
+
 <% if @search_list %>
 	<div class="row">
 	  <% @search_list.each do |volume| %>

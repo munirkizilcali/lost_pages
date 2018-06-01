@@ -7,5 +7,6 @@
     Notes: <%= @copy.notes %><br>
     Status: <%= @copy.available_message%>
     <%= render partial: "lendings/create_form", locals: {copy: @copy, lending: @lending} %>
+    <%= button_to "Delete this book", "/copies/#{@copy.id}", method: :delete, class: "btn btn-danger" %>
   </div>
 </div>

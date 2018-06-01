@@ -1,8 +1,14 @@
 
 <div>
   <br>
+  <% if flash[:message] %>
+    <h3> <%= flash[:message] %> </h3>
+  <% end %>
   <h2>Books on your shelf</h2>
   <div class="row">
+    <% if current_user.self_copies.empty? %>
+      <div class="col-md-3">You have no books on your library</div>
+    <% end %>
   <% current_user.self_copies.each do |copy| %>
     <div class="col-md-2 shadow p-3 mb-5 bg-white" >
       <%= render partial: "book_view", locals: {copy: copy} %>
@@ -14,6 +20,9 @@
   <br>
   <h2>Books you have lended</h2>
   <div class="row">
+    <% if current_user.lended_copies.empty? %>
+      <div class="col-md-3">You lended no books.</div>
+    <% end %>
   <% current_user.lended_copies.each do |copy| %>
     <div class="col-md-2 shadow p-3 mb-5 bg-white" >
       <%= render partial: "book_view", locals: {copy: copy} %>
@@ -23,6 +32,7 @@
   <% end %>
   </div>
 </div>
+<br>
 <div>
     <h3>Add a book to your library</h3>
   <%= render partial: "books/google_book_search", locals: {search: params[:search]} %>

@@ -1,7 +1,7 @@
 class CopiesController < ApplicationController
 
   before_action :user_check
-  before_action :find_copy, only: [:show]
+  before_action :find_copy, only: [:show, :destroy]
 
 	def index
 
@@ -9,6 +9,12 @@ class CopiesController < ApplicationController
 
   def show
     @lending = Lending.new
+  end
+
+  def destroy
+    @copy.destroy
+    flash[:message] = "Book deleted from library"
+    redirect_to copies_path
   end
 
 

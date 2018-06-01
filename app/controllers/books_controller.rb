@@ -4,16 +4,21 @@ class BooksController < ApplicationController
 		if params[:search]
 			@search_list = Book.search_google_books(params[:search])
 		end
+
 	end
 
 	def create
-		@book = Book.new(book_params)
-		if @book.valid?
-			@book.save
-			@copy = Copy.create(book_id: @book.id, user_id:current_user.id)
+
+		@book = Book.find_or_create_by(isbn: book_params[:isbn]) do |b|
+			b.attributes = book_params
+		end
+		@copy = Copy.new(book_id: @book.id, user_id:current_user.id)
+		if @copy.valid?
+			@copy.save
 			redirect_to library_path
 		else
-			render :new
+			flash[:error] = @copy.errors.full_messages
+			redirect_to new_book_path
 		end
 	end
 

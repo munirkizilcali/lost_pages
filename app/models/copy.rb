@@ -2,6 +2,7 @@ class Copy < ApplicationRecord
 	belongs_to :user
 	belongs_to :book
 	has_many :lendings
+  validates :book_id, uniqueness: {scope: [:user_id]}
 
   def self.friend_copies_search(search, current_user)
     books = Book.friend_book_search(search, current_user)
