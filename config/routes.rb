@@ -22,5 +22,19 @@ Rails.application.routes.draw do
 
   get '/friends' => 'friendships#index'
 
+  namespace :api do 
+    namespace :v1 do 
+      resources :friendships, only:[:create, :destroy, :index]
+      resources :copies
+      resources :lendings
+      resources :books
+      resources :users
+      resources :borrowings
+
+      resources :sessions, only:[:create, :destroy, :new]
+      resources :admin, only:[:index]
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

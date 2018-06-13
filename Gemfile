@@ -30,6 +30,9 @@ gem 'json', '~> 2.1'
 gem 'bootstrap'
 gem 'jquery-rails'
 
+gem 'active_model_serializers'
+gem 'rack-cors'
+
 gem 'omniauth', '~> 1.8', '>= 1.8.1'
 gem 'omniauth-facebook', '~> 5.0'
 gem 'dotenv-rails', '~> 2.4'
