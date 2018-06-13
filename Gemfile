@@ -32,7 +32,8 @@ gem 'jquery-rails'
 
 gem 'active_model_serializers'
 gem 'rack-cors'
-
+gem 'graphql', '1.7.4'
+gem 'graphiql-rails', '1.4.4'
 gem 'omniauth', '~> 1.8', '>= 1.8.1'
 gem 'omniauth-facebook', '~> 5.0'
 gem 'dotenv-rails', '~> 2.4'

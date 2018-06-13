@@ -98,6 +98,9 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    graphiql-rails (1.4.4)
+      rails
+    graphql (1.7.4)
     hashie (3.5.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
@@ -247,6 +250,8 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   dotenv-rails (~> 2.4)
+  graphiql-rails (= 1.4.4)
+  graphql (= 1.7.4)
   jbuilder (~> 2.5)
   jquery-rails
   json (~> 2.1)
