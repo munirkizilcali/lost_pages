@@ -8,4 +8,5 @@ Types::BookType = GraphQL::ObjectType.define do
   field :name, !types.String
   field :short_description, !types.String
   field :cover_img, !types.String
+  field :copies, -> { !types[Types::CopyType] }
 end
