@@ -4,4 +4,8 @@ class StaticController < ApplicationController
 
   end
 
+  def privacy
+
+  end
+
 end
