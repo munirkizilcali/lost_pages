@@ -1,7 +1,7 @@
 ### Summary
 Book library with social networking, book lending and tracking features. Users can create their library, see their friends libraries, send borowing requests and lend from their own library.
 
-This was built as a project at Flatiron School in Washington D.C. with Munir Kizilcali.
+This was built as a module 2 project at Flatiron School in Washington D.C. with Josh Pearson.
 
 ### Technologies
 - Ruby on Rails 5.2
