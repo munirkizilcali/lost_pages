@@ -13,6 +13,8 @@ This was built as a project at Flatiron School in Washington D.C. with Munir Kiz
 https://lost-pages.herokuapp.com/
 
 Login with FaceBook or use
+
 User: 'fionna@fionna.com'
+
 Password: 'password'
 
