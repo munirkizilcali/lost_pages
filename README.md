@@ -7,14 +7,13 @@ This was built as a module 2 project at Flatiron School in Washington D.C. with 
 - Ruby on Rails 5.2
 - PostgreSQL
 - Omniauth for Facebook Authentication
-- Google Books API for book search
-
+- Google Books API for book search   
+### Demo Video
+[![Lost Pages Book Library App - Demo Video](https://img.youtube.com/vi/CypqOtIqTYk/0.jpg)](https://www.youtube.com/watch?v=CypqOtIqTYk)
 ### Demo 
 https://lost-pages.herokuapp.com/
 
-Login with FaceBook or use
-
-User: 'fionna@fionna.com'
-
-Password: 'password'
+Login with FaceBook or use  
+User: 'fionna@fionna.com'  
+Password: 'password'  
 
